@@ -10,15 +10,15 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inpus: {
+  outputs = { nixpkgs, home-manager, ... }@inpus:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-    in
-      homeConfigurations.pink-pear = home-manager.lib.homeManagerConfiguration {
+    in {
+      homeConfigurations.muf = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./home.nix ];
       };
-  };
+    };
 }

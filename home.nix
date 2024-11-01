@@ -7,6 +7,8 @@
   home.username = "muf";
   home.homeDirectory = "/home/muf";
 
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = with pkgs; [
     # archives
     zip
