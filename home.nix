@@ -1,11 +1,17 @@
-{ config, pkgs , ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
   imports = [
-    ./river
+    ./wayland
   ];
 
-  home.username = "muf";
-  home.homeDirectory = "/home/muf";
+  home = {
+    username = "muf";
+    homeDirectory = "/home/muf";
+    #keyboard = {
+    #  layout = "us";
+    #  model = "pc105";
+    #};
+  };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -18,9 +24,11 @@
     # utils
     eza
     mtr
-    btop
+    htop
     alacritty
     zsh
+    pulsemixer
+    pkgs-unstable.kmonad
     
     # sys utils
     lm_sensors
@@ -30,7 +38,6 @@
 
     # browser
     firefox
-    ladybird
 
     # editor
     emacs
@@ -38,6 +45,21 @@
 
     # WM
     river
+    waybar
+    fuzzel
+    mako
+    swaybg
+    wl-clipboard
+    wl-screenrec
+    sway-contrib.grimshot
+    #wf-recorder
+
+    catppuccin-cursors.mochaMauve
+
+    # programs
+    discord
+    pkgs-unstable.signal-desktop
+    signalbackup-tools
   ];
 
   programs.git = {
@@ -58,6 +80,7 @@
   programs.zsh = {
     enable = true;
   };
+
 
 
 
