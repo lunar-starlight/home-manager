@@ -26,9 +26,10 @@
     mtr
     htop
     alacritty
-    zsh
+    fish
     pulsemixer
     pkgs-unstable.kmonad
+    gnumake
     
     # sys utils
     lm_sensors
@@ -53,6 +54,7 @@
     wl-screenrec
     sway-contrib.grimshot
     #wf-recorder
+    gammastep
 
     catppuccin-cursors.mochaMauve
 
@@ -60,12 +62,16 @@
     discord
     pkgs-unstable.signal-desktop
     signalbackup-tools
+
+    # lean
+    #lean4
+    elan
   ];
 
   programs.git = {
     enable = true;
     userName = "Luna Strah";
-    userEmail = "strah.luna@gmail.com";
+    userEmail = "45151812+lunar-starlight@users.noreply.github.com";
     extraConfig = {
       init = {
         defaultBranch = "main";
@@ -77,7 +83,7 @@
     enable = true;
   };
 
-  programs.zsh = {
+  programs.fish = {
     enable = true;
   };
 
