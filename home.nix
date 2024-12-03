@@ -66,7 +66,23 @@
     # lean
     #lean4
     elan
+
+    # fonts
+    noto-fonts-color-emoji
+    noto-fonts-monochrome-emoji
+    font-awesome
+    powerline-fonts
+    powerline-symbols
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
+
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      #emoji = [ "Noto Color Emoji" ];
+    };
+  };
+
 
   programs.git = {
     enable = true;
