@@ -17,7 +17,7 @@ in {
     map = {
       normal = {
         "${non}	Print		" = "spawn \"grimshot copy area\"";
-        "${ctl}	Space		" = "spawn fuzzel";
+        "${mod}	Space		" = "spawn fuzzel";
         "${mod}	f12		" = "spawn alacritty";
         "${ms}	f12		" = "spawn alacritty --class popup";
 
