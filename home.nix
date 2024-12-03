@@ -2,7 +2,7 @@
 {
   imports = [
     ./wayland
-    (import ./kmonad/default.nix {inherit pkgs-unstable config; name = "kb";})
+    (import ./keyboard/kmonad.nix {inherit pkgs-unstable config; name = "kb";})
   ];
 
   home = {

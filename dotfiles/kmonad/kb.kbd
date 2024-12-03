@@ -1,7 +1,6 @@
 (defcfg
   input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
-  output (uinput-sink "KMonad: Keyboard"
-    "/usr/bin/sleep 1")
+  output (uinput-sink "KMonad: Keyboard")
   allow-cmd true
   )
 
@@ -11,7 +10,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     
   caps a    s    d    f    g    h    j    k    l    ;    '    ret        
   lsft z    x    c    v    b    n    m    ,    .    /    rsft            
-  lctl lmet lalt           spc                 ralt cmp  rctl            
+  lctl lmet lalt           spc            ralt cmp                       
 
   ssrq pause                     
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -27,7 +26,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    @ž    
   lctl a    s    d    f    g    h    j    k    l    @č   @š   ret        
   lsft z    x    c    v    b    n    m    ,    .    ;    rsft            
-  lctl lmet lalt           spc           @lspe ralt rctl                 
+  lctl lmet lalt           spc           @lspe ralt                      
 
   ssrq @agda                     
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -41,7 +40,7 @@
   tab  '    ,    .    p    y    f    g    c    r    l    [    ]    \     
   caps a    o    e    u    i    d    h    t    n    s    '    ret        
   lsft q    k    x    j    :    b    m    w    v    z    rsft            
-  lctl lmet lalt           spc            ralt cmp  rctl            
+  lctl lmet lalt           spc            ralt cmp                  
 
   ssrq @qty                      
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -57,7 +56,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    <    >    " #|"|#
   @ctl a    s    d    f    g    h    j    k    l    \    '    ret        
   @ag2 z    x    c    v    b    n    m    ,    .    +    @ag2            
-  @ctl lmet lalt           spc           @lspe @lgre @qtyn          
+  @ctl lmet lalt           spc           @lspe ralt                 
 
   ssrq @qty                      
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -71,7 +70,7 @@
   S-tab  Q    W    E    R    T    Y    U    I    O    P    ?    #    |       
   S-lctl A    S    D    F    G    H    J    K    L    \_   ;    S-ret        
   XX     Z    X    C    V    B    N    M    /    @    :    S-rsft            
-  S-lctl S-lmet S-lalt         S-spc        ralt @lgre S-rctl           
+  S-lctl S-lmet S-lalt         S-spc       @lspe ralt                        
 
   S-ssrq @qty                                          
   S-ins  S-home   S-pgup   nlck   S-kp/  S-kp*  S-kp-  
@@ -85,7 +84,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \     
   XX   a    s    d    f    g    h    j    k    l    ;    '    ret        
   lsft z    x    c    v    b    n    m    ,    .    /    rsft            
-  XX   lmet lalt           spc           @lspe @lgre XX             
+  XX   lmet lalt           spc           @lspe ralt                 
 
   ssrq XX                        
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -101,7 +100,7 @@
   _      _      _      _      _      _      @yo    _      _      _      _      \      ć      đ    
   _      _      _      _      _      _      _      _      _      _      =      grv    _           
   rsft   _      @x     _      _      _      _      _      _      @.s    @norm  rsft               
-  _      _      _                    _                    _      @lgre  ralt               
+  _      _      _                    _                    XX     @lgre                            
 
   _    _                            
   _    _    _    _    _    _    _   
@@ -115,7 +114,7 @@
   _    @supq  @supw  @supe  @supr  @supt  @supy  @supu  @supi  @supo  @supp  _      _      _    
   _    @supa  @sups  @supd  @supf  @supg  @suph  @supj  @supk  @supl  _      _      _           
   rsft @supz  @supx  @supc  @supv  @supb  @supn  @supm  _      _      _      rsft               
-  _    _      _                    _                    _      _      _                  
+  _    _      _                    _                    _      _                         
 
   _    _                            
   _    _    _    _    _    _    _   
@@ -129,7 +128,7 @@
   _    _    @gqs @ge  @gr  @gt  @gu  @gqt @gi  @gqo @gp  _    _    _     
   _    @ga  @gs  @gd  @gf  @gg  @gh  @gqx @gk  @gl  _    _    _          
   rsft @gz  @gx  @gqp @go  @gb  @gn  @gm  _    _    _    rsft            
-  _    _    _              _              _    _    _               
+  _    _    _              _              _    _                    
 
   _    _                            
   _    _    _    _    _    _    _   
@@ -251,7 +250,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _    
   _    _    _    _    _    _    _    _    _    _    _    _    _                         
   _    _    _    _    _    _    _    _    _    _    _    _                    _         
-  _    _    _              _                   _    _    _               _    _    _    
+  _    _    _              _                   _    _                    _    _    _    
 )
 
 |#
