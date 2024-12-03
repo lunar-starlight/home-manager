@@ -2,6 +2,7 @@
 {
   imports = [
     ./wayland
+    (import ./kmonad/default.nix {inherit pkgs-unstable config; name = "kb";})
   ];
 
   home = {
@@ -26,7 +27,6 @@
     mtr
     htop
     alacritty
-    fish
     pulsemixer
     pkgs-unstable.kmonad
     gnumake
@@ -82,11 +82,6 @@
   programs.alacritty = {
     enable = true;
   };
-
-  programs.fish = {
-    enable = true;
-  };
-
 
 
 
