@@ -1,6 +1,7 @@
 { config, pkgs, pkgs-unstable, ... }:
 {
   imports = [
+    ./fish.nix
     ./wayland
     ./keyboard
   ];
@@ -95,11 +96,9 @@
     };
   };
 
-  programs.ssh = {
+  services.ssh-agent = {
     enable = true;
-    addKeysToAgent = "yes";
   };
-
 
   programs.alacritty = {
     enable = true;
