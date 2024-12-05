@@ -2,7 +2,7 @@
 {
   imports = [
     ./wayland
-    (import ./keyboard/kmonad.nix {inherit pkgs-unstable config; name = "kb";})
+    ./keyboard
   ];
 
   home = {
@@ -30,8 +30,7 @@
     pulsemixer
     pkgs-unstable.kmonad
     gnumake
-    fcitx5
-    
+
     # sys utils
     lm_sensors
     ethtool
@@ -96,16 +95,15 @@
     };
   };
 
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "yes";
+  };
+
+
   programs.alacritty = {
     enable = true;
   };
-
-  home.sessionVariables = {
-    XMODIFIERS = "@im=fcitx";
-    QT_IM_MODULE = "fcitx";
-    GTK_IM_MODULE = "fcitx";
-  };
-
 
   # do NOT the version
   home.stateVersion = "24.05";

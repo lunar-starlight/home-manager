@@ -1,7 +1,7 @@
-{ ... } :
+{ config, ... } :
 {
   home.file = {
-    "${config.xdg.configHome}/XCompose".source = ../dotfiles/XCompose;
+    "/home/muf/.XCompose".source = ../dotfiles/XCompose;
   };
 
   i18n.inputMethod = {

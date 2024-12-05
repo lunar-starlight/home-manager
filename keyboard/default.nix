@@ -2,6 +2,6 @@
 {
   imports = [
     ./compose.nix
-    (import ./kmonad.nix {inherit pkgs-unstable config; name = "kb";})
+    (import ./kmonad.nix { inherit config pkgs-unstable; name = "kb"; })
   ];
-
+}
