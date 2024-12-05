@@ -30,6 +30,7 @@
     pulsemixer
     pkgs-unstable.kmonad
     gnumake
+    fcitx5
     
     # sys utils
     lm_sensors
@@ -99,6 +100,11 @@
     enable = true;
   };
 
+  home.sessionVariables = {
+    XMODIFIERS = "@im=fcitx";
+    QT_IM_MODULE = "fcitx";
+    GTK_IM_MODULE = "fcitx";
+  };
 
 
   # do NOT the version
