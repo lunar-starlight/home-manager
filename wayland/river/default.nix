@@ -35,13 +35,13 @@
       riverctl input pointer-2-7-SynPS/2_Synaptics_TouchPad tap-button-map left-middle-right
       riverctl input pointer-2-7-SynPS/2_Synaptics_TouchPad scroll-method two-finger
       keys=(minus 7 5 3 1 9 0 2 4 6)
-      for i in "$${!keys[@]}"
+      for i in "''${!keys[@]}"
       do
         tagmask=$((1 << $i))
-        riverctl map normal Mod4               $${keys[$i]} set-focused-tags    $tagmask
-        riverctl map normal Mod4+Shift         $${keys[$i]} set-view-tags       $tagmask
-        riverctl map normal Mod4+Control       $${keys[$i]} toggle-focused-tags $tagmask
-        riverctl map normal Mod4+Shift+Control $${keys[$i]} toggle-view-tags    $tagmask
+        riverctl map normal Mod4               ''${keys[$i]} set-focused-tags    $tagmask
+        riverctl map normal Mod4+Shift         ''${keys[$i]} set-view-tags       $tagmask
+        riverctl map normal Mod4+Control       ''${keys[$i]} toggle-focused-tags $tagmask
+        riverctl map normal Mod4+Shift+Control ''${keys[$i]} toggle-view-tags    $tagmask
       done
       all_tags_mask=$(((1 << 32) - 1))
       riverctl map normal Mod4       8 set-focused-tags $all_tags_mask
