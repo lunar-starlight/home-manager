@@ -1,7 +1,7 @@
 { config, pkgs, pkgs-unstable, ... }:
 {
   imports = [
-    ./fish.nix
+    ./utils
     ./wayland
     ./keyboard
   ];
@@ -9,10 +9,6 @@
   home = {
     username = "muf";
     homeDirectory = "/home/muf";
-    #keyboard = {
-    #  layout = "us";
-    #  model = "pc105";
-    #};
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -82,26 +78,6 @@
     defaultFonts = {
       #emoji = [ "Noto Color Emoji" ];
     };
-  };
-
-
-  programs.git = {
-    enable = true;
-    userName = "Luna Strah";
-    userEmail = "45151812+lunar-starlight@users.noreply.github.com";
-    extraConfig = {
-      init = {
-        defaultBranch = "main";
-      };
-    };
-  };
-
-  services.ssh-agent = {
-    enable = true;
-  };
-
-  programs.alacritty = {
-    enable = true;
   };
 
   # do NOT the version
