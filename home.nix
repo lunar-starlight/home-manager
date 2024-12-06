@@ -25,7 +25,7 @@
     htop
     alacritty
     pulsemixer
-    pkgs-unstable.kmonad
+    kmonad
     gnumake
 
     # sys utils
