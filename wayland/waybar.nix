@@ -17,8 +17,8 @@
         ];
         modules-right = [
           "pulseaudio"
-          "cpu"
-          "memory"
+          #"cpu"
+          #"memory"
           "battery"
           "clock"
         ];
