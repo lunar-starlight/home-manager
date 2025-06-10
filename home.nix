@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-unstable, zen-browser, ... }@inputs:
 {
   imports = [
     ./utils
@@ -36,6 +36,7 @@
 
     # browser
     firefox
+    zen-browser
 
     # editor
     emacs
@@ -70,7 +71,10 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.symbols-only
+
+    # LaTeX
+    texliveFull
   ];
 
   fonts.fontconfig = {
