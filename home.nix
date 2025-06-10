@@ -27,6 +27,7 @@
     pulsemixer
     kmonad
     gnumake
+    killall
 
     # sys utils
     lm_sensors
@@ -39,7 +40,7 @@
     zen-browser
 
     # editor
-    emacs
+    #emacs
     vscode
 
     # WM
