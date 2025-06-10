@@ -74,7 +74,8 @@
     powerline-symbols
     nerd-fonts.symbols-only
 
-    # LaTeX
+    # languages
+    (agda.withPackages (p: [ p.standard-library ]))
     texliveFull
   ];
 

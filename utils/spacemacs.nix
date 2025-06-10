@@ -7,10 +7,10 @@
 
   home.file = {
     "${config.xdg.configHome}/spacemacs/init.el".source = ../dotfiles/spacemacs/init.el;
-    ".emacs.d" = {
-      recursive = true;
-      source = ../dotfiles/emacs;
-    };
+    #".emacs.d" = {
+    #  recursive = true;
+    #  source = ../dotfiles/emacs;
+    #};
   }; 
 
   home.sessionVariables = {
