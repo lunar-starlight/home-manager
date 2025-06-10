@@ -15,7 +15,7 @@
       output-layout = "rivertile";
 
       set-cursor-warp = "on-focus-change";
-      xcursor-theme = "Catppuccin-Mocha-Mauve-Cursors 16";
+      xcursor-theme = "catppuccin-mocha-mauve-cursors 16";
 
       spawn = [
         "rivertile"
