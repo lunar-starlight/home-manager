@@ -23,6 +23,7 @@
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
+      hostname = "rainbow-lemon";
       pkgs          = import nixpkgs          { inherit system; };
       pkgs-unstable = import nixpkgs-unstable { inherit system; };
       zen-browser   = zen-browser-flake.packages."${system}".default;
@@ -32,6 +33,7 @@
         extraSpecialArgs = {
           inherit pkgs-unstable;
           inherit zen-browser;
+          inherit hostname;
         };
         modules = [
           ./home.nix
