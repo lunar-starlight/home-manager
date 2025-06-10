@@ -16,10 +16,10 @@
           "river/tags"
         ];
         modules-right = [
-          #"pulseaudio"
+          "pulseaudio"
           "cpu"
           "memory"
-          #"battery"
+          "battery"
           "clock"
         ];
         "clock" = {
@@ -27,7 +27,16 @@
           tooltip = false;
           format = "{:%a, %Y-%m-%d | %R}";
         };
+        "battery" = {
+          format = "{capacity}% {icon}";
+          format-icons = ["" "" "" "" ""];
+        };
       };
     };
+    #style = ''
+    #  /*#workspaces button {
+    #    color: #f3c;
+    #  }*/
+    #'';
   };
 }
