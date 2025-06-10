@@ -2,7 +2,7 @@
 {
   imports = [
     ./compose.nix
-    (import ./kmonad.nix { inherit config pkgs-unstable; name = "kb"; })
+    (import ./kmonad.nix { inherit config pkgs-unstable; name = "rainbow"; })
   ];
 
   home.file = {
