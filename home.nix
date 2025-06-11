@@ -2,6 +2,7 @@
 {
   imports = [
     ./utils
+    ./scripts
     ./wayland
     ./keyboard
   ];
