@@ -1,0 +1,22 @@
+(defcfg
+  input (device-file "/dev/input/by-id/usb-Logitech_G815_RGB_MECHANICAL_GAMING_KEYBOARD_079031593737-if01-event-kbd")
+  output (uinput-sink "KMonad: G815 gkeys")
+  allow-cmd true
+  )
+
+(defsrc
+  f1 f2 f3 f4 f5
+)
+
+(deflayer default
+  @g1 @g2 @g3 @g4 @g5
+)
+
+(defalias
+  g1 1
+  g2 2
+  g3 3
+  g4 4
+  g5 5
+)
+

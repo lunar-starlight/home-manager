@@ -1,0 +1,16 @@
+[Unit]
+BindsTo=kmonad@g815.service
+BindsTo=kmonad@g815-media.service
+BindsTo=kmonad@g502.service
+After=kmonad@g815.service
+After=kmonad@g815-media.service
+After=kmonad@g502.service
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=/bin/true
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

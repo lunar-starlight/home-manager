@@ -1,0 +1,308 @@
+(defcfg
+  input (device-file "/dev/input/by-id/usb-Logitech_G815_RGB_MECHANICAL_GAMING_KEYBOARD_079031593737-event-kbd")
+  output (uinput-sink "KMonad: G815 Keyboard" "/usr/bin/sleep 1")
+  allow-cmd true
+  fallthrough true
+)
+
+(defsrc
+      esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq slck pause                      
+  f20 grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup   nlck kp/  kp*  kp-  
+  f21 tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   del  end  pgdn   kp7  kp8  kp9  kp+  
+  f22 caps a    s    d    f    g    h    j    k    l    ;    '    \                           kp4  kp5  kp6       
+  f23 lsft z    x    c    v    b    n    m    ,    .    /    rsft                 up          kp1  kp2  kp3  kprt 
+  f24 lctl lmet lalt           spc            ralt rmet cmp  rctl            left down rght   kp0       kp.       
+)
+
+(deflayer qwerty
+      esc  XX   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq @ltex @spotify                  
+  @g1 grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup   nlck kp/  kp*  kp-  
+  @g2 tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   del  end  pgdn   kp7  kp8  kp9  kp+  
+  @g3 lctl a    s    d    f    g    h    j    k    l    ;    '    \                           kp4  kp5  kp6       
+  @g4 lsft z    x    c    v    b    n    m    ,    .    /    rsft                 up          kp1  kp2  kp3  kprt 
+  @g5 lctl lmet lalt           spc            @spe ralt @gre rctl            left down rght   kp0       kp.       
+)
+(deflayer latex1
+      esc  XX   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq @qty @spotify                   
+  @g1 %    !    [    {    =    \(   \)   +    *    ^    &    }    ]    bspc  ins  home pgup   nlck kp/  kp*  kp-  
+  @g2 tab  q    w    e    r    t    y    u    i    o    p    <    >    ret   del  end  pgdn   kp7  kp8  kp9  kp+  
+  @g3 @ctl a    s    d    f    g    h    j    k    l    \    '    "    #|"|#                  kp4  kp5  kp6       
+  @g4 @lt2 z    x    c    v    b    n    m    ,    .    -    @lt2                 up          kp1  kp2  kp3  kprt 
+  @g5 @ctl lmet lalt           spc            @spe ralt @gre @ctl            left down rght   kp0       kp.       
+)
+(deflayer latex2
+      esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq @qty @spotify                   
+  @g1 ~    $    7    5    3    1    9    0    2    4    6    8    grv  bspc  ins  home pgup   nlck kp/  kp*  kp-  
+  @g2 tab  Q    W    E    R    T    Y    U    I    O    P    ?    #    ret   del  end  pgdn   kp7  kp8  kp9  kp+  
+  @g3 lctl A    S    D    F    G    H    J    K    L    \_   ;    |                           kp4  kp5  kp6       
+  @g4 XX   Z    X    C    V    B    N    M    /    @    :    rsft             @sup            kp1  kp2  kp3  kprt 
+  @g5 lctl lmet lalt           spc            @spe ralt @gre rctl      @sleft @sdown @srght   kp0       kp.       
+)
+
+(deflayer latexctl
+      esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        ssrq @ltex @spotify                  
+  @g1 grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  ins  home pgup   nlck kp/  kp*  kp-  
+  @g2 tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   del  end  pgdn   kp7  kp8  kp9  kp+  
+  @g3 XX   a    s    d    f    g    h    j    k    l    ;    '    \                           kp4  kp5  kp6       
+  @g4 lsft z    x    c    v    b    n    m    ,    .    /    rsft                 up          kp1  kp2  kp3  kprt 
+  @g5 XX   lmet lalt           spc            @spe ralt @gre XX              left down rght   kp0       kp.       
+)
+
+(defalias
+  qty  (layer-switch qwerty)
+  ltex (layer-switch latex1)
+  lt2  (layer-toggle latex2)
+  ;; lt21 S-(layer-add qwerty)
+  ;; lt22 (layer-add latex2)
+  ;; lt2 (tap-macro @lt21 @lt22)
+  ctl  C-(layer-toggle latexctl)
+)
+
+(defalias
+  sup   S-up
+  sdown S-down
+  sleft S-left
+  srght S-rght
+)
+
+;; (deflayer superscript
+;;          _      _      _      _      _      _      _      _      _      _      _      _      _           _  _  _               
+;;   _      _      @sup1  @sup2  @sup3  @sup4  @sup5  @sup6  @sup7  @sup8  @sup9  @sup0  @suplb @suprb _    _  _  _    _  _  _  _ 
+;;   _      _      _      _      _      _      _      _      _      @supi  _      _      _      _      _    _  _  _    _  _  _  _ 
+;;   _      _      _      _      _      _      _      _      _      _      _      _      _      _                      _  _  _    
+;;   _      @sspe  _      _      _      _      _      @supn  _      _      _      _      @sspe                 _       _  _  _  _ 
+;;   _      _      _      _                    _                           @spe   @gre   _                  _  _  _    _     _    
+;; )
+;; (deflayer subscript
+;;          _      _      _      _      _      _      _      _      _      _      _      _      _           _  _  _               
+;;   _      _      @sub1  @sub2  @sub3  @sub4  @sub5  @sub6  @sub7  @sub8  @sub9  @sub0  @sublb @subrb _    _  _  _    _  _  _  _ 
+;;   _      _      _      _      _      _      _      _      _      _      _      _      _      _      _    _  _  _    _  _  _  _ 
+;;   _      _      _      _      _      _      _      _      _      _      _      _      _      _                      _  _  _    
+;;   _      _      _      _      _      _      _      _      _      _      _      _      @sspe                 _       _  _  _  _ 
+;;   _      _      _      _                    _                           @spe   _      _                  _  _  _    _     _    
+;; )
+;; (deflayer ext_function
+;;          _      f13    f14    f15    f16    f17    f18    f19    f20    f21    f22    f23    f24         _  _  _               
+;;   _      _      _      _      _      _      _      _      _      _      _      _      _      _      _    _  _  _    _  _  _  _ 
+;;   _      _      _      _      _      _      _      _      _      _      _      _      _      _      _    _  _  _    _  _  _  _ 
+;;   _      _      _      _      _      _      _      _      _      _      _      _      _      _                      _  _  _    
+;;   _      _      _      _      _      _      _      _      _      _      _      _      _                     _       _  _  _  _ 
+;;   _      _      _      _                    _                           _      _      _                  _  _  _    _     _    
+;; )
+;; (deflayer special
+;;          _      f13    f14    f15    f16    f17    f18    f19    f20    f21    f22    f23    f24         _  slck pause         
+;;   _      _      @sup1  @sup2  @sup3  @sup4  @sup5  @sup6  @sup7  @sup8  @sup9  @sup0  @suplb @suprb _    _  _  _    _  _  _  _ 
+;;   _      _      _      _      _      _      _      @yo    _      @supi  _      @supp  @š     @đ     _    _  _  _    _  _  _  _ 
+;;   _      _      _      _      _      _      _      _      @supj  @supk  _      @č     @ć     @ž                     _  _  _    
+;;   _      @sspe  _      @x     _      _      _      @supn  @supm  _      @.s    @norm  @sspe                 _       _  _  _  _ 
+;;   _      _      _      _                    _                    @spe   _      @gre   ralt               _  _  _    _     _    
+;; )
+(deflayer special
+         _      f13    f14    f15    f16    f17    f18    f19    f20    f21    f22    f23    f24         _  slck pause         
+  _      _      @sup1  @sup2  @sup3  @sup4  @sup5  @sup6  @sup7  @sup8  @sup9  @sup0  @suplb @suprb _    _  _  _    _  _  _  _ 
+  _      _      _      _      _      _      _      @yo    _      @supi  _      @supp  š      đ      _    _  _  _    _  _  _  _ 
+  _      _      _      _      _      _      _      _      @supj  @supk  _      č      ć      ž                      _  _  _    
+  _      @sspe  _      @x     _      _      _      @supn  @supm  _      @.s    @norm  @sspe                 _       _  _  _  _ 
+  _      _      _      _                    _                    _      _      @gre   ralt               _  _  _    _     _    
+)
+(deflayer shifted_special
+;;         _      f25    f26    f27    f28    f29    f30    f31    f32    f33    f34    f35    _           _  _  _      
+         _      _      _      _      _      _      _      _      _      _      _      _      _           _  _  _               
+  _      _      @sub1  @sub2  @sub3  @sub4  @sub5  @sub6  @sub7  @sub8  @sub9  @sub0  @sublb @subrb _    _  _  _    _  _  _  _ 
+  _      _      _      _      _      _      _      _      _      @subi  _      @subp  Š      Đ      _    _  _  _    _  _  _  _ 
+  _      _      _      _      _      _      _      _      @subj  @subk  _      Č      Ć      Ž                      _  _  _    
+  _      _      _      @X     _      _      _      @subn  @subm  _      @+.s   _      _                  _       _  _  _  _ 
+  _      _      _      _                    _                    @spe   _      _      _                  _  _  _    _     _    
+)
+
+(deflayer greek
+      _    f1   _    _    _    _    _    _    _    _    _    _    _          _    _    _                       
+  _   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _    _   
+  _   _    _    @gqs @ge  @gr  @gt  @gu  @gqt @gi  @gqo @gp  _    _    _     _    _    _    _    _    _    _   
+  _   _    @ga  @gs  @gd  @gf  @gg  @gh  @gqx @gk  @gl  _    _    _                         _    _    _        
+  _   _    @gz  @gx  @gqp @go  @gb  @gn  @gm  _    _    _    @sgre                _         _    _    _    _   
+  _   _    _    _              _              _    _    _    _               _    _    _    _         _        
+)
+
+(deflayer shifted_greek
+      _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _                       
+  _   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _    _   
+  _   _    _    @GS  @GE  @GR  @GT  @GU  @GQT @GI  @GQO @GP  _    _    _     _    _    _    _    _    _    _   
+  _   _    @GA  @GS  @GD  @GF  @GG  @GH  @GQX @GK  @GL  _    _    _                         _    _    _        
+  _   _    @GZ  @GX  @GQP @GO  @GB  @GN  @GM  _    _    _    @sgre                _         _    _    _    _   
+  _   _    _    _              _              _    _    _    _               _    _    _    _         _        
+)
+
+;; (deflayer shifted_greek
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _                       
+;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _    _   
+;;   _    _    _    _    _    @gqt _    _    _    @gqo @gqp _    _    _     _    _    _    _    _    _    _   
+;;   _    _    @gqs _    _    _    _    _    _    _    _    _    _                         _    _    _        
+;;   _    _    @gqx _    _    _    _    _    _    _    _    _                    _         _    _    _    _   
+;;   _    _    _              _              _    _    _    _               _    _    _    _         _        
+;; )
+
+
+(defalias
+  ;; spe (around (layer-toggle subscript)
+  ;;             (around (layer-toggle superscript)
+  ;;                     (layer-toggle ext_function)
+  ;;             )
+  ;;     )
+  spe  (layer-toggle special)
+  sspe (layer-toggle shifted_special)
+  gre  (layer-toggle greek)
+  sgre (layer-toggle shifted_greek)
+)
+
+(defalias
+  g1 1
+  g2 2
+  g3 3
+  g4 4
+  g5 @spe
+  swaudio (cmd-button "/home/muf/.scripts/spotify-link.sh")
+  spotify (cmd-button "python /home/muf/.scripts/spotify-link")
+)
+
+(defalias
+  š (tap-macro ralt v s)
+  đ (tap-macro ralt - d)
+  č (tap-macro ralt v c)
+  ć (tap-macro ralt ' c)
+  ž (tap-macro ralt v z)
+  Š S-(tap-macro ralt v s)
+  Đ S-(tap-macro ralt - d)
+  Č S-(tap-macro ralt v c)
+  Ć S-(tap-macro ralt ' c)
+  Ž S-(tap-macro ralt v z)
+  ;; Š (tap-macro ralt c S-s)
+  ;; Đ (tap-macro ralt - S-d)
+  ;; Č (tap-macro ralt c S-c)
+  ;; Ć (tap-macro ralt ' S-c)
+  ;; Ž (tap-macro ralt c S-z)
+  sup0 (tap-macro ralt ^ 0)
+  sup1 (tap-macro ralt ^ 1)
+  sup2 (tap-macro ralt ^ 2)
+  sup3 (tap-macro ralt ^ 3)
+  sup4 (tap-macro ralt ^ 4)
+  sup5 (tap-macro ralt ^ 5)
+  sup6 (tap-macro ralt ^ 6)
+  sup7 (tap-macro ralt ^ 7)
+  sup8 (tap-macro ralt ^ 8)
+  sup9 (tap-macro ralt ^ 9)
+  supi (tap-macro ralt ^ i)
+  supj (tap-macro ralt ^ j)
+  supk (tap-macro ralt ^ k)
+  supn (tap-macro ralt ^ n)
+  supm (tap-macro ralt ^ m)
+  supp (tap-macro ralt ^ p)
+  suplb (tap-macro ralt ^ \()
+  suprb (tap-macro ralt ^ \))
+  sub0 (tap-macro ralt \_ 0)
+  sub1 (tap-macro ralt \_ 1)
+  sub2 (tap-macro ralt \_ 2)
+  sub3 (tap-macro ralt \_ 3)
+  sub4 (tap-macro ralt \_ 4)
+  sub5 (tap-macro ralt \_ 5)
+  sub6 (tap-macro ralt \_ 6)
+  sub7 (tap-macro ralt \_ 7)
+  sub8 (tap-macro ralt \_ 8)
+  sub9 (tap-macro ralt \_ 9)
+  subi (tap-macro ralt \_ i)
+  subj (tap-macro ralt \_ j)
+  subk (tap-macro ralt \_ k)
+  subn (tap-macro ralt \_ n)
+  subm (tap-macro ralt \_ m)
+  subp (tap-macro ralt \_ p)
+  sublb (tap-macro ralt \_ \()
+  subrb (tap-macro ralt \_ \))
+
+  x (tap-macro ralt x x)
+  X (tap-macro ralt c d o t)
+  .s (tap-macro ralt l d o t s)
+  +.s (tap-macro ralt . -)
+  norm (tap-macro ralt | |)
+  yo (tap-macro ralt y o)
+
+  ga (tap-macro ralt g r a)
+  gb (tap-macro ralt g r b)
+  gg (tap-macro ralt g r g)
+  gd (tap-macro ralt g r d)
+  ge (tap-macro ralt g r e)
+  gz (tap-macro ralt g r z)
+  gh (tap-macro ralt g r h)
+  gi (tap-macro ralt g r i)
+  gj (tap-macro ralt g r j)
+  gk (tap-macro ralt g r k)
+  gl (tap-macro ralt g r l)
+  gm (tap-macro ralt g r m)
+  gn (tap-macro ralt g r n)
+  gp (tap-macro ralt g r p)
+  gr (tap-macro ralt g r r)
+  gs (tap-macro ralt g r s)
+  gt (tap-macro ralt g r t)
+  gu (tap-macro ralt g r u)
+  gf (tap-macro ralt g r f)
+  gx (tap-macro ralt g r x)
+  go (tap-macro ralt g r o)
+
+  gqt (tap-macro ralt g q t)
+  gqo (tap-macro ralt g q o)
+  gqp (tap-macro ralt g q p)
+  gqs (tap-macro ralt g q s)
+  gqx (tap-macro ralt g q x)
+
+  GA (tap-macro ralt G A)
+  GB (tap-macro ralt G B)
+  GG (tap-macro ralt G G)
+  GD (tap-macro ralt G D)
+  GE (tap-macro ralt G E)
+  GZ (tap-macro ralt G Z)
+  GH (tap-macro ralt G H)
+  GI (tap-macro ralt G I)
+  GJ (tap-macro ralt G J)
+  GK (tap-macro ralt G K)
+  GL (tap-macro ralt G L)
+  GM (tap-macro ralt G M)
+  GN (tap-macro ralt G N)
+  GP (tap-macro ralt G P)
+  GR (tap-macro ralt G R)
+  GS (tap-macro ralt G S)
+  GT (tap-macro ralt G T)
+  GU (tap-macro ralt G U)
+  GF (tap-macro ralt G F)
+  GX (tap-macro ralt G X)
+  GO (tap-macro ralt G O)
+
+  GQT (tap-macro ralt G Q T)
+  GQO (tap-macro ralt G Q O)
+  GQP (tap-macro ralt G Q P)
+  GQS (tap-macro ralt G Q S)
+  GQX (tap-macro ralt G Q X)
+
+  ;;gc (tap-macro ralt g c)
+  ;;gq (tap-macro ralt g q)
+  ;;gv (tap-macro ralt g v)
+  ;;gw (tap-macro ralt g w)
+  ;;gy (tap-macro ralt g y)
+  ;;gm (tap-macro ralt m u)
+)
+
+
+
+#|
+
+(deflayer name
+       _    _    _    _    _    _    _    _    _    _    _    _    _          _    _    _                       
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _    _   
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _    _   
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _                         _    _    _        
+  _    _    _    _    _    _    _    _    _    _    _    _    _                    _         _    _    _    _   
+  _    _    _    _              _              _    _    _    _               _    _    _    _         _        
+)
+
+|#
+(defalias
+  par (tap-macro ralt p a r)
+)
