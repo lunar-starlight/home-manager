@@ -5,15 +5,15 @@
     package = pkgs.emacs;
   };
 
-  home.file = {
-    "${config.xdg.configHome}/spacemacs/init.el".source = ../dotfiles/spacemacs/init.el;
+  #home.file = {
+    #"${config.xdg.configHome}/spacemacs/init.el".source = ../dotfiles/spacemacs/init.el;
     #".emacs.d" = {
     #  recursive = true;
     #  source = ../dotfiles/emacs;
     #};
-  }; 
+  #}; 
 
   home.sessionVariables = {
-    SPACEMACSDIR = "${config.xdg.configHome}/spacemacs";
+    SPACEMACSDIR = "${config.xdg.configHome}/home-manager/dotfiles/spacemacs";
   };
 }

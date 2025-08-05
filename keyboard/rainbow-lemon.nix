@@ -5,7 +5,7 @@
     (import ./kmonad.nix { inherit config pkgs-unstable; name = "rainbow"; })
   ];
 
-  home.file = {
-    "${config.xdg.configHome}/xkb".source = ../dotfiles/xkb;
-  };
+  #home.file = {
+  #  "${config.xdg.configHome}/xkb".source = ../dotfiles/xkb;
+  #};
 }

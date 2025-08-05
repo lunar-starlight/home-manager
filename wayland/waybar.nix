@@ -5,7 +5,7 @@
     settings = {
       mainBar = {
         layer = "top";
-        position = "bottom";
+        position = "top";
         height = 24;
         spacing = 0;
         modules-left = [
@@ -16,11 +16,13 @@
           "river/tags"
         ];
         modules-right = [
+          "backlight"
           "pulseaudio"
           #"cpu"
           #"memory"
           "battery"
           "clock"
+          "custom/sleep"
         ];
         "clock" = {
           interval = 60;
@@ -28,8 +30,22 @@
           format = "{:%a, %Y-%m-%d | %R}";
         };
         "battery" = {
-          format = "{capacity}% {icon}";
+          format = "{icon} {capacity}%";
           format-icons = ["" "" "" "" ""];
+        };
+        "backlight" = {
+          format = "{icon} {percent}%";
+          format-icons = ["󰃞" "󰃝" "󰃟" "󰃠"];
+        };
+        "pulseaudio" = {
+          format = "{icon} {volume}%";
+          format-muted = "󰖁 {volume}%";
+          format-icons = ["" "" ""];
+        };
+        "custom/sleep" = {
+          format = " 💤 ";
+          on-click = "systemctl sleep";
+          tooltip = false;
         };
       };
     };

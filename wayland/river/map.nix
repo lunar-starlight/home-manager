@@ -1,14 +1,23 @@
 { ... }:
 let
-  non = "None             ";
-  ctl = "Control          ";
-  mod = "Super            ";
-  sft = "Shift            ";
-  alt = "Alt              ";
-  ms  = "Super+Shift      ";
-  ma  = "Super+Alt        ";
-  mas = "Super+Alt+Shift  ";
+  non = "None	";
+  ctl = "Control	";
+  mod = "Super	";
+  sft = "Shift	";
+  alt = "Alt	";
+  ms  = "Super+Shift	";
+  ma  = "Super+Alt	";
+  mc  = "Super+Control";
+  mas = "Super+Alt+Shift";
   mac = "Super+Alt+Control";
+  msc = "Super+Shift+Control";
+  fnkeys = {
+    "${non}XF86AudioRaiseVolume	" = "spawn \"pactl set-sink-volume @DEFAULT_SINK@ +5%\"";
+    "${non}XF86AudioLowerVolume	" = "spawn \"pactl set-sink-volume @DEFAULT_SINK@ -5%\"";
+    "${non}	XF86AudioMute	" = "spawn \"pactl set-sink-mute @DEFAULT_SINK@ toggle\"";
+    "${non}XF86MonBrightnessUp	" = "spawn \"brightnessctl set +5%\"";
+    "${non}XF86MonBrightnessDown	" = "spawn \"brightnessctl set 5%-\"";
+  };
 in {
   wayland.windowManager.river.settings = {
     declare-mode = [
@@ -16,15 +25,15 @@ in {
     ];
     map = {
       normal = {
-        "${non}	Print		" = "spawn \"grimshot copy area\"";
+        "${non}	Print		" = "spawn 'killall slurp || grimshot copy area'";
         "${mod}	Space		" = "spawn fuzzel";
         "${mod}	f12		" = "spawn alacritty";
         "${ms}	f12		" = "spawn alacritty --class popup";
 
         "${ms}	Q		" = "close";
         "${mod}	Return		" = "zoom";
-        "${mod}	F		" = "toggle-float";
-        "${ms}	F		" = "toggle-fullscreen";
+        "${mod}	F		" = "toggle-fullscreen";
+        "${ms}	F		" = "toggle-float";
         "${mod}	Backspace	" = "focus-output next";
         "${ms}	Backspace	" = "send-to-output -current-tags next";
 
@@ -58,12 +67,12 @@ in {
         "${mac}	L		" = "snap right";
 
         "${mod}	f11		" = "send-to-output -current-tags next";
-      };
+      } // fnkeys;
     };
     map-pointer = {
       normal = {
-        "${mod}	BTN_LEFT	" = "move-view";
-        "${mod}	BTN_RIGHT	" = "resize-view";
+        "${mod}BTN_LEFT	" = "move-view";
+        "${mod}BTN_RIGHT	" = "resize-view";
       };
     };
   };

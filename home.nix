@@ -54,7 +54,9 @@
     wl-screenrec
     sway-contrib.grimshot
     #wf-recorder
-    gammastep
+    #gammastep # ne dela
+    #xdg-desktop-portal-wlr
+    brightnessctl
 
     catppuccin-cursors.mochaMauve
 
@@ -62,10 +64,8 @@
     discord
     pkgs-unstable.signal-desktop
     signalbackup-tools
-
-    # lean
-    #lean4
-    elan
+    xournalpp
+    kdePackages.okular
 
     # fonts
     noto-fonts-color-emoji
@@ -78,7 +78,23 @@
     # languages
     (agda.withPackages (p: [ p.standard-library ]))
     texliveFull
+    #lean4
+    elan
+
   ];
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      #xdg-desktop-portal-gtk
+    ];
+    configPackages = [ pkgs.river ];
+    #config.common.default = [ "wlr" ];
+    #config.river = {
+    #  default = [ "wlr" ];
+    #};
+  };
 
   fonts.fontconfig = {
     enable = true;
