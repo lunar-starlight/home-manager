@@ -66,6 +66,8 @@
     signalbackup-tools
     xournalpp
     kdePackages.okular
+    deadbeef
+    deadbeefPlugins.headerbar-gtk3
 
     # fonts
     noto-fonts-color-emoji
