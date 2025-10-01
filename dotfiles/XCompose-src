@@ -1,0 +1,559 @@
+# include "%L"
+<Multi_key> <v> <s> : "š"
+<Multi_key> <minus> <d> : "đ"
+<Multi_key> <v> <c> : "č"
+<Multi_key> <apostrophe> <c> : "ć"
+<Multi_key> <v> <z> : "ž"
+<Multi_key> <V> <S> : "Š"
+<Multi_key> <underscore> <D> : "Đ"
+<Multi_key> <V> <C> : "Č"
+<Multi_key> <quotedbl> <C> : "Ć"
+<Multi_key> <V> <Z> : "Ž"
+
+<Multi_key> <quotedbl> <a> : "ä"
+<Multi_key> <quotedbl> <o> : "ö"
+<Multi_key> <quotedbl> <u> : "ü"
+<Multi_key> <quotedbl> <A> : "Ä"
+<Multi_key> <quotedbl> <O> : "Ö"
+<Multi_key> <quotedbl> <U> : "Ü"
+
+
+# GREEK CAPITAL LETTERS
+<Multi_key> <G> <R> <A> : "Α"    U0391    # GREEK CAPITAL LETTER ALPHA
+<Multi_key> <G> <R> <B> : "Β"    U0392    # GREEK CAPITAL LETTER BETA
+<Multi_key> <G> <R> <G> : "Γ"    U0393    # GREEK CAPITAL LETTER GAMMA
+<Multi_key> <G> <R> <D> : "Δ"    U0394    # GREEK CAPITAL LETTER DELTA
+<Multi_key> <G> <R> <E> : "Ε"    U0395    # GREEK CAPITAL LETTER EPSILON
+<Multi_key> <G> <R> <Z> : "Ζ"    U0396    # GREEK CAPITAL LETTER ZETA
+<Multi_key> <G> <R> <H> : "Η"    U0397    # GREEK CAPITAL LETTER ETA
+<Multi_key> <G> <R> <I> : "Ι"    U0399    # GREEK CAPITAL LETTER IOTA
+<Multi_key> <G> <R> <K> : "Κ"    U039A    # GREEK CAPITAL LETTER KAPPA
+<Multi_key> <G> <R> <L> : "Λ"    U039B    # GREEK CAPITAL LETTER LAMDA
+<Multi_key> <G> <R> <M> : "Μ"    U039C    # GREEK CAPITAL LETTER MU
+<Multi_key> <G> <R> <N> : "Ν"    U039D    # GREEK CAPITAL LETTER NU
+<Multi_key> <G> <R> <P> : "Π"    U03A0    # GREEK CAPITAL LETTER PI
+<Multi_key> <G> <R> <R> : "Ρ"    U03A1    # GREEK CAPITAL LETTER RHO
+<Multi_key> <G> <R> <S> : "Σ"    U03A3    # GREEK CAPITAL LETTER SIGMA
+<Multi_key> <G> <R> <T> : "Τ"    U03A4    # GREEK CAPITAL LETTER TAU
+<Multi_key> <G> <R> <U> : "Υ"    U03A5    # GREEK CAPITAL LETTER UPSILON
+<Multi_key> <G> <R> <F> : "Φ"    U03A6    # GREEK CAPITAL LETTER PHI
+<Multi_key> <G> <R> <X> : "Χ"    U03A7    # GREEK CAPITAL LETTER CHI
+<Multi_key> <G> <R> <O> : "Ω"    U03A9    # GREEK CAPITAL LETTER OMEGA
+
+# DOUBLES (additional stroke <Q>)
+<Multi_key> <G> <Q> <T> : "Θ"    U0398    # GREEK CAPITAL LETTER THETA
+<Multi_key> <G> <Q> <O> : "Ο"    U039F    # GREEK CAPITAL LETTER OMICRON
+<Multi_key> <G> <Q> <P> : "Ψ"    U03A8    # GREEK CAPITAL LETTER PSI
+<Multi_key> <G> <Q> <S> : "Σ"    U03C2    # GREEK CAPITAL LETTER SIGMA
+<Multi_key> <G> <Q> <X> : "Ξ"    U039E    # GREEK CAPITAL LETTER XI
+
+# greek small letters
+<Multi_key> <g> <r> <a> : "α"    U03B1    # GREEK SMALL LETTER ALPHA
+<Multi_key> <g> <r> <b> : "β"    U03B2    # GREEK SMALL LETTER BETA
+<Multi_key> <g> <r> <g> : "γ"    U03B3    # GREEK SMALL LETTER GAMMA
+<Multi_key> <g> <r> <d> : "δ"    U03B4    # GREEK SMALL LETTER DELTA
+<Multi_key> <g> <r> <e> : "ε"    U03B5    # GREEK SMALL LETTER EPSILON
+<Multi_key> <g> <r> <z> : "ζ"    U03B6    # GREEK SMALL LETTER ZETA
+<Multi_key> <g> <r> <h> : "η"    U03B7    # GREEK SMALL LETTER ETA
+<Multi_key> <g> <r> <i> : "ι"    U03B9    # GREEK SMALL LETTER IOTA
+<Multi_key> <g> <r> <k> : "κ"    U03BA    # GREEK SMALL LETTER KAPPA
+<Multi_key> <g> <r> <l> : "λ"    U03BB    # GREEK SMALL LETTER LAMDA
+<Multi_key> <g> <r> <m> : "μ"    U03BC    # GREEK SMALL LETTER MU
+<Multi_key> <g> <r> <n> : "ν"    U03BD    # GREEK SMALL LETTER NU
+<Multi_key> <g> <r> <p> : "π"    U03C0    # GREEK SMALL LETTER PI
+<Multi_key> <g> <r> <r> : "ρ"    U03C1    # GREEK SMALL LETTER RHO
+<Multi_key> <g> <r> <s> : "σ"    U03C3    # GREEK SMALL LETTER SIGMA
+<Multi_key> <g> <r> <t> : "τ"    U03C4    # GREEK SMALL LETTER TAU
+<Multi_key> <g> <r> <u> : "υ"    U03C5    # GREEK SMALL LETTER UPSILON
+<Multi_key> <g> <r> <f> : "φ"    U03C6    # GREEK SMALL LETTER PHI
+<Multi_key> <g> <r> <x> : "χ"    U03C7    # GREEK SMALL LETTER CHI
+<Multi_key> <g> <r> <o> : "ω"    U03C9    # GREEK SMALL LETTER OMEGA
+
+# doubles (additional stroke <q>)
+<Multi_key> <g> <q> <t> : "θ"    U03B8    # GREEK SMALL LETTER THETA
+<Multi_key> <g> <q> <o> : "ο"    U03BF    # GREEK SMALL LETTER OMICRON
+<Multi_key> <g> <q> <p> : "ψ"    U03C8    # GREEK SMALL LETTER PSI
+<Multi_key> <g> <q> <s> : "ς"    U03C2    # GREEK SMALL LETTER FINAL SIGMA
+<Multi_key> <g> <q> <x> : "ξ"    U03BE    # GREEK SMALL LETTER XI
+
+# extra special bindings
+#<Multi_key> <p> <i> : "π"    U03C0
+<Multi_key> <t> <h> : "þ"  # thorn
+
+# Supersripts and subscripts
+<Multi_key> <asciicircum> <0> : "⁰"
+<Multi_key> <asciicircum> <1> : "¹"
+<Multi_key> <asciicircum> <2> : "²"
+<Multi_key> <asciicircum> <3> : "³"
+<Multi_key> <asciicircum> <4> : "⁴"
+<Multi_key> <asciicircum> <5> : "⁵"
+<Multi_key> <asciicircum> <6> : "⁶"
+<Multi_key> <asciicircum> <7> : "⁷"
+<Multi_key> <asciicircum> <8> : "⁸"
+<Multi_key> <asciicircum> <9> : "⁹"
+<Multi_key> <asciicircum> <a> : "ᵃ"
+<Multi_key> <asciicircum> <b> : "ᵇ"
+<Multi_key> <asciicircum> <c> : "ᶜ"
+<Multi_key> <asciicircum> <d> : "ᵈ"
+<Multi_key> <asciicircum> <e> : "ᵉ"
+<Multi_key> <asciicircum> <f> : "ᶠ"
+<Multi_key> <asciicircum> <g> : "ᵍ"
+<Multi_key> <asciicircum> <h> : "ʰ"
+<Multi_key> <asciicircum> <i> : "ⁱ"
+<Multi_key> <asciicircum> <j> : "ʲ"
+<Multi_key> <asciicircum> <k> : "ᵏ"
+<Multi_key> <asciicircum> <l> : "ˡ"
+<Multi_key> <asciicircum> <m> : "ᵐ"
+<Multi_key> <asciicircum> <n> : "ⁿ"
+<Multi_key> <asciicircum> <o> : "ᵒ"
+<Multi_key> <asciicircum> <p> : "ᵖ"
+<Multi_key> <asciicircum> <q> : "𐞥"
+<Multi_key> <asciicircum> <r> : "ʳ"
+<Multi_key> <asciicircum> <s> : "ˢ"
+<Multi_key> <asciicircum> <t> : "ᵗ"
+<Multi_key> <asciicircum> <u> : "ᵘ"
+<Multi_key> <asciicircum> <v> : "ᵛ"
+<Multi_key> <asciicircum> <w> : "ʷ"
+<Multi_key> <asciicircum> <x> : "ˣ"
+<Multi_key> <asciicircum> <y> : "ʸ"
+<Multi_key> <asciicircum> <z> : "ᶻ"
+<Multi_key> <asciicircum> <underscore> <p> : "⁺"
+<Multi_key> <asciicircum> <underscore> <m> : "⁻"
+<Multi_key> <asciicircum> <parenleft> : "⁽"
+<Multi_key> <asciicircum> <parenright> : "⁾"
+
+<Multi_key> <asciicircum> <bracketright> : "₀"
+<Multi_key> <asciicircum> <exclam>       : "₁"
+<Multi_key> <asciicircum> <at>           : "₂"
+<Multi_key> <asciicircum> <numbersign>   : "₃"
+<Multi_key> <asciicircum> <dollar>       : "₄"
+<Multi_key> <asciicircum> <percent>      : "₅"
+<Multi_key> <asciicircum> <asciicircum>  : "₆"
+<Multi_key> <asciicircum> <ampersand>    : "₇"
+<Multi_key> <asciicircum> <asterisk>     : "₈"
+<Multi_key> <asciicircum> <bracketleft>  : "₉"
+<Multi_key> <asciicircum> <A> : "ₐ"
+<Multi_key> <asciicircum> <E> : "ₑ"
+<Multi_key> <asciicircum> <H> : "ₕ"
+<Multi_key> <asciicircum> <I> : "ᵢ"
+<Multi_key> <asciicircum> <J> : "ⱼ"
+<Multi_key> <asciicircum> <K> : "ₖ"
+<Multi_key> <asciicircum> <L> : "ₗ"
+<Multi_key> <asciicircum> <M> : "ₘ"
+<Multi_key> <asciicircum> <N> : "ₙ"
+<Multi_key> <asciicircum> <O> : "ₒ"
+<Multi_key> <asciicircum> <P> : "ₚ"
+<Multi_key> <asciicircum> <R> : "ᵣ"
+<Multi_key> <asciicircum> <S> : "ₛ"
+<Multi_key> <asciicircum> <T> : "ₜ"
+<Multi_key> <asciicircum> <U> : "ᵤ"
+<Multi_key> <asciicircum> <V> : "ᵥ"
+<Multi_key> <asciicircum> <X> : "ₓ"
+<Multi_key> <asciicircum> <underscore> <P> : "₊"
+<Multi_key> <asciicircum> <underscore> <M> : "₋"
+
+<Multi_key> <underscore> <0> : "₀"
+<Multi_key> <underscore> <1> : "₁"
+<Multi_key> <underscore> <2> : "₂"
+<Multi_key> <underscore> <3> : "₃"
+<Multi_key> <underscore> <4> : "₄"
+<Multi_key> <underscore> <5> : "₅"
+<Multi_key> <underscore> <6> : "₆"
+<Multi_key> <underscore> <7> : "₇"
+<Multi_key> <underscore> <8> : "₈"
+<Multi_key> <underscore> <9> : "₉"
+<Multi_key> <underscore> <a> : "ₐ"
+<Multi_key> <underscore> <e> : "ₑ"
+<Multi_key> <underscore> <h> : "ₕ"
+<Multi_key> <underscore> <i> : "ᵢ"
+<Multi_key> <underscore> <j> : "ⱼ"
+<Multi_key> <underscore> <k> : "ₖ"
+<Multi_key> <underscore> <l> : "ₗ"
+<Multi_key> <underscore> <m> : "ₘ"
+<Multi_key> <underscore> <n> : "ₙ"
+<Multi_key> <underscore> <o> : "ₒ"
+<Multi_key> <underscore> <p> : "ₚ"
+<Multi_key> <underscore> <r> : "ᵣ"
+<Multi_key> <underscore> <s> : "ₛ"
+<Multi_key> <underscore> <t> : "ₜ"
+<Multi_key> <underscore> <u> : "ᵤ"
+<Multi_key> <underscore> <v> : "ᵥ"
+<Multi_key> <underscore> <x> : "ₓ"
+<Multi_key> <underscore> <plus> :  "₊"
+<Multi_key> <underscore> <minus> : "₋"
+<Multi_key> <underscore> <equal> : "₌"
+<Multi_key> <underscore> <parenleft> : "₍"
+<Multi_key> <underscore> <parenright> : "₎"
+
+# Written prose fancy characters
+<Multi_key> <l> <d> <o> <t> <s> : "…"  # latex \ldots
+<Multi_key> <period> <period> : "…"  # latex \ldots
+<Multi_key> <minus> <minus> : "–"  # en dash
+<Multi_key> <minus> <equal> : "—"  # em dash
+<Multi_key> <c> <h> <e> <c> <k> : "✓"
+<Multi_key> <c> <r> <o> <s> <s> : "✗"
+<Multi_key> <m> <u> <s> <i> <c> : "♪"
+<Multi_key> <v> <e> <g> <a> <n> : "Ⓥ"
+<Multi_key> <a> <n> <a> <r> <c> <h> <y> : "Ⓐ"
+<Multi_key> <s> <h> <r> <u> <g> : " ¯\\_(ツ)_/¯ "
+
+# Arrows
+<Multi_key> <t> <o> : "→"  # latex \to
+<Multi_key> <o> <t> <o> : "↬"  # latex ?
+<Multi_key> <m> <a> <p> <s> <t> <o> : "↦"  # latex \mapsto
+<Multi_key> <m> <u> <l> <t> <i> <m> <a> <p> : "⊸"  # latex \multimap
+<Multi_key> <minus> <minus> <o> : "⊸"  # latex \multimap
+<Multi_key> <f> <r> <o> <m> : "←"  # latex \gets
+<Multi_key> <i> <m> <p> <l> : "⇒"  # latex \Rightarrow
+<Multi_key> <i> <m> <p> <r> : "⇐"  # latex \Leftarrow
+<Multi_key> <i> <m> <p> <b> : "⇔"  # latex \Leftrightarrow
+<Multi_key> <i> <m> <p> <d> : "⇓"  # latex \Downarrow
+<Multi_key> <i> <m> <p> <u> : "⇑"  # latex \Uparrow
+<Multi_key> <u> <p> : "↑"  # latex \uparrow
+<Multi_key> <d> <o> <w> <n> : "↓"  # latex \downarrow
+<Multi_key> <l> <e> <a> <d> <s> <t> <o> : "↝"  # latex \leadsto
+<Multi_key> <f> <r> <o> <m> <t> <o> : "⇄"  # latex \leadsto
+
+# Mathy stuffs
+<Multi_key> <f> <o> <r> <a> <l> <l> : "∀"  # latex \forall
+<Multi_key> <e> <x> <i> <s> <t> <s> : "∃"  # latex \exists
+<Multi_key> <t> <o> <p> : "⊤"  # latex \top
+<Multi_key> <b> <o> <t> : "⊥"  # latex \bot
+<Multi_key> <s> <t> <a> <r> : "★"  # latex \star
+<Multi_key> <i> <n> : "∈"  # latex \in
+<Multi_key> <n> <i> : "∋"  # latex \ni
+<Multi_key> <n> <o> <i> <n> : "∉"  #latex \notin
+<Multi_key> <n> <o> <n> <i> : "∌"  #latex \notin
+<Multi_key> <e> <m> <p> <t> <y> : "∅"  # latex \empty
+<Multi_key> <p> <r> <o> <d> : "∏"  # latex \prod
+<Multi_key> <s> <u> <m> : "∑"  # latex \sum
+<Multi_key> <l> <e> <q> : "≤"  # latex \le
+<Multi_key> <g> <e> <q> : "≥"  # latex \ge
+<Multi_key> <p> <r> <e> <c> : "≺"  # latex \prec
+<Multi_key> <p> <r> <e> <c> <e> <q> : "⪯"  # latex \preceq
+<Multi_key> <p> <m> : "±"  # latex \pm
+<Multi_key> <plus> <plus> : "⧺"  # latex ?
+<Multi_key> <s> <u> <b>     : "⊂"  # latex \subset
+<Multi_key> <s> <u> <b> <q> : "⊆"  # latex \subseteq
+<Multi_key> <s> <u> <p>     : "⊃"  # latex \supset
+<Multi_key> <s> <u> <p> <q> : "⊇"  # latex \supseteq
+<Multi_key> <s> <q> <u> <b>     : "⊏"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <q> : "⊑"  # latex \sqsubseteq
+<Multi_key> <s> <q> <u> <p>     : "⊐"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <q> : "⊒"  # latex \sqsupseteq
+<Multi_key> <s> <q> <s> <u> <b>         : "⊏"  # latex \sqsubset
+<Multi_key> <s> <q> <s> <u> <b> <e> <q> : "⊑"  # latex \sqsubseteq
+<Multi_key> <s> <q> <s> <u> <p>         : "⊐"  # latex \sqsupset
+<Multi_key> <s> <q> <s> <u> <p> <e> <q> : "⊒"  # latex \sqsupseteq
+<Multi_key> <s> <e> <t> <m> <i> <n> <u> <s> : "⧵"  # latex \setminus
+<Multi_key> <backslash> : "⧵"  # latex \setminus
+<Multi_key> <bar> <bar> : "‖"  # latex \|
+<Multi_key> <c> <a> <p> : "∩"  # latex \cap
+<Multi_key> <c> <u> <p> : "∪"  # latex \cup
+<Multi_key> <C> <a> <p> : "⋂"  # latex \bigcap
+<Multi_key> <C> <u> <p> : "⋃"  # latex \bigcup
+<Multi_key> <s> <q> <c> <u> <p> : "⊔"  # latex \sqcup
+<Multi_key> <s> <q> <c> <a> <p> : "⊓"  # latex \sqcap
+<Multi_key> <u> <p> <l> <u> <s> : "⊎"  # latex \uplus
+<Multi_key> <U> <p> <l> <u> <s> : "⨄"  # latex \Uplus
+<Multi_key> <r> <h> <d> : "⊳"  # latex \rhd
+<Multi_key> <l> <h> <d> : "⊲"  # latex \lhd
+<Multi_key> <t> <h> <e> <r> <e> <f> <o> <r> <e> : "∴"  # latex \therefore
+<Multi_key> <q> <e> <d> : "∎"  # latex \qed
+<Multi_key> <b> <A> : "𝔸"  # latex \bA
+<Multi_key> <b> <B> : "𝔹"  # latex \bB
+<Multi_key> <b> <C> : "ℂ"  # latex \bC
+<Multi_key> <b> <D> : "𝔻"  # latex \bD
+<Multi_key> <b> <E> : "𝔼"  # latex \bE
+<Multi_key> <b> <F> : "𝔽"  # latex \bF
+<Multi_key> <b> <G> : "𝔽"  # latex \bF
+<Multi_key> <b> <H> : "ℍ"  # latex \bH
+<Multi_key> <b> <I> : "𝕀"  # latex \bI
+<Multi_key> <b> <J> : "𝕁"  # latex \bJ
+<Multi_key> <b> <K> : "𝕂"  # latex \bK 0x1d54
+<Multi_key> <b> <L> : "𝕃"  # latex \bL
+<Multi_key> <b> <M> : "𝕄"  # latex \bM
+<Multi_key> <b> <N> : "ℕ"  # latex \bN
+<Multi_key> <b> <O> : "𝕆"  # latex \bO
+<Multi_key> <b> <P> : "ℙ"  # latex \bP
+<Multi_key> <b> <Q> : "ℚ"  # latex \bQ
+<Multi_key> <b> <R> : "ℝ"  # latex \bR
+<Multi_key> <b> <S> : "𝕊"  # latex \bS
+<Multi_key> <b> <T> : "𝕋"  # latex \bT
+<Multi_key> <b> <U> : "𝕌"  # latex \bU
+<Multi_key> <b> <V> : "𝕍"  # latex \bV
+<Multi_key> <b> <W> : "𝕎"  # latex \bW
+<Multi_key> <b> <X> : "𝕏"  # latex \bX
+<Multi_key> <b> <Y> : "𝕐"  # latex \bY
+<Multi_key> <b> <Z> : "ℤ"  # latex \bZ
+<Multi_key> <b> <0> : "𝟘"  # latex \b0
+<Multi_key> <b> <1> : "𝟙"  # latex \b1
+<Multi_key> <b> <2> : "𝟚"  # latex \b2
+<Multi_key> <b> <3> : "𝟛"  # latex \b3
+<Multi_key> <b> <4> : "𝟜"  # latex \b4
+<Multi_key> <b> <5> : "𝟝"  # latex \b5
+<Multi_key> <b> <6> : "𝟞"  # latex \b6
+<Multi_key> <b> <7> : "𝟟"  # latex \b7
+<Multi_key> <b> <8> : "𝟠"  # latex \b8
+<Multi_key> <b> <9> : "𝟡"  # latex \b9
+<Multi_key> <i> <n> <f> : "∞"  # latex \infty
+<Multi_key> <e> <q> <u> <i> <v> : "≡"  # latex \equiv
+<Multi_key> <n> <e> <q> <u> <i> <v> : "≢"  # latex \not\equiv
+<Multi_key> <s> <i> <m> <e> <q> : "≃"  # latex \simeq
+<Multi_key> <a> <p> <p> <r> <o> <x> : "≈"  # latex \approx
+<Multi_key> <c> <o> <n> <g> : "≅"  # latex \cong
+<Multi_key> <n> <e> <q> : "≠"  # latex \ne
+<Multi_key> <e> <q> <m> <a> <y> <b> <e> : "≟"  # latex \?
+<Multi_key> <p> <r> <o> <v> <e> <s> : "⊢"  # latex \vdash
+<Multi_key> <n> <p> <r> <o> <v> <e> <s> : "⊬"  # latex \nvdash
+<Multi_key> <e> <n> <t> <a> <i> <l> <s> : "⊨"  # latex \vDash
+<Multi_key> <f> <o> <r> <c> <e> <s> : "⊩"  # latex \Vdash
+<Multi_key> <n> <f> <o> <r> <c> <e> <s> : "⊮"  # latex \nVdash?
+<Multi_key> <p> <e> <r> <p> : "⊥"  # latex \perp
+<Multi_key> <v> <e> <e> : "∨"  # latex \vee
+<Multi_key> <V> <e> <e> : "⋁"  # latex \bigvee
+<Multi_key> <w> <e> <d> <g> <e> : "∧"  # latex \wedge
+<Multi_key> <W> <e> <d> <g> <e> : "⋀"  # latex \bigwedge
+<Multi_key> <a> <n> <d> : "∧"  # latex \wedge
+<Multi_key> <A> <n> <d> : "⋀"  # latex \bigwedge
+<Multi_key> <n> <o> <t> : "¬"  # latex \not
+<Multi_key> <c> <d> <o> <t> : "⋅"  # latex \cdot
+<Multi_key> <colon> <space> : "﹕ "  # latex \?
+<Multi_key> <b> <u> <l> <l> <e> <t> : "•"  # latex \bullet
+<Multi_key> <c> <i> <r> <c> : "∘"  # latex \circ
+<Multi_key> <t> <i> <m> <e> <s> : "×"  # latex \times
+# <Multi_key> <o> <p> <l> <u> <s> : "⊕"  # latex \oplus
+# <Multi_key> <c> <i> <r> <c> <l> <e> <d> <a> <s> <t> : "⊛"  # latex \circledast
+<Multi_key> <o> <plus> : "⊕"  # latex \oplus
+<Multi_key> <O> <plus> : "⨁"  # latex \bigoplus
+<Multi_key> <o> <x> : "⊗"  # latex \otimes
+<Multi_key> <O> <x> : "⨂"  # latex \bigotimes
+<Multi_key> <O> <asterisk> : "⊛"  # latex \circledast
+<Multi_key> <l> <a> <n> <g> <l> <e> : "⟨"  # latex \langle
+<Multi_key> <r> <a> <n> <g> <l> <e> : "⟩"  # latex \rangle
+<Multi_key> <bracketleft> : "⟦"  # latex \llbracket
+<Multi_key> <bracketright> : "⟧"  # latex \rrbracket
+#<Multi_key> <underscore> <bracketleft> : "⌊"  # latex ?
+#<Multi_key> <underscore> <bracketright> : "⌋"  # latex ?
+#<Multi_key> <asciicircum> <bracketleft> : "⌈"  # latex ?
+#<Multi_key> <asciicircum> <bracketright> : "⌉"  # latex ?
+<Multi_key> <colon> <colon> : "∷"  # latex ?
+<Multi_key> <colon> <equal> : "≔"  # latex \coloneq
+<Multi_key> <equal> <colon> : "≕"  # latex \coloneq
+<Multi_key> <l> <o> <z> <e> <n> <g> <e> : "◊"  # latex \lozenge
+<Multi_key> <d> <e> <g> : "°"
+<Multi_key> <comma> : "⹁"  # latex ?
+<Multi_key> <semicolon> : "⁏"  # latex ?
+<Multi_key> <b> <o> <x> : "□"  # latex ?
+<Multi_key> <f> <l> <a> <t> : "♭"  # latex ?
+<Multi_key> <s> <h> <a> <r> <p> : "♯"  # latex ?
+<Multi_key> <l> : "ℓ"  # latex \ell
+<Multi_key> <y> <o> : "よ"  # yoneda
+<Multi_key> <period> <minus> : "⋯"  # latex \cdots
+<Multi_key> <L> <D> <O> <T> <S> : "⋯"  # latex \cdots
+<Multi_key> <m> <d> <o> <t> <s> : "⋯"  # latex \cdots
+<Multi_key> <p> <a> <r> : "∂"  # latex \partial
+<Multi_key> <X> <X> : "⋅"  # latex \cdot
+<Multi_key> <x> <x> : "×"  # MULTIPLICATION SIGN
+
+# Fracitons
+<Multi_key> <1> <slash> <4> : "¼"   onequarter # VULGAR FRACTION ONE QUARTER
+<Multi_key> <1> <slash> <2> : "½"   onehalf # VULGAR FRACTION ONE HALF
+<Multi_key> <3> <slash> <4> : "¾"   threequarters # VULGAR FRACTION THREE QUARTERS
+<Multi_key> <1> <slash> <3> : "⅓"   U2153 # VULGAR FRACTION ONE THIRD
+<Multi_key> <2> <slash> <3> : "⅔"   U2154 # VULGAR FRACTION TWO THIRDS
+<Multi_key> <1> <slash> <5> : "⅕"   U2155 # VULGAR FRACTION ONE FIFTH
+<Multi_key> <2> <slash> <5> : "⅖"   U2156 # VULGAR FRACTION TWO FIFTHS
+<Multi_key> <3> <slash> <5> : "⅗"   U2157 # VULGAR FRACTION THREE FIFTHS
+<Multi_key> <4> <slash> <5> : "⅘"   U2158 # VULGAR FRACTION FOUR FIFTHS
+<Multi_key> <1> <slash> <6> : "⅙"   U2159 # VULGAR FRACTION ONE SIXTH
+<Multi_key> <5> <slash> <6> : "⅚"   U215A # VULGAR FRACTION FIVE SIXTHS
+<Multi_key> <1> <slash> <8> : "⅛"   U215B # VULGAR FRACTION ONE EIGHTH
+<Multi_key> <3> <slash> <8> : "⅜"   U215C # VULGAR FRACTION THREE EIGHTHS
+<Multi_key> <5> <slash> <8> : "⅝"   U215D # VULGAR FRACTION FIVE EIGHTHS
+<Multi_key> <7> <slash> <8> : "⅞"   U215E # VULGAR FRACTION SEVEN EIGHTHS
+
+
+# Caligraphy 𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵
+<Multi_key> <c> <a> <l> <A> : "𝒜"
+<Multi_key> <c> <a> <l> <B> : "ℬ"
+<Multi_key> <c> <a> <l> <C> : "𝒞"
+<Multi_key> <c> <a> <l> <D> : "𝒟"
+<Multi_key> <c> <a> <l> <E> : "ℰ"
+<Multi_key> <c> <a> <l> <F> : "ℱ"
+<Multi_key> <c> <a> <l> <G> : "𝒢"
+<Multi_key> <c> <a> <l> <H> : "ℋ"
+<Multi_key> <c> <a> <l> <I> : "ℐ"
+<Multi_key> <c> <a> <l> <J> : "𝒥"
+<Multi_key> <c> <a> <l> <K> : "𝒦"
+<Multi_key> <c> <a> <l> <L> : "ℒ"
+<Multi_key> <c> <a> <l> <M> : "ℳ"
+<Multi_key> <c> <a> <l> <N> : "𝒩"
+<Multi_key> <c> <a> <l> <O> : "𝒪"
+<Multi_key> <c> <a> <l> <P> : "𝒫"
+<Multi_key> <c> <a> <l> <Q> : "𝒬"
+<Multi_key> <c> <a> <l> <R> : "ℛ"
+<Multi_key> <c> <a> <l> <S> : "𝒮"
+<Multi_key> <c> <a> <l> <T> : "𝒯"
+<Multi_key> <c> <a> <l> <U> : "𝒰"
+<Multi_key> <c> <a> <l> <V> : "𝒱"
+<Multi_key> <c> <a> <l> <W> : "𝒲"
+<Multi_key> <c> <a> <l> <X> : "𝒳"
+<Multi_key> <c> <a> <l> <Y> : "𝒴"
+<Multi_key> <c> <a> <l> <Z> : "𝒵"
+<Multi_key> <c> <a> <l> <0> : "𝟎"
+<Multi_key> <c> <a> <l> <1> : "𝟏"
+<Multi_key> <c> <a> <l> <2> : "𝟐"
+<Multi_key> <c> <a> <l> <3> : "𝟑"
+<Multi_key> <c> <a> <l> <4> : "𝟒"
+<Multi_key> <c> <a> <l> <5> : "𝟓"
+<Multi_key> <c> <a> <l> <6> : "𝟔"
+<Multi_key> <c> <a> <l> <7> : "𝟕"
+<Multi_key> <c> <a> <l> <8> : "𝟖"
+<Multi_key> <c> <a> <l> <9> : "𝟗"
+
+<Multi_key> <s> <c> <r> <A> : "𝓐"
+<Multi_key> <s> <c> <r> <B> : "𝓑"
+<Multi_key> <s> <c> <r> <C> : "𝓒"
+<Multi_key> <s> <c> <r> <D> : "𝓓"
+<Multi_key> <s> <c> <r> <E> : "𝓔"
+<Multi_key> <s> <c> <r> <F> : "𝓕"
+<Multi_key> <s> <c> <r> <G> : "𝓖"
+<Multi_key> <s> <c> <r> <H> : "𝓗"
+<Multi_key> <s> <c> <r> <I> : "𝓘"
+<Multi_key> <s> <c> <r> <J> : "𝓙"
+<Multi_key> <s> <c> <r> <K> : "𝓚"
+<Multi_key> <s> <c> <r> <L> : "𝓛"
+<Multi_key> <s> <c> <r> <M> : "𝓜"
+<Multi_key> <s> <c> <r> <N> : "𝓝"
+<Multi_key> <s> <c> <r> <O> : "𝓞"
+<Multi_key> <s> <c> <r> <P> : "𝓟"
+<Multi_key> <s> <c> <r> <Q> : "𝓠"
+<Multi_key> <s> <c> <r> <R> : "𝓡"
+<Multi_key> <s> <c> <r> <S> : "𝓢"
+<Multi_key> <s> <c> <r> <T> : "𝓣"
+<Multi_key> <s> <c> <r> <U> : "𝓤"
+<Multi_key> <s> <c> <r> <V> : "𝓥"
+<Multi_key> <s> <c> <r> <W> : "𝓦"
+<Multi_key> <s> <c> <r> <X> : "𝓧"
+<Multi_key> <s> <c> <r> <Y> : "𝓨"
+<Multi_key> <s> <c> <r> <Z> : "𝓩"
+<Multi_key> <s> <c> <r> <0> : "𝟎"
+<Multi_key> <s> <c> <r> <1> : "𝟏"
+<Multi_key> <s> <c> <r> <2> : "𝟐"
+<Multi_key> <s> <c> <r> <3> : "𝟑"
+<Multi_key> <s> <c> <r> <4> : "𝟒"
+<Multi_key> <s> <c> <r> <5> : "𝟓"
+<Multi_key> <s> <c> <r> <6> : "𝟔"
+<Multi_key> <s> <c> <r> <7> : "𝟕"
+<Multi_key> <s> <c> <r> <8> : "𝟖"
+<Multi_key> <s> <c> <r> <9> : "𝟗"
+
+# Fraktur
+<Multi_key> <f> <r> <a> <a> : "𝔞"
+<Multi_key> <f> <r> <a> <b> : "𝔟"
+<Multi_key> <f> <r> <a> <c> : "𝔠"
+<Multi_key> <f> <r> <a> <d> : "𝔡"
+<Multi_key> <f> <r> <a> <e> : "𝔢"
+<Multi_key> <f> <r> <a> <f> : "𝔣"
+<Multi_key> <f> <r> <a> <g> : "𝔤"
+<Multi_key> <f> <r> <a> <h> : "𝔥"
+<Multi_key> <f> <r> <a> <i> : "𝔦"
+<Multi_key> <f> <r> <a> <j> : "𝔧"
+<Multi_key> <f> <r> <a> <k> : "𝔨"
+<Multi_key> <f> <r> <a> <l> : "𝔩"
+<Multi_key> <f> <r> <a> <m> : "𝔪"
+<Multi_key> <f> <r> <a> <n> : "𝔫"
+<Multi_key> <f> <r> <a> <o> : "𝔬"
+<Multi_key> <f> <r> <a> <p> : "𝔭"
+<Multi_key> <f> <r> <a> <q> : "𝔮"
+<Multi_key> <f> <r> <a> <r> : "𝔯"
+<Multi_key> <f> <r> <a> <s> : "𝔰"
+<Multi_key> <f> <r> <a> <t> : "𝔱"
+<Multi_key> <f> <r> <a> <u> : "𝔲"
+<Multi_key> <f> <r> <a> <v> : "𝔳"
+<Multi_key> <f> <r> <a> <w> : "𝔴"
+<Multi_key> <f> <r> <a> <x> : "𝔵"
+<Multi_key> <f> <r> <a> <y> : "𝔶"
+<Multi_key> <f> <r> <a> <z> : "𝔷"
+
+<Multi_key> <f> <r> <a> <A> : "𝔄"
+<Multi_key> <f> <r> <a> <B> : "𝔅"
+<Multi_key> <f> <r> <a> <C> : "ℭ"
+<Multi_key> <f> <r> <a> <D> : "𝔇"
+<Multi_key> <f> <r> <a> <E> : "𝔈"
+<Multi_key> <f> <r> <a> <F> : "𝔉"
+<Multi_key> <f> <r> <a> <G> : "𝔊"
+<Multi_key> <f> <r> <a> <H> : "ℌ"
+<Multi_key> <f> <r> <a> <J> : "ℑ"
+<Multi_key> <f> <r> <a> <I> : "𝔍"
+<Multi_key> <f> <r> <a> <K> : "𝔎"
+<Multi_key> <f> <r> <a> <L> : "𝔏"
+<Multi_key> <f> <r> <a> <M> : "𝔐"
+<Multi_key> <f> <r> <a> <N> : "𝔑"
+<Multi_key> <f> <r> <a> <O> : "𝔒"
+<Multi_key> <f> <r> <a> <P> : "𝔓"
+<Multi_key> <f> <r> <a> <Q> : "𝔔"
+<Multi_key> <f> <r> <a> <R> : "ℜ"
+<Multi_key> <f> <r> <a> <S> : "𝔖"
+<Multi_key> <f> <r> <a> <T> : "𝔗"
+<Multi_key> <f> <r> <a> <U> : "𝔘"
+<Multi_key> <f> <r> <a> <V> : "𝔙"
+<Multi_key> <f> <r> <a> <W> : "𝔚"
+<Multi_key> <f> <r> <a> <X> : "𝔛"
+<Multi_key> <f> <r> <a> <Y> : "𝔜"
+<Multi_key> <f> <r> <a> <Z> : "ℨ"
+
+<Multi_key> <F> <r> <a> <a> : "𝖆"
+<Multi_key> <F> <r> <a> <b> : "𝖇"
+<Multi_key> <F> <r> <a> <c> : "𝖈"
+<Multi_key> <F> <r> <a> <d> : "𝖉"
+<Multi_key> <F> <r> <a> <e> : "𝖊"
+<Multi_key> <F> <r> <a> <f> : "𝖋"
+<Multi_key> <F> <r> <a> <g> : "𝖌"
+<Multi_key> <F> <r> <a> <h> : "𝖍"
+<Multi_key> <F> <r> <a> <i> : "𝖎"
+<Multi_key> <F> <r> <a> <j> : "𝖏"
+<Multi_key> <F> <r> <a> <k> : "𝖐"
+<Multi_key> <F> <r> <a> <l> : "𝖑"
+<Multi_key> <F> <r> <a> <m> : "𝖒"
+<Multi_key> <F> <r> <a> <n> : "𝖓"
+<Multi_key> <F> <r> <a> <o> : "𝖔"
+<Multi_key> <F> <r> <a> <p> : "𝖕"
+<Multi_key> <F> <r> <a> <q> : "𝖖"
+<Multi_key> <F> <r> <a> <r> : "𝖗"
+<Multi_key> <F> <r> <a> <s> : "𝖘"
+<Multi_key> <F> <r> <a> <t> : "𝖙"
+<Multi_key> <F> <r> <a> <u> : "𝖚"
+<Multi_key> <F> <r> <a> <v> : "𝖛"
+<Multi_key> <F> <r> <a> <w> : "𝖜"
+<Multi_key> <F> <r> <a> <x> : "𝖝"
+<Multi_key> <F> <r> <a> <y> : "𝖞"
+<Multi_key> <F> <r> <a> <z> : "𝖟"
+
+<Multi_key> <F> <r> <a> <A> : "𝕬"
+<Multi_key> <F> <r> <a> <B> : "𝕭"
+<Multi_key> <F> <r> <a> <C> : "𝕮"
+<Multi_key> <F> <r> <a> <D> : "𝕯"
+<Multi_key> <F> <r> <a> <E> : "𝕰"
+<Multi_key> <F> <r> <a> <F> : "𝕱"
+<Multi_key> <F> <r> <a> <G> : "𝕲"
+<Multi_key> <F> <r> <a> <H> : "𝕳"
+<Multi_key> <F> <r> <a> <J> : "𝕴"
+<Multi_key> <F> <r> <a> <I> : "𝕵"
+<Multi_key> <F> <r> <a> <K> : "𝕶"
+<Multi_key> <F> <r> <a> <L> : "𝕷"
+<Multi_key> <F> <r> <a> <M> : "𝕸"
+<Multi_key> <F> <r> <a> <N> : "𝕹"
+<Multi_key> <F> <r> <a> <O> : "𝕺"
+<Multi_key> <F> <r> <a> <P> : "𝕻"
+<Multi_key> <F> <r> <a> <Q> : "𝕼"
+<Multi_key> <F> <r> <a> <R> : "𝕽"
+<Multi_key> <F> <r> <a> <S> : "𝕾"
+<Multi_key> <F> <r> <a> <T> : "𝕿"
+<Multi_key> <F> <r> <a> <U> : "𝖀"
+<Multi_key> <F> <r> <a> <V> : "𝖁"
+<Multi_key> <F> <r> <a> <W> : "𝖂"
+<Multi_key> <F> <r> <a> <X> : "𝖃"
+<Multi_key> <F> <r> <a> <Y> : "𝖄"
+<Multi_key> <F> <r> <a> <Z> : "𝖅"

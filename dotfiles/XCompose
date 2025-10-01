@@ -1,3 +1,19 @@
+<Multi_key> <1> <slash> <2> : "½"   onehalf # VULGAR FRACTION ONE HALF
+<Multi_key> <1> <slash> <3> : "⅓"   U2153 # VULGAR FRACTION ONE THIRD
+<Multi_key> <1> <slash> <4> : "¼"   onequarter # VULGAR FRACTION ONE QUARTER
+<Multi_key> <1> <slash> <5> : "⅕"   U2155 # VULGAR FRACTION ONE FIFTH
+<Multi_key> <1> <slash> <6> : "⅙"   U2159 # VULGAR FRACTION ONE SIXTH
+<Multi_key> <1> <slash> <8> : "⅛"   U215B # VULGAR FRACTION ONE EIGHTH
+<Multi_key> <2> <slash> <3> : "⅔"   U2154 # VULGAR FRACTION TWO THIRDS
+<Multi_key> <2> <slash> <5> : "⅖"   U2156 # VULGAR FRACTION TWO FIFTHS
+<Multi_key> <3> <slash> <4> : "¾"   threequarters # VULGAR FRACTION THREE QUARTERS
+<Multi_key> <3> <slash> <5> : "⅗"   U2157 # VULGAR FRACTION THREE FIFTHS
+<Multi_key> <3> <slash> <8> : "⅜"   U215C # VULGAR FRACTION THREE EIGHTHS
+<Multi_key> <4> <slash> <5> : "⅘"   U2158 # VULGAR FRACTION FOUR FIFTHS
+<Multi_key> <5> <slash> <6> : "⅚"   U215A # VULGAR FRACTION FIVE SIXTHS
+<Multi_key> <5> <slash> <8> : "⅝"   U215D # VULGAR FRACTION FIVE EIGHTHS
+<Multi_key> <7> <slash> <8> : "⅞"   U215E # VULGAR FRACTION SEVEN EIGHTHS
+<Multi_key> <A> <n> <d> : "⋀"  # latex \bigwedge
 <Multi_key> <C> <a> <p> : "⋂"  # latex \bigcap
 <Multi_key> <C> <u> <p> : "⋃"  # latex \bigcup
 <Multi_key> <F> <r> <a> <A> : "𝕬"
@@ -85,8 +101,11 @@
 <Multi_key> <V> <C> : "Č"
 <Multi_key> <V> <S> : "Š"
 <Multi_key> <V> <Z> : "Ž"
+<Multi_key> <V> <e> <e> : "⋁"  # latex \bigvee
+<Multi_key> <W> <e> <d> <g> <e> : "⋀"  # latex \bigwedge
 <Multi_key> <X> <X> : "⋅"  # latex \cdot
 <Multi_key> <a> <n> <a> <r> <c> <h> <y> : "Ⓐ"
+<Multi_key> <a> <n> <d> : "∧"  # latex \wedge
 <Multi_key> <a> <p> <p> <r> <o> <x> : "≈"  # latex \approx
 <Multi_key> <apostrophe> <c> : "ć"
 <Multi_key> <asciicircum> <0> : "⁰"
@@ -141,6 +160,8 @@
 <Multi_key> <asciicircum> <numbersign> : "₃"
 <Multi_key> <asciicircum> <o> : "ᵒ"
 <Multi_key> <asciicircum> <p> : "ᵖ"
+<Multi_key> <asciicircum> <parenleft> : "⁽"
+<Multi_key> <asciicircum> <parenright> : "⁾"
 <Multi_key> <asciicircum> <percent> : "₅"
 <Multi_key> <asciicircum> <q> : "𐞥"
 <Multi_key> <asciicircum> <r> : "ʳ"
@@ -156,6 +177,16 @@
 <Multi_key> <asciicircum> <x> : "ˣ"
 <Multi_key> <asciicircum> <y> : "ʸ"
 <Multi_key> <asciicircum> <z> : "ᶻ"
+<Multi_key> <b> <0> : "𝟘"  # latex \b0
+<Multi_key> <b> <1> : "𝟙"  # latex \b1
+<Multi_key> <b> <2> : "𝟚"  # latex \b2
+<Multi_key> <b> <3> : "𝟛"  # latex \b3
+<Multi_key> <b> <4> : "𝟜"  # latex \b4
+<Multi_key> <b> <5> : "𝟝"  # latex \b5
+<Multi_key> <b> <6> : "𝟞"  # latex \b6
+<Multi_key> <b> <7> : "𝟟"  # latex \b7
+<Multi_key> <b> <8> : "𝟠"  # latex \b8
+<Multi_key> <b> <9> : "𝟡"  # latex \b9
 <Multi_key> <b> <A> : "𝔸"  # latex \bA
 <Multi_key> <b> <B> : "𝔹"  # latex \bB
 <Multi_key> <b> <C> : "ℂ"  # latex \bC
@@ -187,12 +218,8 @@
 <Multi_key> <b> <u> <l> <l> <e> <t> : "•"  # latex \bullet
 <Multi_key> <backslash> : "⧵"  # latex \setminus
 <Multi_key> <bar> <bar> : "‖"  # latex \|
-<Multi_key> <bracketleft> <asciicircum> : "⌈"  # latex ?
-<Multi_key> <bracketleft> <bracketleft> : "⟦"  # latex \llbracket
-<Multi_key> <bracketleft> <underscore> : "⌊"  # latex ?
-<Multi_key> <bracketright> <asciicircum> : "⌉"  # latex ?
-<Multi_key> <bracketright> <bracketright> : "⟧"  # latex \rrbracket
-<Multi_key> <bracketright> <underscore> : "⌋"  # latex ?
+<Multi_key> <bracketleft> : "⟦"  # latex \llbracket
+<Multi_key> <bracketright> : "⟧"  # latex \rrbracket
 <Multi_key> <c> <a> <l> <0> : "𝟎"
 <Multi_key> <c> <a> <l> <1> : "𝟏"
 <Multi_key> <c> <a> <l> <2> : "𝟐"
@@ -247,6 +274,7 @@
 <Multi_key> <e> <q> <m> <a> <y> <b> <e> : "≟"  # latex \?
 <Multi_key> <e> <q> <u> <i> <v> : "≡"  # latex \equiv
 <Multi_key> <e> <x> <i> <s> <t> <s> : "∃"  # latex \exists
+<Multi_key> <equal> <colon> : "≕"  # latex \coloneq
 <Multi_key> <f> <l> <a> <t> : "♭"  # latex ?
 <Multi_key> <f> <o> <r> <a> <l> <l> : "∀"  # latex \forall
 <Multi_key> <f> <o> <r> <c> <e> <s> : "⊩"  # latex \Vdash
@@ -462,8 +490,10 @@
 <Multi_key> <g> <r> <x> : "χ"    U03C7    # GREEK SMALL LETTER CHI
 <Multi_key> <g> <r> <z> : "ζ"    U03B6    # GREEK SMALL LETTER ZETA
 <Multi_key> <i> <m> <p> <b> : "⇔"  # latex \Leftrightarrow
+<Multi_key> <i> <m> <p> <d> : "⇓"  # latex \Downarrow
 <Multi_key> <i> <m> <p> <l> : "⇒"  # latex \Rightarrow
 <Multi_key> <i> <m> <p> <r> : "⇐"  # latex \Leftarrow
+<Multi_key> <i> <m> <p> <u> : "⇑"  # latex \Uparrow
 <Multi_key> <i> <n> : "∈"  # latex \in
 <Multi_key> <i> <n> <0> : "∈0"  # latex \in
 <Multi_key> <i> <n> <1> : "∈1"  # latex \in
@@ -507,139 +537,7 @@
 <Multi_key> <i> <n> <c> : "∈c"  # latex \in
 <Multi_key> <i> <n> <d> : "∈d"  # latex \in
 <Multi_key> <i> <n> <e> : "∈e"  # latex \in
-<Multi_key> <i> <n> <f> : "∈f"  # latex \in
-<Multi_key> <i> <n> <f> <0> : "∈f0"  # latex \in
-<Multi_key> <i> <n> <f> <1> : "∈f1"  # latex \in
-<Multi_key> <i> <n> <f> <2> : "∈f2"  # latex \in
-<Multi_key> <i> <n> <f> <3> : "∈f3"  # latex \in
-<Multi_key> <i> <n> <f> <4> : "∈f4"  # latex \in
-<Multi_key> <i> <n> <f> <5> : "∈f5"  # latex \in
-<Multi_key> <i> <n> <f> <6> : "∈f6"  # latex \in
-<Multi_key> <i> <n> <f> <7> : "∈f7"  # latex \in
-<Multi_key> <i> <n> <f> <8> : "∈f8"  # latex \in
-<Multi_key> <i> <n> <f> <9> : "∈f9"  # latex \in
-<Multi_key> <i> <n> <f> <A> : "∈fA"  # latex \in
-<Multi_key> <i> <n> <f> <B> : "∈fB"  # latex \in
-<Multi_key> <i> <n> <f> <C> : "∈fC"  # latex \in
-<Multi_key> <i> <n> <f> <D> : "∈fD"  # latex \in
-<Multi_key> <i> <n> <f> <E> : "∈fE"  # latex \in
-<Multi_key> <i> <n> <f> <F> : "∈fF"  # latex \in
-<Multi_key> <i> <n> <f> <G> : "∈fG"  # latex \in
-<Multi_key> <i> <n> <f> <H> : "∈fH"  # latex \in
-<Multi_key> <i> <n> <f> <I> : "∈fI"  # latex \in
-<Multi_key> <i> <n> <f> <J> : "∈fJ"  # latex \in
-<Multi_key> <i> <n> <f> <K> : "∈fK"  # latex \in
-<Multi_key> <i> <n> <f> <L> : "∈fL"  # latex \in
-<Multi_key> <i> <n> <f> <M> : "∈fM"  # latex \in
-<Multi_key> <i> <n> <f> <N> : "∈fN"  # latex \in
-<Multi_key> <i> <n> <f> <O> : "∈fO"  # latex \in
-<Multi_key> <i> <n> <f> <P> : "∈fP"  # latex \in
-<Multi_key> <i> <n> <f> <Q> : "∈fQ"  # latex \in
-<Multi_key> <i> <n> <f> <R> : "∈fR"  # latex \in
-<Multi_key> <i> <n> <f> <S> : "∈fS"  # latex \in
-<Multi_key> <i> <n> <f> <T> : "∈fT"  # latex \in
-<Multi_key> <i> <n> <f> <U> : "∈fU"  # latex \in
-<Multi_key> <i> <n> <f> <V> : "∈fV"  # latex \in
-<Multi_key> <i> <n> <f> <W> : "∈fW"  # latex \in
-<Multi_key> <i> <n> <f> <X> : "∈fX"  # latex \in
-<Multi_key> <i> <n> <f> <Y> : "∈fY"  # latex \in
-<Multi_key> <i> <n> <f> <Z> : "∈fZ"  # latex \in
-<Multi_key> <i> <n> <f> <a> : "∈fa"  # latex \in
-<Multi_key> <i> <n> <f> <b> : "∈fb"  # latex \in
-<Multi_key> <i> <n> <f> <backslash> : "∈f\"#"  # latex \in
-<Multi_key> <i> <n> <f> <c> : "∈fc"  # latex \in
-<Multi_key> <i> <n> <f> <d> : "∈fd"  # latex \in
-<Multi_key> <i> <n> <f> <e> : "∈fe"  # latex \in
-<Multi_key> <i> <n> <f> <f> : "∈ff"  # latex \in
-<Multi_key> <i> <n> <f> <g> : "∈fg"  # latex \in
-<Multi_key> <i> <n> <f> <h> : "∈fh"  # latex \in
-<Multi_key> <i> <n> <f> <i> : "∈fi"  # latex \in
-<Multi_key> <i> <n> <f> <j> : "∈fj"  # latex \in
-<Multi_key> <i> <n> <f> <k> : "∈fk"  # latex \in
-<Multi_key> <i> <n> <f> <l> : "∈fl"  # latex \in
-<Multi_key> <i> <n> <f> <m> : "∈fm"  # latex \in
-<Multi_key> <i> <n> <f> <n> : "∈fn"  # latex \in
-<Multi_key> <i> <n> <f> <o> : "∈fo"  # latex \in
-<Multi_key> <i> <n> <f> <p> : "∈fp"  # latex \in
-<Multi_key> <i> <n> <f> <q> : "∈fq"  # latex \in
-<Multi_key> <i> <n> <f> <r> : "∈fr"  # latex \in
-<Multi_key> <i> <n> <f> <s> : "∈fs"  # latex \in
-<Multi_key> <i> <n> <f> <slash> : "∈f/"  # latex \in
-<Multi_key> <i> <n> <f> <space> : "∈f "  # latex \in
-<Multi_key> <i> <n> <f> <t> : "∈ft"  # latex \in
-<Multi_key> <i> <n> <f> <t> <0> : "∈ft0"  # latex \in
-<Multi_key> <i> <n> <f> <t> <1> : "∈ft1"  # latex \in
-<Multi_key> <i> <n> <f> <t> <2> : "∈ft2"  # latex \in
-<Multi_key> <i> <n> <f> <t> <3> : "∈ft3"  # latex \in
-<Multi_key> <i> <n> <f> <t> <4> : "∈ft4"  # latex \in
-<Multi_key> <i> <n> <f> <t> <5> : "∈ft5"  # latex \in
-<Multi_key> <i> <n> <f> <t> <6> : "∈ft6"  # latex \in
-<Multi_key> <i> <n> <f> <t> <7> : "∈ft7"  # latex \in
-<Multi_key> <i> <n> <f> <t> <8> : "∈ft8"  # latex \in
-<Multi_key> <i> <n> <f> <t> <9> : "∈ft9"  # latex \in
-<Multi_key> <i> <n> <f> <t> <A> : "∈ftA"  # latex \in
-<Multi_key> <i> <n> <f> <t> <B> : "∈ftB"  # latex \in
-<Multi_key> <i> <n> <f> <t> <C> : "∈ftC"  # latex \in
-<Multi_key> <i> <n> <f> <t> <D> : "∈ftD"  # latex \in
-<Multi_key> <i> <n> <f> <t> <E> : "∈ftE"  # latex \in
-<Multi_key> <i> <n> <f> <t> <F> : "∈ftF"  # latex \in
-<Multi_key> <i> <n> <f> <t> <G> : "∈ftG"  # latex \in
-<Multi_key> <i> <n> <f> <t> <H> : "∈ftH"  # latex \in
-<Multi_key> <i> <n> <f> <t> <I> : "∈ftI"  # latex \in
-<Multi_key> <i> <n> <f> <t> <J> : "∈ftJ"  # latex \in
-<Multi_key> <i> <n> <f> <t> <K> : "∈ftK"  # latex \in
-<Multi_key> <i> <n> <f> <t> <L> : "∈ftL"  # latex \in
-<Multi_key> <i> <n> <f> <t> <M> : "∈ftM"  # latex \in
-<Multi_key> <i> <n> <f> <t> <N> : "∈ftN"  # latex \in
-<Multi_key> <i> <n> <f> <t> <O> : "∈ftO"  # latex \in
-<Multi_key> <i> <n> <f> <t> <P> : "∈ftP"  # latex \in
-<Multi_key> <i> <n> <f> <t> <Q> : "∈ftQ"  # latex \in
-<Multi_key> <i> <n> <f> <t> <R> : "∈ftR"  # latex \in
-<Multi_key> <i> <n> <f> <t> <S> : "∈ftS"  # latex \in
-<Multi_key> <i> <n> <f> <t> <T> : "∈ftT"  # latex \in
-<Multi_key> <i> <n> <f> <t> <U> : "∈ftU"  # latex \in
-<Multi_key> <i> <n> <f> <t> <V> : "∈ftV"  # latex \in
-<Multi_key> <i> <n> <f> <t> <W> : "∈ftW"  # latex \in
-<Multi_key> <i> <n> <f> <t> <X> : "∈ftX"  # latex \in
-<Multi_key> <i> <n> <f> <t> <Y> : "∈ftY"  # latex \in
-<Multi_key> <i> <n> <f> <t> <Z> : "∈ftZ"  # latex \in
-<Multi_key> <i> <n> <f> <t> <a> : "∈fta"  # latex \in
-<Multi_key> <i> <n> <f> <t> <b> : "∈ftb"  # latex \in
-<Multi_key> <i> <n> <f> <t> <backslash> : "∈ft\"#"  # latex \in
-<Multi_key> <i> <n> <f> <t> <c> : "∈ftc"  # latex \in
-<Multi_key> <i> <n> <f> <t> <d> : "∈ftd"  # latex \in
-<Multi_key> <i> <n> <f> <t> <e> : "∈fte"  # latex \in
-<Multi_key> <i> <n> <f> <t> <f> : "∈ftf"  # latex \in
-<Multi_key> <i> <n> <f> <t> <g> : "∈ftg"  # latex \in
-<Multi_key> <i> <n> <f> <t> <h> : "∈fth"  # latex \in
-<Multi_key> <i> <n> <f> <t> <i> : "∈fti"  # latex \in
-<Multi_key> <i> <n> <f> <t> <j> : "∈ftj"  # latex \in
-<Multi_key> <i> <n> <f> <t> <k> : "∈ftk"  # latex \in
-<Multi_key> <i> <n> <f> <t> <l> : "∈ftl"  # latex \in
-<Multi_key> <i> <n> <f> <t> <m> : "∈ftm"  # latex \in
-<Multi_key> <i> <n> <f> <t> <n> : "∈ftn"  # latex \in
-<Multi_key> <i> <n> <f> <t> <o> : "∈fto"  # latex \in
-<Multi_key> <i> <n> <f> <t> <p> : "∈ftp"  # latex \in
-<Multi_key> <i> <n> <f> <t> <q> : "∈ftq"  # latex \in
-<Multi_key> <i> <n> <f> <t> <r> : "∈ftr"  # latex \in
-<Multi_key> <i> <n> <f> <t> <s> : "∈fts"  # latex \in
-<Multi_key> <i> <n> <f> <t> <slash> : "∈ft/"  # latex \in
-<Multi_key> <i> <n> <f> <t> <space> : "∈ft "  # latex \in
-<Multi_key> <i> <n> <f> <t> <t> : "∈ftt"  # latex \in
-<Multi_key> <i> <n> <f> <t> <u> : "∈ftu"  # latex \in
-<Multi_key> <i> <n> <f> <t> <underscore> : "∈ft_"  # latex \in
-<Multi_key> <i> <n> <f> <t> <v> : "∈ftv"  # latex \in
-<Multi_key> <i> <n> <f> <t> <w> : "∈ftw"  # latex \in
-<Multi_key> <i> <n> <f> <t> <x> : "∈ftx"  # latex \in
-<Multi_key> <i> <n> <f> <t> <y> : "∞"  # latex \infty
-<Multi_key> <i> <n> <f> <t> <z> : "∈ftz"  # latex \in
-<Multi_key> <i> <n> <f> <u> : "∈fu"  # latex \in
-<Multi_key> <i> <n> <f> <underscore> : "∈f_"  # latex \in
-<Multi_key> <i> <n> <f> <v> : "∈fv"  # latex \in
-<Multi_key> <i> <n> <f> <w> : "∈fw"  # latex \in
-<Multi_key> <i> <n> <f> <x> : "∈fx"  # latex \in
-<Multi_key> <i> <n> <f> <y> : "∈fy"  # latex \in
-<Multi_key> <i> <n> <f> <z> : "∈fz"  # latex \in
+<Multi_key> <i> <n> <f> : "∞"  # latex \infty
 <Multi_key> <i> <n> <g> : "∈g"  # latex \in
 <Multi_key> <i> <n> <h> : "∈h"  # latex \in
 <Multi_key> <i> <n> <i> : "∈i"  # latex \in
@@ -2190,11 +2088,14 @@
 <Multi_key> <n> <e> <q> <x> : "≠x"  # latex \ne
 <Multi_key> <n> <e> <q> <y> : "≠y"  # latex \ne
 <Multi_key> <n> <e> <q> <z> : "≠z"  # latex \ne
+<Multi_key> <n> <f> <o> <r> <c> <e> <s> : "⊮"  # latex \nVdash?
 <Multi_key> <n> <i> : "∋"  # latex \ni
 <Multi_key> <n> <o> <i> <n> : "∉"  #latex \notin
+<Multi_key> <n> <o> <n> <i> : "∌"  #latex \notin
 <Multi_key> <n> <o> <t> : "¬"  # latex \not
 <Multi_key> <n> <p> <r> <o> <v> <e> <s> : "⊬"  # latex \nvdash
 <Multi_key> <o> <plus> : "⊕"  # latex \oplus
+<Multi_key> <o> <t> <o> : "↬"  # latex ?
 <Multi_key> <o> <x> : "⊗"  # latex \otimes
 <Multi_key> <p> <a> <r> : "∂"  # latex \partial
 <Multi_key> <p> <e> <r> <p> : "⊥"  # latex \perp
@@ -2338,7 +2239,13 @@
 <Multi_key> <period> <period> : "…"  # latex \ldots
 <Multi_key> <plus> <plus> : "⧺"  # latex ?
 <Multi_key> <q> <e> <d> : "∎"  # latex \qed
+<Multi_key> <quotedbl> <A> : "Ä"
 <Multi_key> <quotedbl> <C> : "Ć"
+<Multi_key> <quotedbl> <O> : "Ö"
+<Multi_key> <quotedbl> <U> : "Ü"
+<Multi_key> <quotedbl> <a> : "ä"
+<Multi_key> <quotedbl> <o> : "ö"
+<Multi_key> <quotedbl> <u> : "ü"
 <Multi_key> <r> <a> <n> <g> <l> <e> : "⟩"  # latex \rangle
 <Multi_key> <r> <h> <d> : "⊳"  # latex \rhd
 <Multi_key> <s> <c> <r> <0> : "𝟎"
@@ -2649,6 +2556,140 @@
 <Multi_key> <s> <q> <s> <u> <p> <x> : "⊐x"  # latex \sqsupset
 <Multi_key> <s> <q> <s> <u> <p> <y> : "⊐y"  # latex \sqsupset
 <Multi_key> <s> <q> <s> <u> <p> <z> : "⊐z"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <b> : "⊏"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <0> : "⊏0"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <1> : "⊏1"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <2> : "⊏2"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <3> : "⊏3"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <4> : "⊏4"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <5> : "⊏5"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <6> : "⊏6"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <7> : "⊏7"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <8> : "⊏8"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <9> : "⊏9"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <A> : "⊏A"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <B> : "⊏B"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <C> : "⊏C"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <D> : "⊏D"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <E> : "⊏E"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <F> : "⊏F"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <G> : "⊏G"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <H> : "⊏H"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <I> : "⊏I"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <J> : "⊏J"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <K> : "⊏K"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <L> : "⊏L"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <M> : "⊏M"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <N> : "⊏N"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <O> : "⊏O"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <P> : "⊏P"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <Q> : "⊏Q"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <R> : "⊏R"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <S> : "⊏S"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <T> : "⊏T"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <U> : "⊏U"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <V> : "⊏V"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <W> : "⊏W"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <X> : "⊏X"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <Y> : "⊏Y"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <Z> : "⊏Z"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <a> : "⊏a"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <b> : "⊏b"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <backslash> : "⊏\"#"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <c> : "⊏c"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <d> : "⊏d"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <e> : "⊏e"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <f> : "⊏f"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <g> : "⊏g"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <h> : "⊏h"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <i> : "⊏i"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <j> : "⊏j"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <k> : "⊏k"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <l> : "⊏l"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <m> : "⊏m"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <n> : "⊏n"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <o> : "⊏o"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <p> : "⊏p"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <q> : "⊑"  # latex \sqsubseteq
+<Multi_key> <s> <q> <u> <b> <r> : "⊏r"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <s> : "⊏s"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <slash> : "⊏/"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <space> : "⊏ "  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <t> : "⊏t"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <u> : "⊏u"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <underscore> : "⊏_"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <v> : "⊏v"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <w> : "⊏w"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <x> : "⊏x"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <y> : "⊏y"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <b> <z> : "⊏z"  # latex \sqsubset
+<Multi_key> <s> <q> <u> <p> : "⊐"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <0> : "⊐0"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <1> : "⊐1"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <2> : "⊐2"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <3> : "⊐3"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <4> : "⊐4"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <5> : "⊐5"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <6> : "⊐6"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <7> : "⊐7"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <8> : "⊐8"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <9> : "⊐9"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <A> : "⊐A"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <B> : "⊐B"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <C> : "⊐C"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <D> : "⊐D"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <E> : "⊐E"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <F> : "⊐F"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <G> : "⊐G"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <H> : "⊐H"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <I> : "⊐I"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <J> : "⊐J"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <K> : "⊐K"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <L> : "⊐L"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <M> : "⊐M"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <N> : "⊐N"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <O> : "⊐O"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <P> : "⊐P"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <Q> : "⊐Q"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <R> : "⊐R"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <S> : "⊐S"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <T> : "⊐T"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <U> : "⊐U"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <V> : "⊐V"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <W> : "⊐W"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <X> : "⊐X"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <Y> : "⊐Y"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <Z> : "⊐Z"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <a> : "⊐a"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <b> : "⊐b"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <backslash> : "⊐\"#"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <c> : "⊐c"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <d> : "⊐d"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <e> : "⊐e"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <f> : "⊐f"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <g> : "⊐g"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <h> : "⊐h"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <i> : "⊐i"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <j> : "⊐j"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <k> : "⊐k"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <l> : "⊐l"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <m> : "⊐m"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <n> : "⊐n"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <o> : "⊐o"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <p> : "⊐p"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <q> : "⊒"  # latex \sqsupseteq
+<Multi_key> <s> <q> <u> <p> <r> : "⊐r"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <s> : "⊐s"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <slash> : "⊐/"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <space> : "⊐ "  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <t> : "⊐t"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <u> : "⊐u"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <underscore> : "⊐_"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <v> : "⊐v"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <w> : "⊐w"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <x> : "⊐x"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <y> : "⊐y"  # latex \sqsupset
+<Multi_key> <s> <q> <u> <p> <z> : "⊐z"  # latex \sqsupset
 <Multi_key> <s> <t> <a> <r> : "★"  # latex \star
 <Multi_key> <s> <u> <b> : "⊂"  # latex \subset
 <Multi_key> <s> <u> <b> <0> : "⊂0"  # latex \subset

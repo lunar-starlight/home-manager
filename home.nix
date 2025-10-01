@@ -1,5 +1,17 @@
 { config, pkgs, pkgs-unstable, zen-browser, ... }@inputs:
-{
+let
+  stremio-custom =
+    (import ./pkgs/stremio.nix {
+      lib = inputs.lib;
+      stdenv = pkgs.stdenv;
+      fetchFromGitHub = pkgs.fetchFromGitHub;
+      fetchurl = pkgs.fetchurl;
+      libsForQt5 = pkgs.libsForQt5;
+      ffmpeg = pkgs.ffmpeg;
+      mpv = pkgs.mpv;
+      nodejs = pkgs.nodejs;
+    });
+in {
   imports = [
     ./utils
     ./scripts
@@ -43,6 +55,7 @@
     # editor
     #emacs
     vscode
+    (aspellWithDicts (dicts: with dicts; [en sl]))
 
     # WM
     river
@@ -54,9 +67,11 @@
     wl-screenrec
     sway-contrib.grimshot
     #wf-recorder
-    #gammastep # ne dela
+    gammastep # ne dela
     #xdg-desktop-portal-wlr
     brightnessctl
+    wayprompt
+    
 
     catppuccin-cursors.mochaMauve
 
@@ -68,7 +83,18 @@
     kdePackages.okular
     deadbeef
     deadbeefPlugins.headerbar-gtk3
-
+    (lutris.override {
+      extraLibraries = pkgs: [
+      ];
+      extraPkgs = pkgs: [
+      ];
+    })
+    steam
+    stremio
+    #stremio-custom
+    prismlauncher
+    minecraft
+    
     # fonts
     noto-fonts-color-emoji
     noto-fonts-monochrome-emoji
@@ -101,7 +127,7 @@
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      #emoji = [ "Noto Color Emoji" ];
+      emoji = [ "Noto Color Emoji" "Noto Monochrome Emoji" ];
     };
   };
 

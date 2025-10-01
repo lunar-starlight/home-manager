@@ -557,7 +557,7 @@ default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
   (spacemacs/load-spacemacs-env)
-)
+  )
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -565,7 +565,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-)
+  )
 
 
 (defun dotspacemacs/user-load ()
@@ -573,7 +573,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump."
-)
+  )
 
 
 (defun dotspacemacs/user-config ()
@@ -582,6 +582,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (setq ispell-program-name "aspell")
   (define-key evil-normal-state-map (kbd "U") #'evil-redo)
   (add-hook 'prog-mode-hook       'spacemacs/toggle-whitespace-on)
   (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-whitespace-off)
@@ -599,13 +600,7 @@ before packages are loaded."
   (setq TeX-command-extra-options "-auxdir=.build"
         TeX-source-correlate-start-server t
         TeX-view-program-selection '((output-pdf "Okular")))
-  ;; (add-hook 'TeX-mode-hook
-  ;;           (lambda () (add-to-list 'TeX-view-program-selection
-  ;;                          '("LatexMk" "latexmk %(-PDF)%S%(mode) %(fileline-error) %(extraopts) -auxdir=.build %t"
-  ;;                            TeX-run-latexmk nil
-  ;;                            (plain-tex-mode latex-mode doctex-mode)
-  ;;                            :help "Run LatexMk"))))
-)
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -615,17 +610,52 @@ before packages are loaded."
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(cdlatex counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui lsp-mode ggtags ron-mode rustic xterm-color rust-mode toml-mode tern kbd-mode yasnippet-snippets ws-butler writeroom-mode winum which-key web-beautify volatile-highlights vim-powerline vi-tilde-fringe uuidgen unicode-fonts undo-tree treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil tree-sitter-langs toc-org term-cursor symon symbol-overlay string-inflection string-edit-at-point spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline space-doc smeargle restart-emacs request rainbow-delimiters quickrun prettier-js popwin pcre2el password-generator paradox overseer org-superstar open-junk-file npm-mode nodejs-repl nameless multi-line macrostep lorem-ipsum livid-mode link-hint json-reformat json-navigator json-mode js2-refactor js-doc inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-git-grep helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitignore-templates git-timemachine git-modes git-messenger git-link fuzzy forge flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word company-lua column-enforce-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile all-the-icons aggressive-indent ace-link ace-jump-helm-line ac-ispell)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(package-selected-packages
+     '(cdlatex counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui
+               lsp-mode ggtags ron-mode rustic xterm-color rust-mode toml-mode
+               tern kbd-mode yasnippet-snippets ws-butler writeroom-mode winum
+               which-key web-beautify volatile-highlights vim-powerline
+               vi-tilde-fringe uuidgen unicode-fonts undo-tree treemacs-projectile
+               treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil
+               tree-sitter-langs toc-org term-cursor symon symbol-overlay
+               string-inflection string-edit-at-point spacemacs-whitespace-cleanup
+               spacemacs-purpose-popwin spaceline space-doc smeargle restart-emacs
+               request rainbow-delimiters quickrun prettier-js popwin pcre2el
+               password-generator paradox overseer org-superstar open-junk-file
+               npm-mode nodejs-repl nameless multi-line macrostep lorem-ipsum
+               livid-mode link-hint json-reformat json-navigator json-mode
+               js2-refactor js-doc inspector info+ indent-guide hybrid-mode
+               hungry-delete holy-mode hl-todo highlight-parentheses
+               highlight-numbers highlight-indentation hide-comnt helm-xref
+               helm-themes helm-swoop helm-purpose helm-projectile helm-org
+               helm-mode-manager helm-make helm-ls-git helm-git-grep
+               helm-descbinds helm-company helm-c-yasnippet helm-ag
+               google-translate golden-ratio gitignore-templates git-timemachine
+               git-modes git-messenger git-link fuzzy forge flycheck-package
+               flycheck-elsa flx-ido fancy-battery eyebrowse expand-region
+               evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor
+               evil-textobj-line evil-surround evil-numbers evil-nerd-commenter
+               evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus
+               evil-iedit-state evil-goggles evil-exchange evil-evilified-state
+               evil-escape evil-easymotion evil-collection evil-cleverparens
+               evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def
+               editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort
+               diminish devdocs define-word company-lua column-enforce-mode
+               clean-aindent-mode centered-cursor-mode auto-yasnippet
+               auto-highlight-symbol auto-compile all-the-icons aggressive-indent
+               ace-link ace-jump-helm-line ac-ispell))
+   '(safe-local-variable-values
+     '((TeX-engine . lualatex) (javascript-backend . tide)
+       (javascript-backend . tern) (javascript-backend . lsp))))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  )

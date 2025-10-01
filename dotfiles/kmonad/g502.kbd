@@ -1,6 +1,6 @@
 (defcfg
   input (device-file "/dev/input/by-id/usb-Logitech_G502_HERO_Gaming_Mouse_067A38753836-if01-event-kbd")
-  output (uinput-sink "KMonad: G502 Mouse" "/usr/bin/sleep 1")
+  output (uinput-sink "KMonad: G502 Mouse")
   allow-cmd true
 )
 

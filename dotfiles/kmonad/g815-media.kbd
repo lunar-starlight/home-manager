@@ -1,6 +1,6 @@
 (defcfg
   input (device-file "/dev/input/by-id/usb-Logitech_G815_RGB_MECHANICAL_GAMING_KEYBOARD_079031593737-if01-event-kbd")
-  output (uinput-sink "KMonad: G815 media keys" "/usr/bin/sleep 1")
+  output (uinput-sink "KMonad: G815 media keys")
   allow-cmd true
 )
 

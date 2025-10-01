@@ -19,7 +19,7 @@
        up          kp1  kp2  kp3  kprt 
   left down rght   kp0       kp.       
 
-  f20  f21  f22  f23  f24)
+  f20  f21  f22  f23  f24 )
 
 ;; base layer(s)
 (deflayer qwerty-a-la-luna
@@ -28,16 +28,16 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   
   lctl a    s    d    f    g    h    j    k    l    @č   @š   @ž         
   lsft z    x    c    v    b    n    m    ,    .    ;    rsft            
-  lctl lmet lalt           spc           @lspe ralt @lgre rctl          
+  lctl lmet lalt           spc           @lspe ralt @lgre rctl           
 
   ssrq @agda pause                     
-  ins  home pgup   nlck kp/  kp*  kp-  
-  del  end  pgdn   kp7  kp8  kp9  kp+  
-                   kp4  kp5  kp6       
-       up          kp1  kp2  kp3  kprt 
-  left down rght   kp0       kp.       
+  ins  home pgup   @nlck kp/  kp*  kp-  
+  del  end  pgdn   kp7   kp8  kp9  kp+  
+                   kp4   kp5  kp6       
+       up          kp1   kp2  kp3  kprt 
+  left down rght   kp0        kp.       
 
-  @g1  @g2  @g3  @g4  @g5)
+  =  @g2  @g3  @g4  @g5 )
 (deflayer dvorak-a-la-mabel
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  
@@ -53,16 +53,65 @@
        up          kp1  kp2  kp3  kprt 
   left down rght   kp0       kp.       
 
-  @g1  @g2  @g3  @g4  @g5)
+  @g1  @g2  @g3  @g4  @g5 )
+(deflayer vanilla
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc  
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   
+  caps a    s    d    f    g    h    j    k    l    ;    '    \          
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft            
+  lctl lmet lalt           spc            ralt rmet cmp  rctl            
+
+  ssrq slck pause                         
+  ins  home pgup   @kcln kp/   kp*   kp-  
+  del  end  pgdn   kp7   kp8   kp9   kp+  
+                   kp4   kp5   kp6        
+       up          kp1   kp2   kp3   kprt 
+  left down rght   kp0         kp.        
+
+;;  f20  f21  f22  f23  f24 )
+  @g1  @g2  @g3  @g4  @g5 )
 
 ;; programming layers
 (deflayer agda1
   esc  XX   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
   %    -    [    {    =    !    \(   \)   &    *    ^    }    ]    bspc  
-  tab  q    w    e    r    t    y    u    i    o    p    <    >    ret   
-  @ctl a    s    d    f    g    h    j    k    l    \    '    "    #|"|# 
+  tab  q    w    e    r    t    y    u    i    o    p    \    '    ret   
+  @ctl a    s    d    f    g    h    j    k    l    @č   @š   @ž   #|"|# 
   @ag2 z    x    c    v    b    n    m    ,    .    +    @ag2            
-  @ctl lmet lalt           spc           @lspe ralt @lgre @qtyn         
+  @ctl lmet lalt           spc           @lspe ralt @lgre @qtyn          
+
+  ssrq @qty pause                      
+  ins  home pgup   nlck kp/  kp*  kp-  
+  del  end  pgdn   kp7  kp8  kp9  kp+  
+                   kp4  kp5  kp6       
+       up          kp1  kp2  kp3  kprt 
+  left down rght   kp0       kp.       
+
+  @g1  @g2  @g3  @g4  @g5 )
+(deflayer agda2
+  S-esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12          
+  ?      #    7    5    3    1    9    0    2    4    6    8    grv  S-bspc  
+  S-tab  Q    W    E    R    T    Y    U    I    O    P    \_    ;    S-ret   
+  S-lctl A    S    D    F    G    H    J    K    L    @Č   @Š   @Ž           
+  XX     Z    X    C    V    B    N    M    /    @    :    S-rsft            
+  S-lctl S-lmet S-lalt         S-spc       @lspe ralt @lgre S-rctl           
+
+  S-ssrq @qty     S-pause                              
+  S-ins  S-home   S-pgup   nlck   S-kp/  S-kp*  S-kp-  
+  S-del  S-end    S-pgdn   S-kp7  S-kp8  S-kp9  S-kp+  
+                           S-kp4  S-kp5  S-kp6         
+         S-up              S-kp1  S-kp2  S-kp3  S-kprt 
+  S-left S-down   S-rght   S-kp0         S-kp.         
+
+  @g1  @g2  @g3  @g4  @g5 )
+#|(deflayer agda1
+  esc  XX   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
+  %    -    [    {    =    !    \(   \)   &    *    ^    }    ]    bspc  
+  tab  q    w    e    r    t    y    u    i    o    p    <    >    ret   
+  @ctl a    s    d    f    g    h    j    k    l    \    '    "     
+  @ag2 z    x    c    v    b    n    m    ,    .    +    @ag2            
+  @ctl lmet lalt           spc           @lspe ralt @lgre @qtyn          
 
   ssrq @qty pause                      
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -77,7 +126,7 @@
   ~      $    7    5    3    1    9    0    2    4    6    8    grv  S-bspc  
   S-tab  Q    W    E    R    T    Y    U    I    O    P    ?    #    S-ret   
   S-lctl A    S    D    F    G    H    J    K    L    \_   ;    |            
-  XX     Z    X    C    V    B    N    M    /    @    :    S-rsft             
+  XX     Z    X    C    V    B    N    M    /    @    :    S-rsft            
   S-lctl S-lmet S-lalt         S-spc       @lspe ralt @lgre S-rctl           
 
   S-ssrq @qty     S-pause                              
@@ -87,14 +136,14 @@
          S-up              S-kp1  S-kp2  S-kp3  S-kprt 
   S-left S-down   S-rght   S-kp0         S-kp.         
 
-  @g1  @g2  @g3  @g4  @g5 )
+  @g1  @g2  @g3  @g4  @g5 )|#
 (deflayer latexctl
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
   grv  -    7    5    3    1    9    0    2    4    6    8    =    bspc  
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   
   XX   a    s    d    f    g    h    j    k    l    ;    '    \          
   lsft z    x    c    v    b    n    m    ,    .    /    rsft            
-  XX   lmet lalt           spc           @lspe ralt @lgre XX            
+  XX   lmet lalt           spc           @lspe ralt @lgre XX             
 
   ssrq XX   pause                      
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -108,23 +157,24 @@
 ;; higher layers
 (deflayer special
   _      f13    f14    f15    f16    f17    f18    f19    f20    f21    f22    f23    f24         
-  grv    \      _      =      _      _      _      _      _      _      _      _      _      _    
-  _      _      _      _      _      _      @yo    _      _      _      _      ć      đ      _    
-  _      _      _      _      _      _      _      _      _      _      =      grv    \           
+  grv    \      _      =      _      _      _      _      _      _      _      _      @quot  _    
+  _      _      _      _      @bR    _      @yo    _      _      _      _      ć      đ      _    
+  _      _      _      _      _      _      _      _      _      _      <      >      =           
   rsft   _      @x     _      _      _      _      _      _      @.s    @norm  rsft               
   _      _      _                    _                    _      _      @lgre  ralt               
 
-  _    _    _                       
-  _    _    _    _    _    _    _   
-  _    _    _    _    _    _    _   
-                 _    _    _        
-       _         _    _    _    _   
-  _    _    _    _         _        
+  _         _    _                       
+  @clsync   _    _    _    _    _    _   
+  @cosync   _    _    _    _    _    _   
+                      _    _    _        
+            _         _    _    _    _   
+  _         _    _    _         _        
 
-  _      _      _      _      _      )
+  @audioreload _      _      _      _      )
 (deflayer superscript
   _    f13    f14    f15    f16    f17    f18    f19    f20    f21    f22    f23    f24         
-  _    @sup1  @sup2  @sup3  @sup4  @sup5  @sup6  @sup7  @sup8  @sup9  @sup0  @supmn @suppl _    
+;;  _    @sup1  @sup2  @sup3  @sup4  @sup5  @sup6  @sup7  @sup8  @sup9  @sup0  @supmn @suppl _    
+  _    @supmn @sup7  @sup5  @sup3  @sup1  @sup9  @sup0  @sup2  @sup4  @sup6  @sup8  @suppl _    
   _    @supq  @supw  @supe  @supr  @supt  @supy  @supu  @supi  @supo  @supp  _      _      _    
   _    @supa  @sups  @supd  @supf  @supg  @suph  @supj  @supk  @supl  _      _      _           
   rsft @supz  @supx  @supc  @supv  @supb  @supn  @supm  _      _      _      rsft               
@@ -160,105 +210,118 @@
   lspe  (layer-toggle special)
   lsup  (layer-toggle superscript)
   lgre  (layer-toggle greek)
-  ;; lmab #((cmd-button "/home/muf/.scripts/show-toast \"dvorak-a-la-mabel\"") (layer-switch dvorak-a-la-mabel))
+  lmab #((cmd-button "/home/muf/.scripts/show-toast \"dvorak-a-la-mabel\"") (layer-switch dvorak-a-la-mabel))
 
   qty  #((cmd-button "/home/muf/.scripts/show-toast \"qwerty\"") (layer-switch qwerty-a-la-luna))
   qtyn (layer-delay 500 qwerty-a-la-luna)
   agda #((cmd-button "/home/muf/.scripts/show-toast \"agda\"")   (layer-switch agda1))
   ag2  (layer-toggle agda2)
-  ctl C-(layer-toggle latexctl))
+  ;;ag2 (around KeyYen S-(layer-toggle vanilla))
+  ctl C-(layer-toggle latexctl)
+
+  nlck #(nlck (layer-switch vanilla))
+  kcln #(nlck (layer-switch qwerty-a-la-luna)))
 (defalias  ;; gkeys
+  ;;g1 @lmab
   g1 XX
   g2 XX
   g3 @lspe
-  g4 @lgre
-  g5 @lsup)
+  g4 @lsup
+  g5 @lgre)
 (defalias  ;; commands
+  audioreload (cmd-button "/home/muf/.local/bin/reload-audio")
   swaudio (cmd-button "/home/muf/.scripts/spotify-link.sh")
   spotify (cmd-button "python /home/muf/.scripts/spotify-link")
-  block (tap-macro / P100 b P10 l P10 o P10 c P10 k P50 ret))
+  clsync  #((cmd-button "/home/muf/.local/bin/sync-clipboard") (cmd-button "/home/muf/.local/bin/sync-clipboard"))
+  cosync  (cmd-button "/home/muf/.local/bin/cosync-clipboard")
+  block #(/ P100 b P10 l P10 o P10 c P10 k P50 ret))
 (defalias  ;; math
-  x (tap-macro ralt x x)
-  .s (tap-macro ralt l d o t s)
-  norm (tap-macro ralt | |)
-  yo (tap-macro ralt y o)
-  par (tap-macro ralt p a r))
+  x #(ralt x x)
+  .s #(ralt l d o t s)
+  norm #(ralt | |)
+  yo #(ralt y o)
+  par #(ralt p a r)
+  bR #(ralt b R)
+  quot #(C-q "))
 
 ;; standard aliases
 (defalias  ;; superscripts
-  sup0 (tap-macro ralt ^ 0)
-  sup1 (tap-macro ralt ^ 1)
-  sup2 (tap-macro ralt ^ 2)
-  sup3 (tap-macro ralt ^ 3)
-  sup4 (tap-macro ralt ^ 4)
-  sup5 (tap-macro ralt ^ 5)
-  sup6 (tap-macro ralt ^ 6)
-  sup7 (tap-macro ralt ^ 7)
-  sup8 (tap-macro ralt ^ 8)
-  sup9 (tap-macro ralt ^ 9)
-  supa (tap-macro ralt ^ a)
-  supb (tap-macro ralt ^ b)
-  supc (tap-macro ralt ^ c)
-  supd (tap-macro ralt ^ d)
-  supe (tap-macro ralt ^ e)
-  supf (tap-macro ralt ^ f)
-  supg (tap-macro ralt ^ g)
-  suph (tap-macro ralt ^ h)
-  supi (tap-macro ralt ^ i)
-  supj (tap-macro ralt ^ j)
-  supk (tap-macro ralt ^ k)
-  supl (tap-macro ralt ^ l)
-  supm (tap-macro ralt ^ m)
-  supn (tap-macro ralt ^ n)
-  supo (tap-macro ralt ^ o)
-  supp (tap-macro ralt ^ p)
-  supq (tap-macro ralt ^ q)
-  supr (tap-macro ralt ^ r)
-  sups (tap-macro ralt ^ s)
-  supt (tap-macro ralt ^ t)
-  supu (tap-macro ralt ^ u)
-  supv (tap-macro ralt ^ v)
-  supw (tap-macro ralt ^ w)
-  supx (tap-macro ralt ^ x)
-  supy (tap-macro ralt ^ y)
-  supz (tap-macro ralt ^ z)
-  suplb (tap-macro ralt \( ^)
-  suprb (tap-macro ralt \) ^)
-  supmn (tap-macro ralt ^ \_ p)
-  suppl (tap-macro ralt ^ \_ m))
+  sup0 #(ralt ^ 0)
+  sup1 #(ralt ^ 1)
+  sup2 #(ralt ^ 2)
+  sup3 #(ralt ^ 3)
+  sup4 #(ralt ^ 4)
+  sup5 #(ralt ^ 5)
+  sup6 #(ralt ^ 6)
+  sup7 #(ralt ^ 7)
+  sup8 #(ralt ^ 8)
+  sup9 #(ralt ^ 9)
+  supa #(ralt ^ a)
+  supb #(ralt ^ b)
+  supc #(ralt ^ c)
+  supd #(ralt ^ d)
+  supe #(ralt ^ e)
+  supf #(ralt ^ f)
+  supg #(ralt ^ g)
+  suph #(ralt ^ h)
+  supi #(ralt ^ i)
+  supj #(ralt ^ j)
+  supk #(ralt ^ k)
+  supl #(ralt ^ l)
+  supm #(ralt ^ m)
+  supn #(ralt ^ n)
+  supo #(ralt ^ o)
+  supp #(ralt ^ p)
+  supq #(ralt ^ q)
+  supr #(ralt ^ r)
+  sups #(ralt ^ s)
+  supt #(ralt ^ t)
+  supu #(ralt ^ u)
+  supv #(ralt ^ v)
+  supw #(ralt ^ w)
+  supx #(ralt ^ x)
+  supy #(ralt ^ y)
+  supz #(ralt ^ z)
+  suplb #(ralt \( ^)
+  suprb #(ralt \) ^)
+  supmn #(ralt ^ \_ m)
+  suppl #(ralt ^ \_ p))
 (defalias  ;; greek
-  ga (tap-macro ralt g r a)
-  gb (tap-macro ralt g r b)
-  gg (tap-macro ralt g r g)
-  gd (tap-macro ralt g r d)
-  ge (tap-macro ralt g r e)
-  gz (tap-macro ralt g r z)
-  gh (tap-macro ralt g r h)
-  gi (tap-macro ralt g r i)
-  gj (tap-macro ralt g r j)
-  gk (tap-macro ralt g r k)
-  gl (tap-macro ralt g r l)
-  gm (tap-macro ralt g r m)
-  gn (tap-macro ralt g r n)
-  gp (tap-macro ralt g r p)
-  gr (tap-macro ralt g r r)
-  gs (tap-macro ralt g r s)
-  gt (tap-macro ralt g r t)
-  gu (tap-macro ralt g r u)
-  gf (tap-macro ralt g r f)
-  gx (tap-macro ralt g r x)
-  go (tap-macro ralt g r o)
-  gqt (tap-macro ralt g q t)
-  gqo (tap-macro ralt g q o)
-  gqp (tap-macro ralt g q p)
-  gqs (tap-macro ralt g q s)
-  gqx (tap-macro ralt g q x))
+  ga #(ralt g r a)
+  gb #(ralt g r b)
+  gg #(ralt g r g)
+  gd #(ralt g r d)
+  ge #(ralt g r e)
+  gz #(ralt g r z)
+  gh #(ralt g r h)
+  gi #(ralt g r i)
+  gj #(ralt g r j)
+  gk #(ralt g r k)
+  gl #(ralt g r l)
+  gm #(ralt g r m)
+  gn #(ralt g r n)
+  gp #(ralt g r p)
+  gr #(ralt g r r)
+  gs #(ralt g r s)
+  gt #(ralt g r t)
+  gu #(ralt g r u)
+  gf #(ralt g r f)
+  gx #(ralt g r x)
+  go #(ralt g r o)
+  gqt #(ralt g q t)
+  gqo #(ralt g q o)
+  gqp #(ralt g q p)
+  gqs #(ralt g q s)
+  gqx #(ralt g q x))
 (defalias  ;; šumniki
-  š (tap-macro ralt v s)
-  đ (tap-macro ralt - d)
-  č (tap-macro ralt v c)
-  ć (tap-macro ralt ' c)
-  ž (tap-macro ralt v z))
+  š #(ralt v s)
+  đ #(ralt - d)
+  č #(ralt v c)
+  ć #(ralt ' c)
+  ž #(ralt v z)
+  Š S-@š
+  Č S-@č
+  Ž S-@ž)
 (defalias  ;; shifted d-pad
   sup   S-up
   sdown S-down

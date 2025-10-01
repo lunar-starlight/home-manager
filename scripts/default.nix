@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    #(import ./brightness.nix { inherit pkgs; })
+    (import ./getbib.nix { inherit pkgs; })
   ];
 }

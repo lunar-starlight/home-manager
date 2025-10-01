@@ -13,10 +13,10 @@ stdenv.mkDerivation (finalAttrs: {
   version = "4.4.168";
 
   src = fetchFromGitHub {
-    owner = "Stremio";
+    owner = "ptfpinho23";
     repo = "stremio-shell";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-pz1mie0kJov06GcyitvZu5Gg0Vz3YnigjDqFujGKqZM=";
+    rev = "635851dfff386eca97c18f3e18581ffc3b5e7a59";
+    hash = "sha256-/eXz0w6WbCYbrj8TSAsE8esiMaE8kF6cT6y4ehJRSPY=";
     fetchSubmodules = true;
     meta.license = lib.licenses.gpl3Only;
   };
@@ -48,7 +48,7 @@ stdenv.mkDerivation (finalAttrs: {
     ln -s ${nodejs}/bin/node $out/opt/stremio/node
     ln -s $server $out/opt/stremio/server.js
     wrapProgram $out/bin/stremio \
-      --suffix PATH ":" ${lib.makeBinPath [ ffmpeg mpv ]}
+      --suffix PATH ":" ${lib.makeBinPath [ ffmpeg ]}
   '';
 
   meta = {

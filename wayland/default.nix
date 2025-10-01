@@ -4,6 +4,6 @@
     ./river
     ./waybar.nix
     ./cursor.nix
-    #./gammastep.nix
+    ./gammastep.nix
   ];
 }
