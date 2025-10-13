@@ -86,6 +86,7 @@ partial alphanumeric_keys
 xkb_symbols "evdev" {
     key <MUTE>   {      [ XF86AudioMute         ]       };
     key <VOL->   {      [ XF86AudioLowerVolume  ]       };
+    //key <I114>   {      [ XF86AudioLowerVolume  ]       };
     key <VOL+>   {      [ XF86AudioRaiseVolume  ]       };
     key <POWR>   {      [ XF86PowerOff          ]       };
     key <STOP>   {      [ Cancel                ]       };
@@ -182,7 +183,7 @@ xkb_symbols "evdev" {
     key <I232>   {      [ XF86MonBrightnessDown ]       };
     key <I233>   {      [ XF86MonBrightnessUp   ]       };
     key <I234>   {      [ XF86AudioMedia        ]       };
-//  key <I235>   {      [ ]                             }; // see <OUTP>
+    key <I235>   {      [ XF86MonBrightnessUp ]                             }; // see <OUTP>
 //  key <I236>   {      [ ]                             }; // see <KITG>
 //  key <I237>   {      [ ]                             }; // see <KIDN>
 //  key <I238>   {      [ ]                             }; // see <KIUP>
