@@ -7,5 +7,5 @@ pkgs.stdenv.mkDerivation {
     ]))
   ];
   dontUnpack = true;
-  installPhase = "install -Dm755 ${./marginaltool.py} $out/bin/myscript";
+  installPhase = "install -Dm755 ${./marginaltool.py} $out/bin/marginaltool";
 }
