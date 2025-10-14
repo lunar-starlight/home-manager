@@ -50,10 +50,28 @@
         };
       };
     };
-    #style = ''
-    #  /*#workspaces button {
-    #    color: #f3c;
-    #  }*/
-    #'';
+    style = ''
+      /*#tags button {
+        color: rgba(100, 114, 125, 0.5);
+      }*/
+#tags button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#tags button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#tags button.focused, #tags button.active {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#tags button.urgent {
+    background-color: #eb4d4b;
+}
+    '';
   };
 }
