@@ -81,6 +81,7 @@ in {
     signalbackup-tools
     xournalpp
     kdePackages.okular
+    thunderbird
     deadbeef
     deadbeefPlugins.headerbar-gtk3
     (lutris.override {
@@ -93,7 +94,6 @@ in {
     stremio
     #stremio-custom
     prismlauncher
-    minecraft
     
     # fonts
     noto-fonts-color-emoji
