@@ -42,6 +42,7 @@
           format-muted = "󰖁 {volume}%";
           format-icons = ["" "" ""];
           on-click = "alacritty -e nix run nixpkgs#pulsemixer";
+          on-click-middle = "switch-audio-device";
         };
         "custom/sleep" = {
           format = " 💤 ";
