@@ -5,6 +5,7 @@ in
 {
   home.packages = with pkgs; [
     (import ./getbib.nix { inherit pkgs; })
+    (import ./switch-audio-device.nix { inherit pkgs; })
     marginaltool
   ];
   xdg = {
