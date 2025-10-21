@@ -23,7 +23,7 @@
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      hostname = "pink-pear";
+      hostname = "rainbow-lemon";
       pkgs          = import nixpkgs          { inherit system; };
       pkgs-unstable = import nixpkgs-unstable { inherit system; };
       zen-browser   = zen-browser-flake.packages."${system}".default;

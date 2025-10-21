@@ -8,6 +8,8 @@ in
     (import ./switch-audio-device.nix { inherit pkgs; })
     marginaltool
   ];
+
+  # MarginalTool
   xdg = {
     mimeApps = {
       enable = true;
@@ -20,4 +22,10 @@ in
       exec = "${marginaltool}/bin/marginaltool";
     };
   };
+  home.file.".config/marginaltool".text = ''
+    [https://gcsign.uni-lj.si/BCSign/]
+    engine = file
+    keyfile = .ssh/sigenca.key.pem
+    certfile = .ssh/sigenca.crt.pem
+  '';
 }

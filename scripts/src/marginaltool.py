@@ -21,7 +21,7 @@ def init(args):
 
     # if missing, get options from section [url] in config
     config = configparser.ConfigParser()
-    config.read(os.path.expanduser('~') + '/.marginaltool')
+    config.read(os.path.expanduser('~') + '/.config/marginaltool')
     if not args.engine:
         args.engine = config.get(args.url, 'engine', fallback='file')
 
