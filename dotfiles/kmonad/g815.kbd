@@ -1,6 +1,6 @@
 (defcfg
   input (device-file "/dev/input/by-id/usb-Logitech_G815_RGB_MECHANICAL_GAMING_KEYBOARD_079031593737-event-kbd")
-  output (uinput-sink "KMonad: G815 Keyboard" "/usr/bin/sleep 1")
+  output (uinput-sink "KMonad: G815 Keyboard")
   fallthrough true
   allow-cmd true)
 

@@ -94,6 +94,7 @@ in {
     stremio
     #stremio-custom
     prismlauncher
+    vintagestory
     
     # fonts
     noto-fonts-color-emoji
