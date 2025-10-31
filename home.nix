@@ -78,6 +78,7 @@ in {
     discord
     pkgs-unstable.signal-desktop
     signalbackup-tools
+    zulip
     xournalpp
     kdePackages.okular
     thunderbird
