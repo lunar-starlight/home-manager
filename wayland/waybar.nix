@@ -4,6 +4,7 @@
     enable = true;
     settings = {
       mainBar = {
+        reloadStyleOnChange = true;
         layer = "top";
         position = "top";
         height = 24;
@@ -51,6 +52,6 @@
         };
       };
     };
-    style = (builtins.readFile ./src/waybar-default.css) ++ (builtins.readFile ./src/waybar-custom.css);
+    style = (builtins.readFile ./src/waybar-default.css) + (builtins.readFile ./src/waybar-custom.css);
   };
 }

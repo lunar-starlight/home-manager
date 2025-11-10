@@ -143,10 +143,15 @@ in {
     #};
   };
 
+  home.file."${config.xdg.dataHome}/fonts".source = ./fonts;
+
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
-      emoji = [ "Noto Color Emoji" "Noto Monochrome Emoji" ];
+      emoji = [
+        "Noto Color Emoji" 
+        "Noto Emoji"
+      ];
     };
   };
 
