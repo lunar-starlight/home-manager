@@ -1,0 +1,23 @@
+(defcfg
+  input (device-file "/dev/input/event4")
+  output (uinput-sink "KMonad: G815 media keys")
+  allow-cmd true
+)
+
+(defsrc
+  vold volu mute prev pp next
+)
+
+(deflayer default
+  vold volu @mute @prev @pp @next
+)
+
+(defalias
+  cpp   (cmd-button "playerctl play-pause")
+  cprev (cmd-button "playerctl previous")
+  cnext (cmd-button "playerctl next")
+  mute  (tap-hold 200 (cmd-button "/home/muf/.scripts/switch-audio-device")      #(mute XX))
+  prev  (tap-hold 200 (cmd-button "/home/muf/.scripts/media-shift-meta unshift") @cprev)
+  next  (tap-hold 200 (cmd-button "/home/muf/.scripts/media-shift-meta shift"  ) @cnext)
+  pp    (tap-hold 200 (cmd-button "/home/muf/.scripts/media-show-current")       @cpp)
+)
