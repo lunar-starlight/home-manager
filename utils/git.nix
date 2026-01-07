@@ -2,9 +2,9 @@
 {
   programs.git = {
     enable = true;
-    userName = "Luna Strah";
-    userEmail = "45151812+lunar-starlight@users.noreply.github.com";
-    extraConfig = {
+    settings = {
+      user.name = "Luna Strah";
+      user.email = "45151812+lunar-starlight@users.noreply.github.com";
       init = {
         defaultBranch = "main";
       };

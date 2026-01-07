@@ -58,7 +58,7 @@ in {
     (aspellWithDicts (dicts: with dicts; [en sl]))
 
     # WM
-    river
+    river-classic
     waybar
     fuzzel
     mako
@@ -71,7 +71,6 @@ in {
     #xdg-desktop-portal-wlr
     brightnessctl
     wayprompt
-    
 
     catppuccin-cursors.mochaMauve
 
@@ -82,8 +81,8 @@ in {
     xournalpp
     kdePackages.okular
     thunderbird
-    deadbeef
-    deadbeefPlugins.headerbar-gtk3
+    #deadbeef
+    #deadbeefPlugins.headerbar-gtk3
     (lutris.override {
       extraLibraries = pkgs: [
       ];
@@ -91,7 +90,7 @@ in {
       ];
     })
     steam
-    stremio
+    #stremio
     #stremio-custom
     prismlauncher
     vintagestory
@@ -136,7 +135,7 @@ in {
       xdg-desktop-portal-wlr
       #xdg-desktop-portal-gtk
     ];
-    configPackages = [ pkgs.river ];
+    configPackages = [ pkgs.river-classic ];
     #config.common.default = [ "wlr" ];
     #config.river = {
     #  default = [ "wlr" ];
