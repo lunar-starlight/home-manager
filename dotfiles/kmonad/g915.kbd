@@ -10,7 +10,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   
   caps a    s    d    f    g    h    j    k    l    ;    '    \          
   lsft z    x    c    v    b    n    m    ,    .    /    rsft            
-  lctl lmet lalt           spc            ralt rmet cmp  rctl            
+  lctl lmet lalt           spc            ralt cmp  rctl            
 
   ssrq slck pause                      
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -28,7 +28,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   
   lctl a    s    d    f    g    h    j    k    l    @č   @š   @ž         
   lsft z    x    c    v    b    n    m    ,    .    ;    rsft            
-  lctl lmet lalt           spc           @lspe ralt @lgre rctl           
+  lctl lmet lalt           spc           ralt @lspe rctl           
 
   ssrq @agda pause                     
   ins  home pgup   @nlck kp/  kp*  kp-  
@@ -44,7 +44,7 @@
   tab  '    ,    .    p    y    f    g    c    r    l    [    ]    ret   
   caps a    o    e    u    i    d    h    t    n    s    '    \          
   lsft q    k    x    j    :    b    m    w    v    z    rsft            
-  lctl lmet lalt           spc            ralt rmet cmp  rctl            
+  lctl lmet lalt           spc            ralt cmp  rctl            
 
   ssrq @qty pause                      
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -60,7 +60,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   
   caps a    s    d    f    g    h    j    k    l    ;    '    \          
   lsft z    x    c    v    b    n    m    ,    .    /    rsft            
-  lctl lmet lalt           spc            ralt rmet cmp  rctl            
+  lctl lmet lalt           spc            ralt cmp  rctl            
 
   ssrq slck pause                         
   ins  home pgup   @kcln kp/   kp*   kp-  
@@ -79,7 +79,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    \    '    ret   
   @ctl a    s    d    f    g    h    j    k    l    @č   @š   @ž   #|"|# 
   @ag2 z    x    c    v    b    n    m    ,    .    +    @ag2            
-  @ctl lmet lalt           spc           @lspe ralt @lgre @qtyn          
+  @ctl lmet lalt           spc           ralt @lspe @qtyn          
 
   ssrq @qty pause                      
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -95,7 +95,7 @@
   S-tab  Q    W    E    R    T    Y    U    I    O    P    \_    ;    S-ret   
   S-lctl A    S    D    F    G    H    J    K    L    @Č   @Š   @Ž           
   XX     Z    X    C    V    B    N    M    /    @    :    S-rsft            
-  S-lctl S-lmet S-lalt         S-spc       @lspe ralt @lgre S-rctl           
+  S-lctl S-lmet S-lalt         S-spc       ralt @lspe S-rctl           
 
   S-ssrq @qty     S-pause                              
   S-ins  S-home   S-pgup   nlck   S-kp/  S-kp*  S-kp-  
@@ -111,7 +111,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    <    >    ret   
   @ctl a    s    d    f    g    h    j    k    l    \    '    "     
   @ag2 z    x    c    v    b    n    m    ,    .    +    @ag2            
-  @ctl lmet lalt           spc           @lspe ralt @lgre @qtyn          
+  @ctl lmet lalt           spc           ralt @lspe @qtyn          
 
   ssrq @qty pause                      
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -127,7 +127,7 @@
   S-tab  Q    W    E    R    T    Y    U    I    O    P    ?    #    S-ret   
   S-lctl A    S    D    F    G    H    J    K    L    \_   ;    |            
   XX     Z    X    C    V    B    N    M    /    @    :    S-rsft            
-  S-lctl S-lmet S-lalt         S-spc       @lspe ralt @lgre S-rctl           
+  S-lctl S-lmet S-lalt         S-spc       ralt @lspe S-rctl           
 
   S-ssrq @qty     S-pause                              
   S-ins  S-home   S-pgup   nlck   S-kp/  S-kp*  S-kp-  
@@ -143,7 +143,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret   
   XX   a    s    d    f    g    h    j    k    l    ;    '    \          
   lsft z    x    c    v    b    n    m    ,    .    /    rsft            
-  XX   lmet lalt           spc           @lspe ralt @lgre XX             
+  XX   lmet lalt           spc           ralt @lspe XX             
 
   ssrq XX   pause                      
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -161,7 +161,7 @@
   _      _      _      _      @bR    _      @yo    _      _      _      _      ć      đ      _    
   _      _      _      _      _      _      _      _      _      _      <      >      =           
   rsft   _      @x     _      _      _      _      _      _      @.s    @norm  rsft               
-  _      _      _                    _                    _      _      @lgre  ralt               
+  _      _      _                    _                    _      _      ralt                    
 
   _         _    _                       
   @clsync   _    _    _    _    _    _   
@@ -178,7 +178,7 @@
   _    @supq  @supw  @supe  @supr  @supt  @supy  @supu  @supi  @supo  @supp  _      _      _    
   _    @supa  @sups  @supd  @supf  @supg  @suph  @supj  @supk  @supl  _      _      _           
   rsft @supz  @supx  @supc  @supv  @supb  @supn  @supm  _      _      _      rsft               
-  _    _      _                    _                    _      _      _      _                  
+  _    _      _                    _                    _      _      _                      
 
   _    _    _                       
   _    _    _    _    _    _    _   
@@ -194,7 +194,7 @@
   _    _    @gqs @ge  @gr  @gt  @gu  @gqt @gi  @gqo @gp  _    _    _     
   _    @ga  @gs  @gd  @gf  @gg  @gh  @gqx @gk  @gl  _    _    _          
   rsft @gz  @gx  @gqp @go  @gb  @gn  @gm  _    _    _    rsft            
-  _    _    _              _              _    _    _    _               
+  _    _    _              _              _    _    _                    
 
   _    _    _                       
   _    _    _    _    _    _    _   
@@ -337,7 +337,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _     
   _    _    _    _    _    _    _    _    _    _    _    _    _          
   _    _    _    _    _    _    _    _    _    _    _    _               
-  _    _    _              _              _    _    _    _               
+  _    _    _              _              _    _    _                   
 
   _    _    _                       
   _    _    _    _    _    _    _   

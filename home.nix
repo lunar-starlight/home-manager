@@ -127,6 +127,7 @@ in {
       "application/x-extension-xht" = "zen-beta.desktop";
       "x-scheme-handler/sgnl" = "signal.desktop";
       "x-scheme-handler/signalcaptcha" = "signal.desktop";
+      "x-scheme-handler/vintagestorymodinstall" = "vintagestory.desktop";
     };
   };
 
