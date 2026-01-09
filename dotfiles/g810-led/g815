@@ -1,0 +1,15 @@
+# Sample profile by groups keys
+
+k capslock 009999 # capslock doesn't always work?
+g logo ff33cc
+g indicators ffffff
+g multimedia 009900
+g fkeys ff00ff
+g modifiers ff0000
+g arrows ffff00
+g numeric 00ff99
+g functions ffffff
+g keys 009999
+g gkeys 0099ff
+
+c # Commit changes
