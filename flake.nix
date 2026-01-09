@@ -28,28 +28,22 @@
       pkgs          = import nixpkgs          { inherit system; };
       pkgs-unstable = import nixpkgs-unstable { inherit system; };
       zen-browser   = zen-browser-flake.packages."${system}".default;
-    in {
-      homeConfigurations."muf@${laptop}" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {
-          inherit pkgs-unstable;
-          inherit zen-browser;
-          hostname = laptop;
+      machine = { hostname, extraSpecialArgs ? {}, modules ? []}: {
+        homeConfigurations."muf@${hostname}" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit pkgs-unstable;
+            inherit zen-browser;
+            hostname = hostname;
+          } // extraSpecialArgs;
+          modules = [
+            ./home.nix
+          ] ++ modules;
         };
-        modules = [
-          ./home.nix
-        ];
       };
-      homeConfigurations."muf@${desktop}" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {
-          inherit pkgs-unstable;
-          inherit zen-browser;
-          hostname = desktop;
-        };
-        modules = [
-          ./home.nix
-        ];
-      };
-    };
+    in 
+      lib.attrsets.foldAttrs (x: acc: x // acc) {} [
+        (machine { hostname = desktop; })
+        (machine { hostname = laptop; })
+      ];
 }
