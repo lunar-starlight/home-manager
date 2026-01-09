@@ -29,12 +29,23 @@
       pkgs-unstable = import nixpkgs-unstable { inherit system; };
       zen-browser   = zen-browser-flake.packages."${system}".default;
     in {
-      homeConfigurations.muf = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."muf@${laptop}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
           inherit pkgs-unstable;
           inherit zen-browser;
           hostname = laptop;
+        };
+        modules = [
+          ./home.nix
+        ];
+      };
+      homeConfigurations."muf@${desktop}" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit pkgs-unstable;
+          inherit zen-browser;
+          hostname = desktop;
         };
         modules = [
           ./home.nix
