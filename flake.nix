@@ -20,30 +20,29 @@
     zen-browser-flake,
     ...
   }:
-    let
-      lib = nixpkgs.lib;
-      system = "x86_64-linux";
-      desktop = "pink-pear";
-      laptop  = "rainbow-lemon";
-      pkgs          = import nixpkgs          { inherit system; };
-      pkgs-unstable = import nixpkgs-unstable { inherit system; };
-      zen-browser   = zen-browser-flake.packages."${system}".default;
-      machine = { hostname, extraSpecialArgs ? {}, modules ? []}: {
-        homeConfigurations."muf@${hostname}" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = {
-            inherit pkgs-unstable;
-            inherit zen-browser;
-            hostname = hostname;
-          } // extraSpecialArgs;
-          modules = [
-            ./home.nix
-          ] ++ modules;
-        };
+  let
+    lib = nixpkgs.lib;
+    system = "x86_64-linux";
+    pkgs          = import nixpkgs          { inherit system; };
+    pkgs-unstable = import nixpkgs-unstable { inherit system; };
+    zen-browser   = zen-browser-flake.packages."${system}".default;
+    machine = { hostname, extraSpecialArgs ? {}, modules ? []}: {
+      homeConfigurations."muf@${hostname}" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit hostname pkgs-unstable zen-browser;
+        } // extraSpecialArgs;
+        modules = [
+          ./home.nix
+        ] ++ modules;
       };
-    in 
-      lib.attrsets.foldAttrs (x: acc: x // acc) {} [
-        (machine { hostname = desktop; })
-        (machine { hostname = laptop; })
-      ];
+    };
+    hosts = [
+      { hostname = "pink-pear"; }
+      { hostname = "rainbow-lemon"; }
+    ];
+  in
+    lib.foldAttrs lib.mergeAttrs {} (
+      lib.map machine hosts
+    );
 }
