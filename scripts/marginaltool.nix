@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  marginaltool =pkgs.stdenv.mkDerivation {
+  marginaltool = pkgs.stdenv.mkDerivation {
     name = "marginaltool";
     propagatedBuildInputs = [
       (pkgs.python3.withPackages (pythonPackages: with pythonPackages; [
@@ -11,7 +11,7 @@ let
     installPhase = "install -Dm755 ${./src/marginaltool.py} $out/bin/marginaltool";
   };
 in {
-  home.packages = with pkgs; [ (import ./marginaltool.nix { inherit pkgs; }) ];
+  home.packages = with pkgs; [ marginaltool ];
 
   xdg = {
     mimeApps = {

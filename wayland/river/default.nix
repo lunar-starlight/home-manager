@@ -19,7 +19,7 @@
 
       spawn = [
         "rivertile"
-        "waybar"
+        #"waybar"
       ];
 
       set-repeat = "40 200";
@@ -43,6 +43,7 @@
     };
 
     extraConfig = ''
+      uwsm finalize
     '';
   };
 }

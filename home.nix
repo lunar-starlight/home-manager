@@ -1,16 +1,17 @@
 { config, pkgs, pkgs-unstable, zen-browser, ... }@inputs:
 let
-  stremio-custom =
-    (import ./pkgs/stremio.nix {
-      lib = inputs.lib;
-      stdenv = pkgs.stdenv;
-      fetchFromGitHub = pkgs.fetchFromGitHub;
-      fetchurl = pkgs.fetchurl;
-      libsForQt5 = pkgs.libsForQt5;
-      ffmpeg = pkgs.ffmpeg;
-      mpv = pkgs.mpv;
-      nodejs = pkgs.nodejs;
-    });
+  stremio-linux-shell = (pkgs.callPackage ./packages/stremio-linux-shell.nix {});
+  #stremio-custom =
+  #  (import ./packages/stremio.nix {
+  #    lib = inputs.lib;
+  #    stdenv = pkgs.stdenv;
+  #    fetchFromGitHub = pkgs.fetchFromGitHub;
+  #    fetchurl = pkgs.fetchurl;
+  #    libsForQt5 = pkgs.libsForQt5;
+  #    ffmpeg = pkgs.ffmpeg;
+  #    mpv = pkgs.mpv;
+  #    nodejs = pkgs.nodejs;
+  #  });
 in {
   imports = [
     ./utils
@@ -24,7 +25,14 @@ in {
     homeDirectory = "/home/muf";
   };
 
+  #nixpkgs.config.permittedInsecurePackages = [
+  #  "qtwebengine-5.15.19"
+  #];
   nixpkgs.config.allowUnfree = true;
+  #nixpkgs.config.allowInsecurePredicate = pkg:
+  #  builtins.elem (pkgs.lib.getName pkg) [
+  #    "qtwebengine"
+  #  ];
 
   home.packages = with pkgs; [
     # archives
@@ -49,7 +57,7 @@ in {
     usbutils
 
     # browser
-    firefox
+    #firefox
     zen-browser
 
     # editor
@@ -59,8 +67,8 @@ in {
 
     # WM
     river-classic
-    waybar
-    fuzzel
+    #waybar
+    #fuzzel
     mako
     swaybg
     wl-clipboard
@@ -75,6 +83,7 @@ in {
     catppuccin-cursors.mochaMauve
 
     # programs
+    #vesktop
     discord
     pkgs-unstable.signal-desktop
     signalbackup-tools
@@ -93,6 +102,7 @@ in {
     steam
     #stremio
     #stremio-custom
+    stremio-linux-shell
     prismlauncher
     vintagestory
     
@@ -131,18 +141,19 @@ in {
     };
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      #xdg-desktop-portal-gtk
-    ];
-    configPackages = [ pkgs.river-classic ];
-    #config.common.default = [ "wlr" ];
-    #config.river = {
-    #  default = [ "wlr" ];
-    #};
-  };
+  #xdg.portal = {
+  #  enable = true;
+  #  xdgOpenUsePortal = true;
+  #  extraPortals = with pkgs; [
+  #    xdg-desktop-portal-wlr
+  #    xdg-desktop-portal-gtk
+  #  ];
+  #  #configPackages = [ pkgs.river-classic ];
+  #  #config.common.default = [ "wlr" "gtk" ];
+  #  #config.river-classic = {
+  #  #  default = [ "wlr" ];
+  #  #};
+  #};
 
   home.file."${config.xdg.dataHome}/fonts".source = ./fonts;
 

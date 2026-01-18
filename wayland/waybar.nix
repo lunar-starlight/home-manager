@@ -1,7 +1,14 @@
-{ ... }:
+{ pkgs, ... }:
+let
+  switch-audio-device = (pkgs.callPackage ../scripts/switch-audio-device.nix {});
+in
 {
   programs.waybar = {
     enable = true;
+    systemd = {
+      enable = true;
+      target = "river-session.target";
+    };
     settings = {
       mainBar = {
         reloadStyleOnChange = true;
@@ -42,8 +49,8 @@
           format = "{icon} {volume}%";
           format-muted = "󰖁 {volume}%";
           format-icons = ["" "" ""];
-          on-click = "alacritty -e nix run nixpkgs#pulsemixer";
-          on-click-middle = "switch-audio-device";
+          on-click = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.nix}/bin/nix run nixpkgs#pulsemixer";
+          on-click-middle = "${switch-audio-device}/bin/switch-audio-device";
         };
         "custom/sleep" = {
           format = " 💤 ";
