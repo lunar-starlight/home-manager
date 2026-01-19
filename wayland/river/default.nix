@@ -8,6 +8,9 @@
 
     systemd = {
       enable = true;
+      extraCommands = [
+        "uwsm finalize"
+      ];
     };
 
     settings = {
@@ -43,7 +46,6 @@
     };
 
     extraConfig = ''
-      uwsm finalize
     '';
   };
 }

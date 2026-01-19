@@ -7,7 +7,7 @@ in
     enable = true;
     systemd = {
       enable = true;
-      target = "river-session.target";
+      target = "graphical-session.target";
     };
     settings = {
       mainBar = {
