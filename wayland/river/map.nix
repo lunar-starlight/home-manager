@@ -11,13 +11,13 @@ let
   mas = "Super+Alt+Shift";
   mac = "Super+Alt+Control";
   msc = "Super+Shift+Control";
-  spawn = "${pkgs.uwsm}/bin/uwsm app --";
+  spawn = "spawn '${pkgs.uwsm}/bin/uwsm app --";
   fnkeys = {
-    "${non}XF86AudioRaiseVolume	" = "${spawn} \"pactl set-sink-volume @DEFAULT_SINK@ +5%\"";
-    "${non}XF86AudioLowerVolume	" = "${spawn} \"pactl set-sink-volume @DEFAULT_SINK@ -5%\"";
-    "${non}XF86AudioMute	" = "${spawn} \"pactl set-sink-mute @DEFAULT_SINK@ toggle\"";
-    "${non}XF86MonBrightnessUp	" = "${spawn} \"brightnessctl set +5%\"";
-    "${non}XF86MonBrightnessDown	" = "${spawn} \"brightnessctl set 5%-\"";
+    "${non}XF86AudioRaiseVolume	" = "${spawn} \"pactl set-sink-volume @DEFAULT_SINK@ +5%\"'";
+    "${non}XF86AudioLowerVolume	" = "${spawn} \"pactl set-sink-volume @DEFAULT_SINK@ -5%\"'";
+    "${non}XF86AudioMute	" = "${spawn} \"pactl set-sink-mute @DEFAULT_SINK@ toggle\"'";
+    "${non}XF86MonBrightnessUp	" = "${spawn} \"brightnessctl set +5%\"'";
+    "${non}XF86MonBrightnessDown	" = "${spawn} \"brightnessctl set 5%-\"'";
   };
 in {
   wayland.windowManager.river.settings = {
@@ -26,10 +26,10 @@ in {
     ];
     map = {
       normal = {
-        "${non}	Print		" = "${spawn} 'killall slurp || grimshot copy area'";
-        "${mod}	Space		" = "${spawn} fuzzel";
-        "${mod}	f12		" = "${spawn} alacritty";
-        "${ms}	f12		" = "${spawn} alacritty --class popup";
+        "${non}	Print		" = "${spawn} \"killall slurp || grimshot copy area\"'";
+        "${mod}	Space		" = "${spawn} fuzzel'";
+        "${mod}	f12		" = "${spawn} alacritty'";
+        "${ms}	f12		" = "${spawn} alacritty --class popup'";
 
         "${ms}	Q		" = "close";
         "${mod}	Return		" = "zoom";
