@@ -21,8 +21,10 @@
        up          kp1  kp2  kp3  kprt 
   left down rght   kp0       kp.       
 
-  f20  f21  f22  f23  f24
-  f16  f17  f18  f19 )
+  vold volu mute prev pp next
+
+  f13  f14  f15  f16  f17
+  f18  f19  f20  f21)
 
 ;; base layer(s)
 (deflayer qwerty-a-la-luna
@@ -40,7 +42,9 @@
        up          kp1   kp2  kp3  kprt 
   left down rght   kp0        kp.       
 
-  =    @g2  @g3  @g4  @g5
+  vold volu @mute @prev @pp @next
+
+  @g1  @g2  @g3  @g4  @g5
   @g6  @g7  @g8  @g9 )
 (deflayer dvorak-a-la-mabel
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
@@ -56,6 +60,8 @@
                    kp4  kp5  kp6       
        up          kp1  kp2  kp3  kprt 
   left down rght   kp0       kp.       
+
+  vold volu mute prev pp next
 
   @g1  @g2  @g3  @g4  @g5
   @g6  @g7  @g8  @g9 )
@@ -73,6 +79,8 @@
                    kp4   kp5   kp6        
        up          kp1   kp2   kp3   kprt 
   left down rght   kp0         kp.        
+
+  vold volu mute prev pp next
 
 ;;  f20  f21  f22  f23  f24 )
   @g1  @g2  @g3  @g4  @g5
@@ -94,6 +102,8 @@
        up          kp1  kp2  kp3  kprt 
   left down rght   kp0       kp.       
 
+  vold volu @mute @prev @pp @next
+
   @g1  @g2  @g3  @g4  @g5
   @g6  @g7  @g8  @g9 )
 (deflayer agda2
@@ -110,6 +120,8 @@
                            S-kp4  S-kp5  S-kp6         
          S-up              S-kp1  S-kp2  S-kp3  S-kprt 
   S-left S-down   S-rght   S-kp0         S-kp.         
+
+  vold volu @mute @prev @pp @next
 
   @g1  @g2  @g3  @g4  @g5
   @g6  @g7  @g8  @g9 )
@@ -128,6 +140,8 @@
        up          kp1  kp2  kp3  kprt 
   left down rght   kp0       kp.       
 
+  vold volu @mute @prev @pp @next
+
   @g1  @g2  @g3  @g4  @g5
   @g6  @g7  @g8  @g9 )
 (deflayer agda2
@@ -145,6 +159,8 @@
          S-up              S-kp1  S-kp2  S-kp3  S-kprt 
   S-left S-down   S-rght   S-kp0         S-kp.         
 
+  vold volu @mute @prev @pp @next
+
   @g1  @g2  @g3  @g4  @g5
   @g6  @g7  @g8  @g9 )|#
 (deflayer latexctl
@@ -161,6 +177,8 @@
                    kp4  kp5  kp6       
        up          kp1  kp2  kp3  kprt 
   left down rght   kp0       kp.       
+
+  vold volu @mute @prev @pp @next
 
   @g1  @g2  @g3  @g4  @g5
   @g6  @g7  @g8  @g9 )
@@ -181,6 +199,8 @@
             _         _    _    _    _   
   _         _    _    _         _        
 
+  sdn sup @mute @prev @pp @next
+
   @audioreload _      _      _      _      
   _      _      _      _ )
 (deflayer superscript
@@ -199,6 +219,8 @@
        _         _    _    _    _   
   _    _    _    _         _        
 
+  vold volu @mute @prev @pp @next
+
   _      _      _      _      _      
   _      _      _      _ )
 (deflayer greek
@@ -215,6 +237,8 @@
                  _    _    _        
        _         _    _    _    _   
   _    _    _    _         _        
+
+  vold volu @mute @prev @pp @next
 
   _    _    _    _    _ 
   _    _    _    _ )
@@ -261,6 +285,15 @@
   par #(ralt p a r)
   bR #(ralt b R)
   quot #(C-q "))
+(defalias  ;; media
+  cpp   (cmd-button "playerctl play-pause")
+  cprev (cmd-button "playerctl previous")
+  cnext (cmd-button "playerctl next")
+  mute  (tap-hold 200 (cmd-button "/home/muf/.scripts/switch-audio-device")      #(mute XX))
+  prev  (tap-hold 200 (cmd-button "/home/muf/.scripts/media-shift-meta unshift") @cprev)
+  next  (tap-hold 200 (cmd-button "/home/muf/.scripts/media-shift-meta shift"  ) @cnext)
+  pp    (tap-hold 200 (cmd-button "/home/muf/.scripts/media-show-current")       @cpp)
+)
 
 ;; standard aliases
 (defalias  ;; superscripts
@@ -362,7 +395,13 @@
   _    _    _    _    _    _    _   
                  _    _    _        
        _         _    _    _    _   
-  _    _    _    _         _        )
+  _    _    _    _         _        
+
+  _    _    _    _    _    _    
+
+  _    _    _    _    _    
+  _    _    _    _ )
+)
 |#
 
 #| old stuff

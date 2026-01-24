@@ -13,7 +13,7 @@
       };
 
       Service = {
-        ExecStart = "${pkgs-unstable.kmonad}/bin/kmonad /home/muf/.config/kmonad/${name}.kbd";
+        ExecStart = "-${pkgs-unstable.kmonad}/bin/kmonad /home/muf/.config/kmonad/${name}.kbd";
       };
 
       Install.WantedBy = [ "default.target" ];

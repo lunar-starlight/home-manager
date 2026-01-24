@@ -13,9 +13,9 @@ let
   msc = "Super+Shift+Control";
   spawn = "spawn '${pkgs.uwsm}/bin/uwsm app --";
   fnkeys = {
-    "${non}XF86AudioRaiseVolume	" = "${spawn} \"pactl set-sink-volume @DEFAULT_SINK@ +5%\"'";
-    "${non}XF86AudioLowerVolume	" = "${spawn} \"pactl set-sink-volume @DEFAULT_SINK@ -5%\"'";
-    "${non}XF86AudioMute	" = "${spawn} \"pactl set-sink-mute @DEFAULT_SINK@ toggle\"'";
+    #"${non}XF86AudioRaiseVolume	" = "${spawn} \"pactl set-sink-volume @DEFAULT_SINK@ +5%\"'";
+    #"${non}XF86AudioLowerVolume	" = "${spawn} \"pactl set-sink-volume @DEFAULT_SINK@ -5%\"'";
+    #"${non}XF86AudioMute	" = "${spawn} \"pactl set-sink-mute @DEFAULT_SINK@ toggle\"'";
     "${non}XF86MonBrightnessUp	" = "${spawn} \"brightnessctl set +5%\"'";
     "${non}XF86MonBrightnessDown	" = "${spawn} \"brightnessctl set 5%-\"'";
   };
