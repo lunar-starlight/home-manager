@@ -49,6 +49,7 @@ in {
     kmonad
     gnumake
     killall
+    wtype
 
     # sys utils
     lm_sensors
