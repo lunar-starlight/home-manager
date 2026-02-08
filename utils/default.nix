@@ -2,6 +2,7 @@
 {
   imports = [
     ./git.nix
+    ./mpv.nix
     ./vim.nix
     ./fish.nix
     ./yazi.nix
