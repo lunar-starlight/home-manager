@@ -93,7 +93,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    \    '    ret   
   @ctl a    s    d    f    g    h    j    k    l    @č   @š   @ž   #|"|# 
   @ag2 z    x    c    v    b    n    m    ,    .    +    @ag2            
-  @ctl lmet lalt           spc           ralt @lspe @lspe @qtyn          
+  @ctl @lmet lalt           spc           ralt @lspe @lspe @qtyn          
 
   ssrq @qty pause                      
   ins  home pgup   nlck kp/  kp*  kp-  
@@ -256,6 +256,7 @@
   ag2  (layer-toggle agda2)
   ;;ag2 (around KeyYen S-(layer-toggle vanilla))
   ctl C-(layer-toggle latexctl)
+  lmet (around lmet (layer-toggle qwerty-a-la-luna))
 
   nlck #(nlck (layer-switch vanilla))
   kcln #(nlck (layer-switch qwerty-a-la-luna)))

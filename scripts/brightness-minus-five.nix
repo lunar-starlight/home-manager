@@ -1,6 +1,7 @@
 { pkgs, ... }:
 pkgs.writeShellScriptBin "brightness-minus-five" ''
 curr=$(brightnessctl get)
-next=$(printf %.2f "$((10**3 * $curr / 256 - 50))e-3")
-brightnessctl set $(($next*256))
+next=$(printf %.0f "$((200 * $curr / 256 - 10))e-1")
+next=$(printf %.0f "$(($next*256*5))e-2")
+brightnessctl set $next
 ''
