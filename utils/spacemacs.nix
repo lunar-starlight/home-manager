@@ -2,8 +2,8 @@
 {
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs;
   };
+  services.emacs.client.enable = false;
 
   #home.file = {
     #"${config.xdg.configHome}/spacemacs/init.el".source = ../dotfiles/spacemacs/init.el;
@@ -13,7 +13,7 @@
     #};
   #}; 
 
-  home.sessionVariables = {
+  systemd.user.sessionVariables = {
     SPACEMACSDIR = "${config.xdg.configHome}/home-manager/dotfiles/spacemacs";
   };
 }
