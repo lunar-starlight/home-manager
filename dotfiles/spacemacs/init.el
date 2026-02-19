@@ -580,10 +580,10 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-                                        ;(load-file (let ((coding-system-for-read 'utf-8))
-                                        ;                (shell-command-to-string "agda-mode locate")))
+  (load-file (let (coding-system-for-read 'utf-8)
+               (shell-command-to-string "agda-mode locate")))
   (setq ispell-program-name "aspell")
-                                        ;(define-key evil-normal-state-map (kbd "U") #'evil-redo)
+  ;;(define-key evil-normal-state-map (kbd "U") #'evil-redo)
   (add-hook 'prog-mode-hook       'spacemacs/toggle-whitespace-on)
   (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-whitespace-off)
   (add-hook 'kbd-mode-hook        'spacemacs/toggle-whitespace-on)
@@ -610,48 +610,51 @@ before packages are loaded."
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(ace-link aggressive-indent all-the-icons auctex-latexmk auto-compile
-              auto-highlight-symbol auto-yasnippet avy-jump-helm-line
-              centered-cursor-mode clean-aindent-mode code-review
-              column-enforce-mode company-auctex company-lua company-math
-              company-reftex define-word devdocs diminish dired-quick-sort
-              disable-mouse dotenv-mode drag-stuff dumb-jump elisp-def
-              elisp-demos elisp-slime-nav emr eval-sexp-fu evil-anzu evil-args
-              evil-cleverparens evil-collection evil-easymotion evil-escape
-              evil-evilified-state evil-exchange evil-goggles evil-iedit-state
-              evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
-              evil-nerd-commenter evil-numbers evil-surround evil-tex
-              evil-textobj-line evil-tutor evil-unimpaired evil-visual-mark-mode
-              evil-visualstar expand-region eyebrowse fancy-battery
-              flyspell-correct-helm git-link git-messenger git-modes
-              git-timemachine gitignore-templates golden-ratio google-translate
-              helm-ag helm-c-yasnippet helm-comint helm-company helm-descbinds
-              helm-ls-git helm-make helm-mode-manager helm-org helm-projectile
-              helm-purpose helm-swoop helm-xref hide-comnt highlight-indentation
-              highlight-numbers highlight-parentheses hl-todo holy-mode
-              hungry-delete hybrid-mode indent-guide info+ inspector js-doc
-              js2-refactor json-mode json-navigator json-reformat kbd-mode
-              link-hint livid-mode lorem-ipsum macrostep multi-line nameless
-              nodejs-repl npm-mode open-junk-file org-superstar overseer
-              page-break-lines paradox password-generator pcre2el popwin
-              prettier-js quickrun rainbow-delimiters restart-emacs smeargle
-              space-doc spaceline spacemacs-purpose-popwin
-              spacemacs-whitespace-cleanup string-edit-at-point
-              string-inflection symbol-overlay symon term-cursor tern toc-org
-              transient-cycles treemacs-evil treemacs-icons-dired treemacs-magit
-              treemacs-persp treemacs-projectile undo-tree unicode-fonts
-              vi-tilde-fringe volatile-highlights web-beautify wgrep winum
-              writeroom-mode ws-butler yasnippet-snippets)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(package-selected-packages
+     '(ace-link aggressive-indent all-the-icons auctex-latexmk auto-compile
+                auto-highlight-symbol auto-yasnippet avy-jump-helm-line
+                centered-cursor-mode clean-aindent-mode code-review
+                column-enforce-mode company-auctex company-lua company-math
+                company-reftex define-word devdocs diminish dired-quick-sort
+                disable-mouse dotenv-mode drag-stuff dumb-jump elisp-def
+                elisp-demos elisp-slime-nav emr eval-sexp-fu evil-anzu evil-args
+                evil-cleverparens evil-collection evil-easymotion evil-escape
+                evil-evilified-state evil-exchange evil-goggles evil-iedit-state
+                evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
+                evil-nerd-commenter evil-numbers evil-surround evil-tex
+                evil-textobj-line evil-tutor evil-unimpaired evil-visual-mark-mode
+                evil-visualstar expand-region eyebrowse fancy-battery
+                flyspell-correct-helm git-link git-messenger git-modes
+                git-timemachine gitignore-templates golden-ratio google-translate
+                helm-ag helm-c-yasnippet helm-comint helm-company helm-descbinds
+                helm-ls-git helm-make helm-mode-manager helm-org helm-projectile
+                helm-purpose helm-swoop helm-xref hide-comnt highlight-indentation
+                highlight-numbers highlight-parentheses hl-todo holy-mode
+                hungry-delete hybrid-mode indent-guide info+ inspector js-doc
+                js2-refactor json-mode json-navigator json-reformat kbd-mode
+                link-hint livid-mode lorem-ipsum macrostep multi-line nameless
+                nodejs-repl npm-mode open-junk-file org-superstar overseer
+                page-break-lines paradox password-generator pcre2el popwin
+                prettier-js quickrun rainbow-delimiters restart-emacs smeargle
+                space-doc spaceline spacemacs-purpose-popwin
+                spacemacs-whitespace-cleanup string-edit-at-point
+                string-inflection symbol-overlay symon term-cursor tern toc-org
+                transient-cycles treemacs-evil treemacs-icons-dired treemacs-magit
+                treemacs-persp treemacs-projectile undo-tree unicode-fonts
+                vi-tilde-fringe volatile-highlights web-beautify wgrep winum
+                writeroom-mode ws-butler yasnippet-snippets))
+   '(safe-local-variable-values
+     '((TeX-engine . lualatex) (javascript-backend . tide)
+       (javascript-backend . tern) (javascript-backend . lsp))))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  )
