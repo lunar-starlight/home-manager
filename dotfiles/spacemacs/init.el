@@ -43,6 +43,8 @@ This function should only modify configuration layer settings."
      ;; lsp
      ;; markdown
      (latex :variables
+            latex-enable-auto-fill nil
+            latex-enable-folding t
             latex-build-engine 'luatex)
      multiple-cursors
      ;; org
@@ -432,7 +434,7 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers 'relative
+   dotspacemacs-line-numbers 'visual
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
@@ -522,7 +524,7 @@ It should only modify the values of Spacemacs settings."
    ;; which major modes have whitespace cleanup enabled or disabled
    ;; by default.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
 
    ;; If non-nil activate `clean-aindent-mode' which tries to correct
    ;; virtual indentation of simple modes. This can interfere with mode specific
@@ -580,10 +582,17 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (load-file (let (coding-system-for-read 'utf-8)
-               (shell-command-to-string "agda-mode locate")))
+  ;;(load-file (let (coding-system-for-read 'utf-8)
+  ;;                (shell-command-to-string "agda-mode locate")))
   (setq ispell-program-name "aspell")
-  ;;(define-key evil-normal-state-map (kbd "U") #'evil-redo)
+  (define-key evil-normal-state-map (kbd "U") #'evil-redo)
+
+  (setq fill-column 100)
+  (setq visual-fill-column-width 100)
+  (add-hook 'text-mode-hook       'visual-wrap-prefix-mode)
+  (add-hook 'text-mode-hook       'visual-line-fill-column-mode)
+  (add-hook 'text-mode-hook       'spacemacs/toggle-visual-line-navigation-on)
+
   (add-hook 'prog-mode-hook       'spacemacs/toggle-whitespace-on)
   (add-hook 'emacs-lisp-mode-hook 'spacemacs/toggle-whitespace-off)
   (add-hook 'kbd-mode-hook        'spacemacs/toggle-whitespace-on)
@@ -637,17 +646,18 @@ This function is called at the very end of Spacemacs initialization."
                 highlight-numbers highlight-parentheses hl-todo holy-mode
                 hungry-delete hybrid-mode indent-guide info+ inspector js-doc
                 js2-refactor json-mode json-navigator json-reformat kbd-mode
-                link-hint livid-mode lorem-ipsum macrostep multi-line nameless
-                nodejs-repl npm-mode open-junk-file org-superstar overseer
-                page-break-lines paradox password-generator pcre2el popwin
-                prettier-js quickrun rainbow-delimiters restart-emacs smeargle
-                space-doc spaceline spacemacs-purpose-popwin
-                spacemacs-whitespace-cleanup string-edit-at-point
-                string-inflection symbol-overlay symon term-cursor tern toc-org
-                transient-cycles treemacs-evil treemacs-icons-dired treemacs-magit
-                treemacs-persp treemacs-projectile undo-tree unicode-fonts
-                vi-tilde-fringe volatile-highlights web-beautify wgrep winum
-                writeroom-mode ws-butler yasnippet-snippets))
+                link-hint livid-mode lorem-ipsum macrostep memoize multi-line
+                nameless nodejs-repl npm-mode open-junk-file org-superstar
+                overseer page-break-lines paradox password-generator pcre2el
+                popwin prettier-js quickrun rainbow-delimiters restart-emacs
+                smeargle space-doc spaceline spaceline-all-the-icons
+                spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+                string-edit-at-point string-inflection symbol-overlay symon
+                term-cursor tern toc-org transient-cycles treemacs-evil
+                treemacs-icons-dired treemacs-magit treemacs-persp
+                treemacs-projectile undo-tree unicode-fonts vi-tilde-fringe
+                volatile-highlights web-beautify wgrep winum writeroom-mode
+                ws-butler yasnippet-snippets))
    '(safe-local-variable-values
      '((TeX-engine . lualatex) (javascript-backend . tide)
        (javascript-backend . tern) (javascript-backend . lsp))))
