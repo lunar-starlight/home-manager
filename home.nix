@@ -2,13 +2,11 @@
 let
 in {
   imports = [
+    ./misc
     ./utils
     ./scripts
     ./wayland
     ./keyboard
-    ./mime.nix
-    ./fonts.nix
-    ./programs.nix
   ];
 
   home = {
