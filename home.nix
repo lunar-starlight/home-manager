@@ -1,23 +1,12 @@
 { config, pkgs, pkgs-unstable, zen-browser, ... }@inputs:
 let
-  stremio-linux-shell = (pkgs.callPackage ./packages/stremio-linux-shell.nix {});
-  #stremio-custom =
-  #  (import ./packages/stremio.nix {
-  #    lib = inputs.lib;
-  #    stdenv = pkgs.stdenv;
-  #    fetchFromGitHub = pkgs.fetchFromGitHub;
-  #    fetchurl = pkgs.fetchurl;
-  #    libsForQt5 = pkgs.libsForQt5;
-  #    ffmpeg = pkgs.ffmpeg;
-  #    mpv = pkgs.mpv;
-  #    nodejs = pkgs.nodejs;
-  #  });
 in {
   imports = [
     ./utils
     ./scripts
     ./wayland
     ./keyboard
+    ./fonts.nix
   ];
 
   home = {
@@ -68,7 +57,6 @@ in {
 
     # WM
     river-classic
-    #waybar
     #fuzzel
     mako
     swaybg
@@ -76,7 +64,7 @@ in {
     wl-screenrec
     sway-contrib.grimshot
     #wf-recorder
-    gammastep # ne dela
+    gammastep
     #xdg-desktop-portal-wlr
     brightnessctl
     wayprompt
@@ -101,24 +89,13 @@ in {
       ];
     })
     steam
-    #stremio
-    #stremio-custom
     stremio-linux-shell
     prismlauncher
     vintagestory
-    
-    # fonts
-    noto-fonts-color-emoji
-    noto-fonts-monochrome-emoji
-    font-awesome
-    powerline-fonts
-    powerline-symbols
-    nerd-fonts.symbols-only
 
     # languages
     (agda.withPackages (p: [ p.standard-library ]))
     texliveFull
-    #lean4
     elan
 
   ];
@@ -139,32 +116,6 @@ in {
       "x-scheme-handler/sgnl" = "signal.desktop";
       "x-scheme-handler/signalcaptcha" = "signal.desktop";
       "x-scheme-handler/vintagestorymodinstall" = "vintagestory.desktop";
-    };
-  };
-
-  #xdg.portal = {
-  #  enable = true;
-  #  xdgOpenUsePortal = true;
-  #  extraPortals = with pkgs; [
-  #    xdg-desktop-portal-wlr
-  #    xdg-desktop-portal-gtk
-  #  ];
-  #  #configPackages = [ pkgs.river-classic ];
-  #  #config.common.default = [ "wlr" "gtk" ];
-  #  #config.river-classic = {
-  #  #  default = [ "wlr" ];
-  #  #};
-  #};
-
-  home.file."${config.xdg.dataHome}/fonts".source = ./fonts;
-
-  fonts.fontconfig = {
-    enable = true;
-    defaultFonts = {
-      emoji = [
-        "Noto Color Emoji" 
-        "Noto Emoji"
-      ];
     };
   };
 
