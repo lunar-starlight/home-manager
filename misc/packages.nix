@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, pkgs-unstable, zen-browser, ...}:
 {
   home.packages = with pkgs; [
     # archives

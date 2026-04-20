@@ -1,6 +1,5 @@
-{ config, pkgs, pkgs-unstable, zen-browser, ... }@inputs:
-let
-in {
+{ ... }:
+{
   imports = [
     ./misc
     ./utils
