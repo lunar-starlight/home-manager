@@ -5,15 +5,15 @@
   };
   services.emacs.client.enable = false;
 
-  #home.file = {
-    #"${config.xdg.configHome}/spacemacs/init.el".source = ../dotfiles/spacemacs/init.el;
+  home.file = {
+    "${config.xdg.configHome}/spacemacs/".source = ../dotfiles/spacemacs;
     #".emacs.d" = {
     #  recursive = true;
     #  source = ../dotfiles/emacs;
     #};
-  #}; 
+  }; 
 
   systemd.user.sessionVariables = {
-    SPACEMACSDIR = "${config.xdg.configHome}/home-manager/dotfiles/spacemacs";
+    SPACEMACSDIR = "${config.xdg.configHome}/spacemacs";
   };
 }

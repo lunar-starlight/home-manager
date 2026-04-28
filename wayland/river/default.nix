@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   imports = [ ./map.nix ./tags.nix ];
   
@@ -39,7 +39,7 @@
       input."usb-Logitech_USB_Optical_Mouse-mouse" = {
         accel-profile = "flat";
       };
-      keyboard-layout-file = "/home/muf/.config/home-manager/dotfiles/xkb/xkbmap.conf";
+      keyboard-layout-file = "${config.xdg.configHome}/home-manager/dotfiles/xkb/xkbmap.conf";
     };
 
     extraSessionVariables = {

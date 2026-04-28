@@ -11,7 +11,7 @@
     fira-code-symbols
   ];
 
-  home.file."${config.xdg.dataHome}/fonts".source = ../fonts;
+  home.file."${config.xdg.dataHome}/fonts".source = ../dotfiles/fonts;
 
   fonts.fontconfig = {
     enable = true;
