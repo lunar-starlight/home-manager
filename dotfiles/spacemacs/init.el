@@ -609,6 +609,16 @@ before packages are loaded."
   (setq TeX-command-extra-options "-auxdir=.build"
         TeX-source-correlate-start-server t
         TeX-view-program-selection '((output-pdf "Okular")))
+  (defun +evil--preserve-input-method-in-minibuffer (fn &rest args)
+    (if (and (bound-and-true-p evil-local-mode)
+             (evil-normal-state-p))
+        (let ((m evil-input-method))
+          (with-temp-buffer
+            (activate-input-method m)
+            (apply fn args)))
+      (apply fn args)))
+  (advice-add 'read-string :around +evil--preserve-input-method-in-minibuffer)
+  (advice-add 'read-from-minibuffer :around +evil--preserve-input-method-in-minibuffer)
   )
 
 
@@ -625,39 +635,41 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(package-selected-packages
-     '(ace-link aggressive-indent all-the-icons auctex-latexmk auto-compile
+     '(ace-link aggressive-indent all-the-icons amx auctex-latexmk auto-compile
                 auto-highlight-symbol auto-yasnippet avy-jump-helm-line
                 centered-cursor-mode clean-aindent-mode code-review
                 column-enforce-mode company-auctex company-lua company-math
-                company-reftex define-word devdocs diminish dired-quick-sort
-                disable-mouse dotenv-mode drag-stuff dumb-jump elisp-def
-                elisp-demos elisp-slime-nav emr eval-sexp-fu evil-anzu evil-args
-                evil-cleverparens evil-collection evil-easymotion evil-escape
-                evil-evilified-state evil-exchange evil-goggles evil-iedit-state
-                evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
-                evil-nerd-commenter evil-numbers evil-surround evil-tex
-                evil-textobj-line evil-tutor evil-unimpaired evil-visual-mark-mode
-                evil-visualstar expand-region eyebrowse fancy-battery
-                flyspell-correct-helm git-link git-messenger git-modes
+                company-reftex counsel counsel-projectile define-word devdocs
+                diminish dired-quick-sort disable-mouse dotenv-mode drag-stuff
+                dumb-jump elisp-def elisp-demos elisp-slime-nav emr eval-sexp-fu
+                evil-anzu evil-args evil-cleverparens evil-collection
+                evil-easymotion evil-escape evil-evilified-state evil-exchange
+                evil-goggles evil-iedit-state evil-indent-plus evil-lion
+                evil-lisp-state evil-matchit evil-mc evil-nerd-commenter
+                evil-numbers evil-surround evil-tex evil-textobj-line evil-tutor
+                evil-unimpaired evil-visual-mark-mode evil-visualstar
+                expand-region eyebrowse fancy-battery flx flyspell-correct-helm
+                flyspell-correct-ivy git-link git-messenger git-modes
                 git-timemachine gitignore-templates golden-ratio google-translate
-                helm-ag helm-c-yasnippet helm-comint helm-company helm-descbinds
-                helm-ls-git helm-make helm-mode-manager helm-org helm-projectile
-                helm-purpose helm-swoop helm-xref hide-comnt highlight-indentation
-                highlight-numbers highlight-parentheses hl-todo holy-mode
-                hungry-delete hybrid-mode indent-guide info+ inspector js-doc
-                js2-refactor json-mode json-navigator json-reformat kbd-mode
-                link-hint livid-mode lorem-ipsum macrostep memoize multi-line
-                nameless nodejs-repl npm-mode open-junk-file org-superstar
-                overseer page-break-lines paradox password-generator pcre2el
-                popwin prettier-js quickrun rainbow-delimiters restart-emacs
-                smeargle space-doc spaceline spaceline-all-the-icons
+                helm helm-ag helm-c-yasnippet helm-comint helm-company helm-core
+                helm-descbinds helm-ls-git helm-make helm-mode-manager helm-org
+                helm-projectile helm-purpose helm-swoop helm-xref hide-comnt
+                highlight-indentation highlight-numbers highlight-parentheses
+                hl-todo holy-mode hungry-delete hybrid-mode indent-guide info+
+                inspector ivy ivy-avy ivy-hydra ivy-purpose ivy-xref ivy-yasnippet
+                js-doc js2-refactor json-mode json-navigator json-reformat
+                kbd-mode link-hint livid-mode lorem-ipsum macrostep memoize
+                multi-line nameless nodejs-repl npm-mode open-junk-file
+                org-superstar overseer page-break-lines paradox password-generator
+                pcre2el popwin prettier-js quickrun rainbow-delimiters
+                restart-emacs smeargle space-doc spaceline spaceline-all-the-icons
                 spacemacs-purpose-popwin spacemacs-whitespace-cleanup
-                string-edit-at-point string-inflection symbol-overlay symon
+                string-edit-at-point string-inflection swiper symbol-overlay symon
                 term-cursor tern toc-org transient-cycles treemacs-evil
                 treemacs-icons-dired treemacs-magit treemacs-persp
                 treemacs-projectile undo-tree unicode-fonts vi-tilde-fringe
-                volatile-highlights web-beautify wgrep winum writeroom-mode
-                ws-butler yasnippet-snippets))
+                volatile-highlights web-beautify wfnames wgrep winum
+                writeroom-mode ws-butler yasnippet-snippets))
    '(safe-local-variable-values
      '((TeX-engine . lualatex) (javascript-backend . tide)
        (javascript-backend . tern) (javascript-backend . lsp))))
