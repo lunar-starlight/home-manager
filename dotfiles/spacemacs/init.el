@@ -617,8 +617,8 @@ before packages are loaded."
             (activate-input-method m)
             (apply fn args)))
       (apply fn args)))
-  (advice-add 'read-string :around +evil--preserve-input-method-in-minibuffer)
-  (advice-add 'read-from-minibuffer :around +evil--preserve-input-method-in-minibuffer)
+  (advice-add 'read-string :around '+evil--preserve-input-method-in-minibuffer)
+  (advice-add 'read-from-minibuffer :around '+evil--preserve-input-method-in-minibuffer)
   )
 
 
