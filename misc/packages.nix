@@ -16,6 +16,7 @@
     gnumake
     killall
     wtype
+    gparted
 
     # sys utils
     lm_sensors
