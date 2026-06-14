@@ -58,8 +58,14 @@
     xournalpp
     kdePackages.okular
     thunderbird
-    #deadbeef
-    #deadbeefPlugins.headerbar-gtk3
+    (deadbeef-with-plugins.override {
+      plugins = with deadbeefPlugins; [
+        headerbar-gtk3
+        mpris2
+        musical-spectrum
+        playlist-manager
+      ];
+    })
     (lutris.override {
       extraLibraries = pkgs: [
       ];
