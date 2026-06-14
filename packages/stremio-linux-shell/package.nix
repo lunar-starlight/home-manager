@@ -8,61 +8,48 @@
 
   # buildInputs
   atk,
-  cef-binary,
-  gtk3,
+  gtk4,
   libayatana-appindicator,
+  libxkbcommon,
   mpv,
   openssl,
 
   # nativeBuildInputs
-  wrapGAppsHook4,
   makeBinaryWrapper,
   pkg-config,
+  wrapGAppsHook4,
 
   # Wrapper
+  addDriverRunpath,
   libGL,
   nodejs,
 }:
 
-let
-  # Follow upstream
-  # https://github.com/Stremio/stremio-linux-shell/blob/v1.0.0-beta.12/flatpak/com.stremio.Stremio.Devel.json#L150
-  cefPinned = cef-binary.override {
-    version = "138.0.21";
-    gitRevision = "54811fe";
-    chromiumVersion = "138.0.7204.101";
-
-    srcHashes = {
-      aarch64-linux = ""; # TODO: Add when available
-      x86_64-linux = "sha256-Kob/5lPdZc9JIPxzqiJXNSMaxLuAvNQKdd/AZDiXvNI=";
-    };
-  };
-
-  # Stremio expects CEF files in a specific layout
-  cefPath = symlinkJoin {
-    name = "stremio-cef-target";
-    paths = [
-      "${cefPinned}/Resources"
-      "${cefPinned}/Release"
-    ];
-  };
-in
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "stremio-linux-shell";
-  version = "1.0.0-beta.12";
+  version = "1.0.0-beta.13-1";
 
   src = fetchFromGitHub {
     owner = "Stremio";
     repo = "stremio-linux-shell";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-NVChTlW146AAHtpeLrCEJBhWmOM7FvrSv9H/KMLJiNY=";
+    #tag = "v${finalAttrs.version}";
+    #hash = "sha256-1f9IBNo5gxpSqTSIf8QuQOlf+sfRhohOmQTLRbX/OU8=";
+    rev = "01967a0202569620afb5b42175a67d6b25039c43";
+    hash = "sha256-HG5In34ED5akLFwzYbJuk3IsT8ABqqJaXKoHe4Y2l+Q=";
   };
 
-  cargoHash = "sha256-3HJqzkhmKF1J3aHiw3UvgeWzLNnr3tw+/cvMyAKNvAQ=";
+  cargoHash = "sha256-QhrL7yPu/zAJIXo+D1abbZ4yO3Tk9S+qsNbz3RxQ+uw=";
 
   postPatch = ''
-    substituteInPlace $cargoDepsCopy/libappindicator-sys-*/src/lib.rs \
+    substituteInPlace src/config.rs \
+      --replace-fail "@serverjs@" "${placeholder "out"}/share/stremio/server.js"
+
+    substituteInPlace $cargoDepsCopy/*/libappindicator-sys-*/src/lib.rs \
       --replace-fail "libayatana-appindicator3.so.1" "${libayatana-appindicator}/lib/libayatana-appindicator3.so.1"
+    substituteInPlace $cargoDepsCopy/*/xkbcommon-dl-*/src/lib.rs \
+      --replace-fail "libxkbcommon.so.0" "${libxkbcommon}/lib/libxkbcommon.so.0"
+    substituteInPlace $cargoDepsCopy/*/xkbcommon-dl-*/src/x11.rs \
+      --replace-fail "libxkbcommon-x11.so.0" "${libxkbcommon}/lib/libxkbcommon-x11.so.0"
   '';
 
   # Don't download CEF during build
@@ -70,29 +57,32 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   buildInputs = [
     atk
-    cefPath
-    gtk3
+    gtk4
     libayatana-appindicator
+    libxkbcommon
     mpv
     openssl
   ];
 
   nativeBuildInputs = [
-    wrapGAppsHook4
     makeBinaryWrapper
     pkg-config
+    wrapGAppsHook4
   ];
 
-  env.CEF_PATH = "${cefPath}";
+  strictDeps = true;
+  __structuredAttrs = true;
 
   postInstall = ''
     mkdir -p $out/share/applications
     cp data/com.stremio.Stremio.desktop $out/share/applications/com.stremio.Stremio.desktop
-
+-/
     mkdir -p $out/share/icons/hicolor/scalable/apps
     cp data/icons/com.stremio.Stremio.svg $out/share/icons/hicolor/scalable/apps/com.stremio.Stremio.svg
 
-    cp data/server.js $out/bin/server.js
+    mkdir -p $out/share/stremio
+    cp data/server.js $out/share/stremio/server.js
+
     mv $out/bin/stremio-linux-shell $out/bin/stremio
   '';
 
@@ -100,27 +90,32 @@ rustPlatform.buildRustPackage (finalAttrs: {
   # Add to `gappsWrapperArgs` to avoid two layers of wrapping.
   preFixup = ''
     gappsWrapperArgs+=(
-      --prefix LD_LIBRARY_PATH : "/run/opengl-driver/lib" \
+      --prefix LD_LIBRARY_PATH : "${addDriverRunpath.driverLink}/lib" \
       --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath [ libGL ]}" \
       --prefix PATH : "${lib.makeBinPath [ nodejs ]}"
     )
   '';
 
-  nativeInstallCheckInputs = [
-    versionCheckHook
-  ];
+  nativeInstallCheckInputs = [ versionCheckHook ];
   versionCheckProgramArg = "--version";
   doInstallCheck = true;
 
-  passthru.updateScript = gitUpdater { rev-prefix = "v"; };
+  passthru = {
+    updateScript = gitUpdater { rev-prefix = "v"; };
+  };
 
   meta = {
     description = "Modern media center that gives you the freedom to watch everything you want";
     homepage = "https://www.stremio.com/";
-    license = with lib.licenses; [
-      gpl3Only
-      # server.js is unfree
-      unfree
+    license =
+      with lib.licenses;
+      AND [
+        gpl3Only
+        unfree # server.js
+      ];
+    sourceProvenance = with lib.sourceTypes; [
+      fromSource
+      obfuscatedCode # server.js
     ];
     maintainers = with lib.maintainers; [ thunze ];
     platforms = lib.platforms.linux;

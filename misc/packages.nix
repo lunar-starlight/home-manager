@@ -1,4 +1,7 @@
 { pkgs, pkgs-unstable, zen-browser, ...}:
+let
+  stremio-linux-shell = (pkgs.callPackage ../packages/stremio-linux-shell/package.nix {});
+in
 {
   home.packages = with pkgs; [
     # archives
