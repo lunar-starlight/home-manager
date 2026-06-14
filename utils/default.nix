@@ -12,4 +12,5 @@
   ];
 
   services.copyq.enable = true;
+  services.polkit-gnome.enable = true;
 }

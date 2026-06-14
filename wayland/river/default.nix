@@ -8,6 +8,15 @@
 
     systemd = {
       enable = true;
+      variables = [
+        "DISPLAY"
+        "WAYLAND_DISPLAY"
+        "XDG_CURRENT_DESKTOP"
+        "NIXOS_OZONE_WL"
+        "XCURSOR_THEME"
+        "XCURSOR_SIZE"
+        "SSH_AUTH_SOCK"
+      ];
       extraCommands = [
         "uwsm finalize"
       ];

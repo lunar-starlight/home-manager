@@ -6,8 +6,6 @@
     keys = [
       "id_github"
     ];
-    extraFlags = [ "--systemd" "--ssh-agent-socket '/home/muf/.ssh/agent/keychain'" "--quiet" "--clear" ];
+    extraFlags = [ "--systemd" "--quiet" ];
   };
-
-  systemd.user.sessionVariables.SSH_AUTH_SOCK = "/home/muf/.ssh/agent/keychain";
 }
