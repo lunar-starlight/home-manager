@@ -19,18 +19,20 @@
       ];
       extraCommands = [
         "uwsm finalize"
+        "systemctl --user stop river-session.target"
+        "systemctl --user start river-session.target"
       ];
     };
 
     settings = {
       default-layout = "rivertile";
-      output-layout = "rivertile";
+      #output-layout = "rivertile";
 
       set-cursor-warp = "on-focus-change";
       xcursor-theme = "catppuccin-mocha-mauve-cursors 16";
 
       spawn = [
-        "rivertile"
+        "'rivertile -main-location top'"
         #"waybar"
       ];
 

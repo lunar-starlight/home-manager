@@ -18,10 +18,10 @@ in
         spacing = 0;
         modules-left = [
           "river/mode"
-          "river/window"
+          "river/tags"
         ];
         modules-center = [
-          "river/tags"
+          "river/window"
         ];
         modules-right = [
           "backlight"
