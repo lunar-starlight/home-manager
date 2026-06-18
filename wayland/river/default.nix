@@ -27,12 +27,14 @@
     settings = {
       default-layout = "rivertile";
       #output-layout = "rivertile";
+      default-attach-mode = "after 1";
 
       set-cursor-warp = "on-focus-change";
       xcursor-theme = "catppuccin-mocha-mauve-cursors 16";
 
       spawn = [
-        "'rivertile -main-location top'"
+        "'rivertile -main-location bottom'"
+        "'nix shell nixpkgs#way-displays -c bash -c \"(way-displays &) ; sleep 1 && way-displays -s scaling off && way-displays -s transform DP-1 90 && killall way-displays\"'"
         #"waybar"
       ];
 
