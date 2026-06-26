@@ -1,0 +1,38 @@
+{ dev, name }:
+''
+(defcfg
+  input (device-file "${dev}")
+  output (uinput-sink "KMonad: ${name} Mouse")
+  allow-cmd true
+)
+
+(defsrc
+  f13 f14 f15 f16 f17
+)
+
+(deflayer default
+  ret @switch-tabs _ @switch-desktops @switch-windows
+)
+
+(defalias
+  1tab #(tab P10)
+  2tab #(tab P10 tab P10)
+  3tab #(tab P10 tab P10 tab P10)
+  4tab #(tab P10 tab P10 tab P10 tab P10)
+  switch-tabs (multi-tap 200 (around lalt @1tab)
+                         200 (around lalt @2tab)
+                         200 (around lalt @3tab)
+                             (around lalt @4tab)
+              )
+  1f11 #(f11 P10)
+  2f11 #(f11 P10 f11 P10)
+  3f11 #(f11 P10 f11 P10 f11 P10)
+  4f11 #(f11 P10 f11 P10 f11 P10 f11 P10)
+  switch-desktops (multi-tap 200 (around lmeta @1f11)
+                             200 (around lmeta @2f11)
+                             200 (around lmeta @3f11)
+                                 (around lmeta @4f11)
+                  )
+  switch-windows M-f12
+)
+''

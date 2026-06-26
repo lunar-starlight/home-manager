@@ -34,7 +34,8 @@
 
       spawn = [
         "'rivertile -main-location bottom'"
-        "'nix shell nixpkgs#way-displays -c bash -c \"(way-displays &) ; sleep 1 && way-displays -s scaling off && way-displays -s transform DP-1 90 && killall way-displays\"'"
+        #"'nix shell nixpkgs#way-displays -c bash -c \"(way-displays &) ; sleep 1 && way-displays -s scaling off && way-displays -s transform DP-1 90 && killall way-displays\"'"
+        "'nix run nixpkgs#wlr-randr -- --output DP-1 --transform 90 --output HDMI-A-2 --pos 0,786'"
         #"waybar"
       ];
 
@@ -49,6 +50,9 @@
       input."pointer-1133-49291-Logitech_G502_HERO_Gaming_Mouse" = {
         accel-profile = "flat";
       };
+      inputp."ointer-1133-50503-Logitech_USB_Receiver" = {
+        accel-profile = "flat";
+      };
       input."usb-Logitech_USB_Optical_Mouse-mouse" = {
         accel-profile = "flat";
       };
@@ -59,6 +63,7 @@
     };
 
     extraConfig = ''
+      riverctl send-layout-cmd rivertile "main-location right"
     '';
   };
 }

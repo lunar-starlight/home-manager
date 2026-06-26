@@ -54,7 +54,7 @@ in
         };
         "custom/sleep" = {
           format = " 💤 ";
-          on-click = "systemctl sleep";
+          on-click = "systemctl hybrid-sleep";
           tooltip = false;
         };
       };
