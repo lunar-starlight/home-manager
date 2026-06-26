@@ -9,10 +9,13 @@
   # buildInputs
   atk,
   gtk4,
+  libadwaita,
   libayatana-appindicator,
+  libepoxy,
   libxkbcommon,
   mpv,
   openssl,
+  webkitgtk_6_0,
 
   # nativeBuildInputs
   makeBinaryWrapper,
@@ -27,7 +30,7 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "stremio-linux-shell";
-  version = "1.0.0-beta.13-1";
+  version = "1.0.0-beta.13";
 
   src = fetchFromGitHub {
     owner = "Stremio";
@@ -40,17 +43,14 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   cargoHash = "sha256-QhrL7yPu/zAJIXo+D1abbZ4yO3Tk9S+qsNbz3RxQ+uw=";
 
-  postPatch = ''
-    substituteInPlace src/config.rs \
-      --replace-fail "@serverjs@" "${placeholder "out"}/share/stremio/server.js"
-
-    substituteInPlace $cargoDepsCopy/*/libappindicator-sys-*/src/lib.rs \
-      --replace-fail "libayatana-appindicator3.so.1" "${libayatana-appindicator}/lib/libayatana-appindicator3.so.1"
-    substituteInPlace $cargoDepsCopy/*/xkbcommon-dl-*/src/lib.rs \
-      --replace-fail "libxkbcommon.so.0" "${libxkbcommon}/lib/libxkbcommon.so.0"
-    substituteInPlace $cargoDepsCopy/*/xkbcommon-dl-*/src/x11.rs \
-      --replace-fail "libxkbcommon-x11.so.0" "${libxkbcommon}/lib/libxkbcommon-x11.so.0"
-  '';
+  #postPatch = ''
+  #  substituteInPlace $cargoDepsCopy/*/libappindicator-sys-*/src/lib.rs \
+  #    --replace-fail "libayatana-appindicator3.so.1" "${libayatana-appindicator}/lib/libayatana-appindicator3.so.1"
+  #  substituteInPlace $cargoDepsCopy/*/xkbcommon-dl-*/src/lib.rs \
+  #    --replace-fail "libxkbcommon.so.0" "${libxkbcommon}/lib/libxkbcommon.so.0"
+  #  substituteInPlace $cargoDepsCopy/*/xkbcommon-dl-*/src/x11.rs \
+  #    --replace-fail "libxkbcommon-x11.so.0" "${libxkbcommon}/lib/libxkbcommon-x11.so.0"
+  #'';
 
   # Don't download CEF during build
   buildFeatures = [ "offline-build" ];
@@ -58,10 +58,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
   buildInputs = [
     atk
     gtk4
+    libadwaita
     libayatana-appindicator
+    libepoxy
     libxkbcommon
     mpv
     openssl
+    webkitgtk_6_0
   ];
 
   nativeBuildInputs = [
@@ -76,7 +79,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   postInstall = ''
     mkdir -p $out/share/applications
     cp data/com.stremio.Stremio.desktop $out/share/applications/com.stremio.Stremio.desktop
--/
+
     mkdir -p $out/share/icons/hicolor/scalable/apps
     cp data/icons/com.stremio.Stremio.svg $out/share/icons/hicolor/scalable/apps/com.stremio.Stremio.svg
 
@@ -93,6 +96,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
       --prefix LD_LIBRARY_PATH : "${addDriverRunpath.driverLink}/lib" \
       --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath [ libGL ]}" \
       --prefix PATH : "${lib.makeBinPath [ nodejs ]}"
+      --prefix SERVER_PATH : "/home/muf/.nix-profile/share/stremio/server.js"
     )
   '';
 
