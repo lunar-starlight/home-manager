@@ -3,7 +3,11 @@
   programs.emacs = {
     enable = true;
   };
-  services.emacs.client.enable = false;
+  services.emacs = {
+    enable = true;
+    client.enable = true;
+    startWithUserSession = true;
+  };
 
   #home.file = {
     #"${config.xdg.configHome}/spacemacs/".source = ../dotfiles/spacemacs;
