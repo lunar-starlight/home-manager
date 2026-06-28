@@ -33,9 +33,7 @@
       xcursor-theme = "catppuccin-mocha-mauve-cursors 16";
 
       spawn = [
-        "'rivertile -main-location bottom'"
-        #"'nix shell nixpkgs#way-displays -c bash -c \"(way-displays &) ; sleep 1 && way-displays -s scaling off && way-displays -s transform DP-1 90 && killall way-displays\"'"
-        "'nix run nixpkgs#wlr-randr -- --output DP-1 --transform 90 --output HDMI-A-2 --pos 0,786'"
+        "'rivertile -main-location right -main-ratio 0.667'"
         #"waybar"
       ];
 
@@ -63,7 +61,7 @@
     };
 
     extraConfig = ''
-      riverctl send-layout-cmd rivertile "main-location right"
+      riverctl send-layout-cmd rivertile "main-location bottom"
     '';
   };
 }

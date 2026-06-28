@@ -6,6 +6,7 @@
     ./vim.nix
     ./fish.nix
     ./yazi.nix
+    ./kanshi.nix
     ./keychain.nix
     ./spacemacs.nix
     ./alacritty.nix
