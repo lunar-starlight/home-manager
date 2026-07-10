@@ -15,11 +15,15 @@ in
     htop
     alacritty
     pulsemixer
+    playerctl
     kmonad
     gnumake
     killall
     wtype
     gparted
+    libratbag
+    jq
+    pavolctld
 
     # sys utils
     lm_sensors
@@ -49,6 +53,7 @@ in
     #xdg-desktop-portal-wlr
     brightnessctl
     wayprompt
+    ristate
 
     catppuccin-cursors.mochaMauve
 

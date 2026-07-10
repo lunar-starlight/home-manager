@@ -1,8 +1,9 @@
 { pkgs, ... }:
 {
   imports = [
+    ./eww.nix
     ./river
-    ./waybar.nix
+    #./waybar.nix
     ./cursor.nix
     ./fuzzel.nix
     ./gammastep.nix

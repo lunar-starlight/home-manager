@@ -1,0 +1,185 @@
+/************************************
+              Variables
+
+    THEME: GRUVBOX MATERIAL MEDIUM
+ ************************************/
+
+
+$white: #fff;
+$grey: #5a524c;
+$red: #ea6962;
+$yellow: #d8a657;
+$green: #a9b665;
+$blue: #7daea3;
+$cyan: #89b482;
+$purple: #d3869b;
+$black: #000;
+
+$bg: rgba(43, 48, 59, 0.5);
+$bg-mode: #64727D;
+$bg-clock: #64727D;
+$bg-battery: $white;
+$bg-battery-charging: $green;
+$bg-backlight: #90b1b1;
+$bg-volume: #f1c40f;
+$bg-volume-hover: #a37800;
+$bg-volume-muted: #90b1b1;
+$fg-volume-muted: #2a5c45;
+
+$fg: #d4be98;
+$cobg: $white;
+$cofg: $black;
+$border: rgba(100, 114, 125, 0.5);
+$accent: #fae;
+$active: #64727d;
+$urgent: #eb4d4b;
+
+/************************************
+                GLOBAL
+ ************************************/
+
+* {
+    all: unset;
+    font-family: "FontAwesome", "Roboto", "Helvetica", "Arial", "sans-serif";
+    font-size: 13px;
+    transition-property: inherit;
+    transition-duration: inherit;
+}
+
+.bar {
+    background-color: $bg;
+    color: $fg;
+    //border-bottom: 3px solid $border;
+    box-shadow: inset 0 -3px $border;
+    transition-property: all;
+    transition-duration: .5s;
+}
+
+.module {
+    padding: 0 10px;
+    //color: $bg;
+}
+
+.module_inactive {
+    //background-color: $grey;
+    //color: $fg;
+}
+
+.module_active {
+    //background-color: $green;
+    //color: $bg;
+}
+
+.module_critical {
+    //background-color: $red;
+    //color: $bg;
+}
+
+.right_side {
+}
+
+.left_side {
+}
+
+.clock {
+    background-color: $bg-clock;
+}
+.battery_state {
+    background-color: $bg-battery;
+}
+
+tooltip {
+    background-color: $bg;
+    color: $fg;
+}
+
+
+.button {
+    min-width: 26px;
+    padding: 0;
+}
+.tag {
+    background-color: transparent;
+}
+
+.tag-widget:not(.active-tag):hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -3px $white;
+}
+
+.active-tag {
+    background-color: $active;
+    box-shadow: inset 0 -3px $white;
+}
+
+.empty-tag {
+    color: $grey;
+}
+
+.mode {
+    background-color: $bg-mode;
+}
+
+.sleep {
+    margin: 0 -1px;
+}
+
+.volume {
+    color: $cofg;
+    background-color: $bg-volume;
+}
+.volume:hover {
+    background-color: $bg-volume-hover;
+}
+.volume.muted {
+    color: $fg-volume-muted;
+    background-color: $bg-volume-muted;
+}
+
+/************************************
+            CALENDAR
+************************************/
+
+.calendar {
+    background-color: rgba(40,40,40);
+    color: $fg;
+    border: 2px solid $accent;
+    padding: 2em 1.5em 1.5em 1.5em;
+}
+
+.cal_header {
+    margin: 0em 1em;
+    padding: 0em 1em;
+}
+
+.cal_days {
+    margin: 1em 1em 0em 1em;
+}
+
+.cal_main_container {
+    padding-top: 1.3em;
+}
+
+.today {
+    background-color: $red;
+    color: $bg;
+}
+
+.day:hover {
+    background-color: $yellow;
+    color: $bg;
+}
+
+.cal_button:hover {
+    background-color: $yellow;
+    color: $bg;
+}
+
+.cal_type_switcher {
+    margin-top: 1em;
+}
+
+.cal_type_header {
+    margin: 0em 1em;
+    padding: 0em 1em;
+}

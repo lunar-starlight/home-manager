@@ -1,7 +1,7 @@
 { config, ... }:
 {
   imports = [ ./map.nix ./tags.nix ];
-  
+
   wayland.windowManager.river = {
     enable = true;
     xwayland.enable = true;
@@ -33,8 +33,7 @@
       xcursor-theme = "catppuccin-mocha-mauve-cursors 16";
 
       spawn = [
-        "'rivertile -main-location right -main-ratio 0.667'"
-        #"waybar"
+        "rivertile -main-location right -main-ratio 0.667"
       ];
 
       set-repeat = "40 200";

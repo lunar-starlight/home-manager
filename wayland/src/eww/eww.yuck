@@ -1,0 +1,112 @@
+(deflisten focused-tag :initial "1"
+           {"ristate -t | stdbuf -o0 sed '/{\"tags\":{}}/d' | stdbuf -o0 jq '.tags | to_entries.[0].value.[0] | tonumber'"}
+)
+
+(deflisten occupied-tags :initial "[]"
+           "ristate -vt | stdbuf -o0 sed '/{\"viewstag\":{}}/d' | stdbuf -o0 jq '.viewstag | to_entries.[0].value | map(tonumber) | tostring'"
+)
+
+(deflisten focused-title :initial ""
+           "ristate -w | stdbuf -o0 jq -r '.title'")
+
+(deflisten volume ;:initial "{\"vols\": {\"0\":0}, \"sink\":\"0\"}"
+           "tail -F /home/muf/.cache/pavolctld | pavolctld | jq --unbuffered -cRf '/home/muf/.config/eww/jq/volume.jq'")
+                                        ;"pw-dump -m | stdbuf -o0 jq '(.[].metadata? | values | .[] | tostring | select(. | contains(\"default.audio.sink\")) | fromjson | .value.name) as $sink | . , inputs | .[] | tostring | select(. | contains($sink)) | fromjson | .info.params.Props.[0].channelVolumes.[0]'")
+                                        ;"pw-dump -m | stdbuf -o0 jq -c '[.[] | {key: .info.props.[\"node.name\"] , value: .info.params.Props.[0].channelVolumes.[0]} | tostring | select(test(\"null\") | not) | fromjson ] | from_entries' | stdbuf -o0 sed '/{}/d'")
+                                        ;"pw-dump -m | stdbuf -o0 jq '.[] | tostring | select(. | contains($(eww get current-sink))) | fromjson | .info.params.Props.[0].channelVolumes.[0]' | stdbuf -o0 sed '/null/d'")
+(deflisten volume-mute :initial "false"
+           "pw-dump -m | stdbuf -o0 jq '(.[].metadata? | values | .[] | tostring | select(. | contains(\"default.audio.sink\")) | fromjson | .value.name) as $sink | . , inputs | .[] | tostring | select(. | contains($sink)) | fromjson | .info.params.Props.[0].mute | values'")
+                                        ;"pw-dump -m | stdbuf -o0 jq '.[] | tostring | select(. | contains(\"alsa_output.pci-0000_09_00.3.HiFi__Line1__sink\")) | fromjson | .info.params.Props.[0].mute' | sed '/null/d'")
+
+(defwindow bar
+  :monitor 1
+  :stacking "fg"
+  :exclusive true
+  :focusable "none"
+  :geometry (geometry :width "100%" :height "24px" :anchor "top center")
+  :hexpand "false"
+  :vexpand "false"
+  (bar_layout))
+
+(defwidget bar_layout []
+  (centerbox :orientation "h"
+             (_left)
+             (_middle)
+             (_right)))
+
+(defwidget _left []
+  (box :halign "start"
+       ;(_mode)
+       (_title)))
+
+(defwidget _middle []
+  (box :halign "center" :space-evenly false
+       (_tags)))
+
+(defwidget _right []
+  (box :halign "end" :space-evenly false
+       ;(_brightness)
+       (_volume)
+       (_clock)
+       (_sleep)))
+
+(defwidget _mode []
+  "mode")
+
+(defwidget _title []
+  (label :class "module title"
+         :text {focused-title}))
+
+
+(defvar tags "[1, 2, 3, 4, 5, 6, 7, 8, 9]")
+
+(defwidget _tags []
+  (box :class "module tags"
+       :orientation "h"
+       (for tagnum in tags
+            (_tag :id tagnum))))
+
+(defwidget _tag [id ?symbol]
+  (eventbox
+   :onclick "riverctl set-focused-tags ${powi(2, id - 1)}"
+   :class "tag-widget"
+   (_taglabel :id id
+              :text {symbol ?: id})))
+
+(defwidget _taglabel [id text]
+  (label
+   :class "${id == focused-tag
+             ? "active-tag" : matches(occupied-tags, id) == true
+             ? "occupied-tag"
+             : "empty-tag"} button tag"
+   :text text))
+
+(defwidget _brightness []
+  "brightness")
+
+(defwidget _volume []
+  (eventbox
+   :onscroll "if [ '{}' == 'up' ]; then pactl set-sink-volume @DEFAULT_SINK@ +5%; else pactl set-sink-volume @DEFAULT_SINK@ -5%; fi"
+   :onclick "alacritty -e pulsemixer"
+   :onmiddleclick "switch-audio-device"
+   :timeout "10000000000ms"
+   (box
+    :class "module volume"
+    (label :class "volume-icon"
+           :justify "left"
+           :text {volume["vols"][volume["sink"]] < 33
+           ? "" : volume["vols"][volume["sink"]] < 66
+           ? ""
+           : ""})
+    (label :class "volume-value"
+           :text `${volume["vols"][volume["sink"]]} %`))))
+
+(defwidget _clock []
+  (label :class "module clock"
+         :text {formattime(EWW_TIME, "%a, %Y-%m-%d | %R")}))
+
+(defwidget _sleep []
+  (eventbox
+   :onclick "systemctl hybrid-sleep"
+   (label :class "button module sleep"
+          :text "💤")))

@@ -7,7 +7,6 @@ in
     enable = true;
     systemd = {
       enable = true;
-      #targets = "graphical-session.target";
     };
     settings = {
       mainBar = {
@@ -26,8 +25,6 @@ in
         modules-right = [
           "backlight"
           "pulseaudio"
-          #"cpu"
-          #"memory"
           "battery"
           "clock"
           "custom/sleep"
@@ -59,6 +56,6 @@ in
         };
       };
     };
-    style = (builtins.readFile ./src/waybar-default.css) + (builtins.readFile ./src/waybar-custom.css);
+    style = (builtins.readFile ./src/waybar/default.css) + (builtins.readFile ./src/waybar/custom.css);
   };
 }
