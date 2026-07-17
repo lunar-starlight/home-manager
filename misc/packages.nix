@@ -1,6 +1,7 @@
 { pkgs, pkgs-unstable, zen-browser, ...}:
 let
   #stremio-linux-shell = (pkgs.callPackage ../packages/stremio-linux-shell/package.nix {});
+  riverql = (pkgs.callPackage ../packages/riverql/package.nix {});
 in
 {
   home.packages = with pkgs; [
@@ -24,6 +25,7 @@ in
     libratbag
     jq
     pavolctld
+    riverql
 
     # sys utils
     lm_sensors
