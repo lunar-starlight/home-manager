@@ -2,6 +2,7 @@
 let
   #stremio-linux-shell = (pkgs.callPackage ../packages/stremio-linux-shell/package.nix {});
   riverql = (pkgs.callPackage ../packages/riverql/package.nix {});
+  piper = (pkgs.callPackage ../packages/piper/package.nix {});
 in
 {
   home.packages = with pkgs; [
@@ -22,10 +23,10 @@ in
     killall
     wtype
     gparted
-    libratbag
     jq
     pavolctld
     riverql
+    piper
 
     # sys utils
     lm_sensors
