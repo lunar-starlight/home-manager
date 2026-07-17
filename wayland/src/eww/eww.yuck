@@ -1,13 +1,11 @@
 (deflisten title
     "riverql 'subscription { events { __typename ... on SeatFocusedOutput { name } ... on SeatFocusedView { title }}}' | jq --unbuffered -cnf '/home/muf/.config/eww/jq/title.jq'")
-                                        ;"riverql 'name@home/muf/.config/eww/riverql/left-state.gql' | jq -c '.data.eventsForOutput'")
+
 (deflisten focused-tag
-    "riverql 'subscription { events(tagList: true) { __typename ... on OutputFocusedTags { name tagsList }}}' | jq --unbuffered -cnf '/home/muf/.config/eww/jq/tags.jq'")
-                                        ;{"ristate -t | stdbuf -o0 sed '/{\"tags\":{}}/d' | jq --unbuffered '.tags | to_entries.[0].value.[0] | tonumber'"})
+    "riverql 'subscription { events(tagList: true) { ... on OutputFocusedTags { name tagsList }}}' | jq --unbuffered -cnf '/home/muf/.config/eww/jq/tags.jq'")
 
 (deflisten occupied-tags
-    "riverql 'subscription { events(tagList: true) { __typename ... on OutputViewTags { name tagsList }}}' | jq --unbuffered -cnf '/home/muf/.config/eww/jq/tags.jq'")
-                                        ;"ristate -vt | stdbuf -o0 sed '/{\"viewstag\":{}}/d' | stdbuf -o0 jq '.viewstag | to_entries.[0].value | map(tonumber) | tostring'")
+    "riverql 'subscription { events(tagList: true) { ... on OutputViewTags { name tagsList }}}' | jq --unbuffered -cnf '/home/muf/.config/eww/jq/tags.jq'")
 
 (deflisten volume ;:initial "{\"vols\": {\"0\":0}, \"sink\":\"0\"}"
     "tail -F /home/muf/.cache/pavolctld | pavolctld | jq --unbuffered -cRf '/home/muf/.config/eww/jq/volume.jq'")
@@ -31,11 +29,11 @@
 (defwidget _left [screen]
   (box :halign "start"
        ;(_mode)
-       (_title :screen {screen == 0 ? "HDMI-A-1" : "DP-1"})))
+       (_title :screen {screen == 1 ? "HDMI-A-2" : "DP-1"})))
 
 (defwidget _middle [screen]
   (box :halign "center" :space-evenly false
-       (_tags :screen {screen == 0 ? "HDMI-A-1" : "DP-1"})))
+       (_tags :screen {screen == 1 ? "HDMI-A-2" : "DP-1"})))
 
 (defwidget _right []
   (box :halign "end" :space-evenly false

@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  riverql = (pkgs.callPackage ../packages/riverql/package.nix {});
+in
 {
   programs.eww = {
     enable = true;
@@ -10,6 +13,18 @@
   xdg.cacheFile."pavolctld".text = "";
 
   systemd.user.services = {
+    "riverql" = {
+      Unit = {
+        Description = "Start riverql server";
+        After = "eww.service";
+        Before = "eww-bars.service";
+        PartOf = "eww.service";
+      };
+      Service = {
+        ExecStart = "${riverql}/bin/riverql --server";
+      };
+      Install.WantedBy = [ "eww.service" ];
+    };
     "eww-bars" = {
       Unit = {
         Description = "Open the eww bars";
