@@ -1,47 +1,41 @@
-(deflisten focused-tag :initial "1"
-           {"ristate -t | stdbuf -o0 sed '/{\"tags\":{}}/d' | stdbuf -o0 jq '.tags | to_entries.[0].value.[0] | tonumber'"}
-)
+(deflisten title
+    "riverql 'subscription { events { __typename ... on SeatFocusedOutput { name } ... on SeatFocusedView { title }}}' | jq --unbuffered -cnf '/home/muf/.config/eww/jq/title.jq'")
+                                        ;"riverql 'name@home/muf/.config/eww/riverql/left-state.gql' | jq -c '.data.eventsForOutput'")
+(deflisten focused-tag
+    "riverql 'subscription { events(tagList: true) { __typename ... on OutputFocusedTags { name tagsList }}}' | jq --unbuffered -cnf '/home/muf/.config/eww/jq/tags.jq'")
+                                        ;{"ristate -t | stdbuf -o0 sed '/{\"tags\":{}}/d' | jq --unbuffered '.tags | to_entries.[0].value.[0] | tonumber'"})
 
-(deflisten occupied-tags :initial "[]"
-           "ristate -vt | stdbuf -o0 sed '/{\"viewstag\":{}}/d' | stdbuf -o0 jq '.viewstag | to_entries.[0].value | map(tonumber) | tostring'"
-)
-
-(deflisten focused-title :initial ""
-           "ristate -w | stdbuf -o0 jq -r '.title'")
+(deflisten occupied-tags
+    "riverql 'subscription { events(tagList: true) { __typename ... on OutputViewTags { name tagsList }}}' | jq --unbuffered -cnf '/home/muf/.config/eww/jq/tags.jq'")
+                                        ;"ristate -vt | stdbuf -o0 sed '/{\"viewstag\":{}}/d' | stdbuf -o0 jq '.viewstag | to_entries.[0].value | map(tonumber) | tostring'")
 
 (deflisten volume ;:initial "{\"vols\": {\"0\":0}, \"sink\":\"0\"}"
-           "tail -F /home/muf/.cache/pavolctld | pavolctld | jq --unbuffered -cRf '/home/muf/.config/eww/jq/volume.jq'")
-                                        ;"pw-dump -m | stdbuf -o0 jq '(.[].metadata? | values | .[] | tostring | select(. | contains(\"default.audio.sink\")) | fromjson | .value.name) as $sink | . , inputs | .[] | tostring | select(. | contains($sink)) | fromjson | .info.params.Props.[0].channelVolumes.[0]'")
-                                        ;"pw-dump -m | stdbuf -o0 jq -c '[.[] | {key: .info.props.[\"node.name\"] , value: .info.params.Props.[0].channelVolumes.[0]} | tostring | select(test(\"null\") | not) | fromjson ] | from_entries' | stdbuf -o0 sed '/{}/d'")
-                                        ;"pw-dump -m | stdbuf -o0 jq '.[] | tostring | select(. | contains($(eww get current-sink))) | fromjson | .info.params.Props.[0].channelVolumes.[0]' | stdbuf -o0 sed '/null/d'")
-(deflisten volume-mute :initial "false"
-           "pw-dump -m | stdbuf -o0 jq '(.[].metadata? | values | .[] | tostring | select(. | contains(\"default.audio.sink\")) | fromjson | .value.name) as $sink | . , inputs | .[] | tostring | select(. | contains($sink)) | fromjson | .info.params.Props.[0].mute | values'")
-                                        ;"pw-dump -m | stdbuf -o0 jq '.[] | tostring | select(. | contains(\"alsa_output.pci-0000_09_00.3.HiFi__Line1__sink\")) | fromjson | .info.params.Props.[0].mute' | sed '/null/d'")
+    "tail -F /home/muf/.cache/pavolctld | pavolctld | jq --unbuffered -cRf '/home/muf/.config/eww/jq/volume.jq'")
 
-(defwindow bar
-  :monitor 1
+(defwindow bar [screen]
+  :monitor screen
   :stacking "fg"
   :exclusive true
   :focusable "none"
   :geometry (geometry :width "100%" :height "24px" :anchor "top center")
   :hexpand "false"
   :vexpand "false"
-  (bar_layout))
+  (bar_layout :screen screen))
 
-(defwidget bar_layout []
+(defwidget bar_layout [screen]
   (centerbox :orientation "h"
-             (_left)
-             (_middle)
+             (_left :screen screen)
+             (_middle :screen screen)
              (_right)))
 
-(defwidget _left []
+(defwidget _left [screen]
   (box :halign "start"
        ;(_mode)
-       (_title)))
+       (_title :screen {screen == 0 ? "HDMI-A-1" : "DP-1"})))
 
-(defwidget _middle []
+(defwidget _middle [screen]
   (box :halign "center" :space-evenly false
-       (_tags)))
+       (_tags :screen {screen == 0 ? "HDMI-A-1" : "DP-1"})))
 
 (defwidget _right []
   (box :halign "end" :space-evenly false
@@ -53,32 +47,34 @@
 (defwidget _mode []
   "mode")
 
-(defwidget _title []
+(defwidget _title [screen]
   (label :class "module title"
-         :text {focused-title}))
+         :text {title[screen]}))
 
 
 (defvar tags "[1, 2, 3, 4, 5, 6, 7, 8, 9]")
 
-(defwidget _tags []
+(defwidget _tags [screen]
   (box :class "module tags"
        :orientation "h"
        (for tagnum in tags
-            (_tag :id tagnum))))
+            (_tag :id tagnum
+                  :screen screen))))
 
-(defwidget _tag [id ?symbol]
+(defwidget _tag [screen id ?symbol]
   (eventbox
    :onclick "riverctl set-focused-tags ${powi(2, id - 1)}"
    :class "tag-widget"
-   (_taglabel :id id
+   (_taglabel :screen screen
+              :id id
               :text {symbol ?: id})))
 
-(defwidget _taglabel [id text]
+(defwidget _taglabel [screen id text]
   (label
-   :class "${id == focused-tag
-             ? "active-tag" : matches(occupied-tags, id) == true
-             ? "occupied-tag"
-             : "empty-tag"} button tag"
+   :class `button tag
+           ${matches(focused-tag[screen], id)   ? "active-tag"
+           : matches(occupied-tags[screen], id) ? "occupied-tag"
+                                                : "empty-tag"}`
    :text text))
 
 (defwidget _brightness []
@@ -87,19 +83,17 @@
 (defwidget _volume []
   (eventbox
    :onscroll "if [ '{}' == 'up' ]; then pactl set-sink-volume @DEFAULT_SINK@ +5%; else pactl set-sink-volume @DEFAULT_SINK@ -5%; fi"
-   :onclick "alacritty -e pulsemixer"
+   :onclick "alacritty -e pulsemixer &"
    :onmiddleclick "switch-audio-device"
-   :timeout "10000000000ms"
    (box
-    :class "module volume"
-    (label :class "volume-icon"
+    :class `module volume ${volume[volume.sink].mute == "1" ? "muted" : "" }`
+    (label :class "volume-icon icon"
            :justify "left"
-           :text {volume["vols"][volume["sink"]] < 33
-           ? "" : volume["vols"][volume["sink"]] < 66
-           ? ""
-           : ""})
+           :text {volume[volume.sink].vol < 33 ? ""
+                : volume[volume.sink].vol < 66 ? ""
+                                               : ""})
     (label :class "volume-value"
-           :text `${volume["vols"][volume["sink"]]} %`))))
+           :text "${volume[volume.sink].vol} %"))))
 
 (defwidget _clock []
   (label :class "module clock"

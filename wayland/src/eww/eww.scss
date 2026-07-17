@@ -16,22 +16,22 @@ $purple: #d3869b;
 $black: #000;
 
 $bg: rgba(43, 48, 59, 0.5);
-$bg-mode: #64727D;
-$bg-clock: #64727D;
+$bg-mode: rgb(100, 114, 125);
+$bg-clock: rgb(100, 114, 125);
 $bg-battery: $white;
 $bg-battery-charging: $green;
 $bg-backlight: #90b1b1;
 $bg-volume: #f1c40f;
 $bg-volume-hover: #a37800;
 $bg-volume-muted: #90b1b1;
-$fg-volume-muted: #2a5c45;
+$fg-volume-muted: rgb(0, 0, 0, 0.8); //#2a5c45;
 
 $fg: #d4be98;
 $cobg: $white;
 $cofg: $black;
 $border: rgba(100, 114, 125, 0.5);
 $accent: #fae;
-$active: #64727d;
+$active: rgb(100, 114, 125);
 $urgent: #eb4d4b;
 
 /************************************
@@ -57,7 +57,6 @@ $urgent: #eb4d4b;
 
 .module {
     padding: 0 10px;
-    //color: $bg;
 }
 
 .module_inactive {
@@ -73,6 +72,8 @@ $urgent: #eb4d4b;
 .module_critical {
     //background-color: $red;
     //color: $bg;
+}
+.icon {
 }
 
 .right_side {
@@ -127,6 +128,7 @@ tooltip {
 .volume {
     color: $cofg;
     background-color: $bg-volume;
+    padding-left: 0;
 }
 .volume:hover {
     background-color: $bg-volume-hover;
