@@ -1,6 +1,4 @@
-{ config, ... } :
+{ ... } :
 {
-  home.file = {
-    "${config.xdg.configHome}/xkb".source = ../dotfiles/xkb;
-  };
+  xdg.configFile."/xkb".source = ../dotfiles/xkb;
 }

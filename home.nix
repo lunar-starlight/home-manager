@@ -11,7 +11,10 @@
   home = {
     username = "muf";
     homeDirectory = "/home/muf";
+    preferXdgDirectories = true;
   };
+
+  xdg.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
     "electron-39.8.10"

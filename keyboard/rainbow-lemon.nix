@@ -1,4 +1,4 @@
-{ config, pkgs-unstable, lib, ... } :
+{ config, pkgs, lib, ... } :
 let
   keyboards = [
     { name = "G915-wired"; src = "GX15"; dev = "/dev/input/by-id/usb-Logitech_G915_X_LS_BB8E30E8-event-kbd"; }
@@ -7,5 +7,5 @@ let
   ];
 in
 {
-  imports = lib.map ({name, src, dev}: import ./kmonad.nix {inherit config pkgs-unstable name src dev;}) keyboards;
+  imports = lib.map ({name, src, dev}: import ./kmonad.nix {inherit config pkgs name src dev;}) keyboards;
 }

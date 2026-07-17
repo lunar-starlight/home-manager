@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     noto-fonts-color-emoji
@@ -11,7 +11,7 @@
     fira-code-symbols
   ];
 
-  home.file."${config.xdg.dataHome}/fonts".source = ../dotfiles/fonts;
+  xdg.dataFile."/fonts".source = ../dotfiles/fonts;
 
   fonts.fontconfig = {
     enable = true;

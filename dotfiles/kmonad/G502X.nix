@@ -11,7 +11,7 @@
 )
 
 (deflayer default
-  ret @switch-tabs _ @switch-desktops @switch-windows
+  ret @switch-tabs _ _ @switch-windows
 )
 
 (defalias
