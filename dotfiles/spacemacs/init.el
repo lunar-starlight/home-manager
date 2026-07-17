@@ -32,32 +32,42 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(;;rust
-     javascript
-     lua
+   '(
+     ;; ----------------------------------------------------------------
+     ;; Example of useful layers you may want to use right away.
+     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
+     ;; `M-m f e R' (Emacs style) to install them.
+     ;; ----------------------------------------------------------------
+     agda
      auto-completion
      ;; better-defaults
      emacs-lisp
      git
      helm
-     ;; lsp
-     ;; markdown
+     (html :variable scss-enable-lsp t)
+     javascript
      (latex :variables
             latex-enable-auto-fill nil
             latex-enable-folding t
             latex-build-engine 'luatex)
+     ;; lsp
+     lua
+     ;; markdown
      multiple-cursors
+     (nixos :variables
+            nixos-format-on-save t)
      ;; org
+     python
+     ;;rust
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      spell-checking
      ;; syntax-checking
-     ;; version-control
-     treemacs
-     agda
      ;;(tree-sitter :variables
      ;;             tree-sitter-syntax-highlight-enable t)
+     treemacs
+     ;; version-control
      unicode-fonts)
 
    ;; List of additional packages that will be installed without being wrapped
@@ -234,8 +244,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts. This setting has no effect when
-   ;; running Emacs in terminal. The font set here will be used for default and
-   ;; fixed-pitch faces. The `:size' can be specified as
+   ;; running Emacs in terminal. The font set here will be used for `default' and
+   ;; `fixed-pitch' faces. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Fira Code"
@@ -353,9 +363,12 @@ It should only modify the values of Spacemacs settings."
    ;; Spacemacs on Windows. Refer the FAQ.org "load-hints" session for details.
    dotspacemacs-enable-load-hints nil
 
-   ;; If t, enable the `package-quickstart' feature to avoid full package
-   ;; loading, otherwise no `package-quickstart' attemption (default nil).
-   ;; Refer the FAQ.org "package-quickstart" section for details.
+   ;; If non-nil, enable the `package-quickstart' feature to avoid activating
+   ;; all package autoloads one by one.
+   ;; Requires building and maintaining a quickstart autoload file for all
+   ;; installed packages.
+   ;; Refer to the FAQ.org "package-quickstart" section for details.
+   ;; (default nil)
    dotspacemacs-enable-package-quickstart nil
 
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
@@ -451,7 +464,9 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc...
-   ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
+   ;; This can be temporary disabled by pressing `C-q' before `)'.
+   ;; Only effective when `dotspacemacs-activate-smartparens-mode' is non-nil.
+   ;; Redundant when `smartparens-strict-mode' is enabled. (default nil)
    dotspacemacs-smart-closing-parenthesis t
 
    ;; Select a scope to highlight delimiters. Possible values are `any',
@@ -635,41 +650,51 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(package-selected-packages
-     '(ace-link aggressive-indent all-the-icons amx auctex-latexmk auto-compile
-                auto-highlight-symbol auto-yasnippet avy-jump-helm-line
-                centered-cursor-mode clean-aindent-mode code-review
-                column-enforce-mode company-auctex company-lua company-math
-                company-reftex counsel counsel-projectile define-word devdocs
-                diminish dired-quick-sort disable-mouse dotenv-mode drag-stuff
-                dumb-jump elisp-def elisp-demos elisp-slime-nav emr eval-sexp-fu
-                evil-anzu evil-args evil-cleverparens evil-collection
-                evil-easymotion evil-escape evil-evilified-state evil-exchange
-                evil-goggles evil-iedit-state evil-indent-plus evil-lion
-                evil-lisp-state evil-matchit evil-mc evil-nerd-commenter
-                evil-numbers evil-surround evil-tex evil-textobj-line evil-tutor
+     '(ace-link add-node-modules-path aggressive-indent all-the-icons amx
+                anaconda-mode auctex-latexmk auto-compile auto-highlight-symbol
+                auto-yasnippet avy-jump-helm-line blacken centered-cursor-mode
+                clean-aindent-mode code-cells code-review column-enforce-mode
+                company-anaconda company-auctex company-lua company-math
+                company-nixos-options company-reftex company-web compat concurrent
+                counsel counsel-css counsel-projectile ctable cython-mode
+                define-word devdocs diminish dired-quick-sort disable-mouse
+                dotenv-mode drag-stuff dumb-jump elisp-def elisp-demos
+                elisp-slime-nav emmet-mode emr epc eval-sexp-fu evil-anzu
+                evil-args evil-cleverparens evil-collection evil-easymotion
+                evil-escape evil-evilified-state evil-exchange evil-goggles
+                evil-iedit-state evil-indent-plus evil-lion evil-lisp-state
+                evil-matchit evil-mc evil-nerd-commenter evil-numbers
+                evil-surround evil-tex evil-textobj-line evil-tutor
                 evil-unimpaired evil-visual-mark-mode evil-visualstar
-                expand-region eyebrowse fancy-battery flx flyspell-correct-helm
-                flyspell-correct-ivy git-link git-messenger git-modes
-                git-timemachine gitignore-templates golden-ratio google-translate
-                helm helm-ag helm-c-yasnippet helm-comint helm-company helm-core
-                helm-descbinds helm-ls-git helm-make helm-mode-manager helm-org
-                helm-projectile helm-purpose helm-swoop helm-xref hide-comnt
+                expand-region eyebrowse fancy-battery flx flycheck
+                flyspell-correct-helm flyspell-correct-ivy ggtags git-link
+                git-messenger git-modes git-timemachine gitignore-templates
+                golden-ratio google-translate haml-mode helm helm-ag
+                helm-c-yasnippet helm-comint helm-company helm-core helm-cscope
+                helm-css-scss helm-descbinds helm-ls-git helm-make
+                helm-mode-manager helm-nixos-options helm-org helm-projectile
+                helm-purpose helm-pydoc helm-swoop helm-xref hide-comnt
                 highlight-indentation highlight-numbers highlight-parentheses
-                hl-todo holy-mode hungry-delete hybrid-mode indent-guide info+
-                inspector ivy ivy-avy ivy-hydra ivy-purpose ivy-xref ivy-yasnippet
-                js-doc js2-refactor json-mode json-navigator json-reformat
-                kbd-mode link-hint livid-mode lorem-ipsum macrostep memoize
-                multi-line nameless nodejs-repl npm-mode open-junk-file
-                org-superstar overseer page-break-lines paradox password-generator
-                pcre2el popwin prettier-js quickrun rainbow-delimiters
-                restart-emacs smeargle space-doc spaceline spaceline-all-the-icons
-                spacemacs-purpose-popwin spacemacs-whitespace-cleanup
-                string-edit-at-point string-inflection swiper symbol-overlay symon
-                term-cursor tern toc-org transient-cycles treemacs-evil
-                treemacs-icons-dired treemacs-magit treemacs-persp
-                treemacs-projectile undo-tree unicode-fonts vi-tilde-fringe
-                volatile-highlights web-beautify wfnames wgrep winum
-                writeroom-mode ws-butler yasnippet-snippets))
+                hl-todo holy-mode htmlize hungry-delete hybrid-mode impatient-mode
+                importmagic indent-guide info+ inspector ivy ivy-avy ivy-hydra
+                ivy-purpose ivy-xref ivy-yasnippet js-doc js2-refactor json-mode
+                json-navigator json-reformat kbd-mode link-hint live-py-mode
+                livid-mode load-env-vars lorem-ipsum lsp-mode macrostep memoize
+                multi-line nameless nix-mode nixos-options nodejs-repl nose
+                npm-mode open-junk-file org-superstar overseer page-break-lines
+                paradox password-generator pcre2el pet pip-requirements pipenv
+                pippel poetry popwin prettier-js pug-mode py-isort pydoc
+                pyenv-mode pylookup python-pytest pythonic pyvenv quickrun
+                rainbow-delimiters reformatter restart-emacs ruff-format sass-mode
+                scss-mode slim-mode smeargle space-doc spaceline
+                spaceline-all-the-icons spacemacs-purpose-popwin
+                spacemacs-whitespace-cleanup sphinx-doc string-edit-at-point
+                string-inflection swiper symbol-overlay symon tagedit term-cursor
+                tern toc-org transient-cycles treemacs-evil treemacs-icons-dired
+                treemacs-magit treemacs-persp treemacs-projectile undo-tree
+                unicode-fonts uv vi-tilde-fringe volatile-highlights web-beautify
+                web-completion-data web-mode wfnames wgrep winum writeroom-mode
+                ws-butler xcscope yapfify yasnippet-snippets))
    '(safe-local-variable-values
      '((TeX-engine . lualatex) (javascript-backend . tide)
        (javascript-backend . tern) (javascript-backend . lsp))))

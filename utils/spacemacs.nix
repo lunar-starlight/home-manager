@@ -6,7 +6,7 @@
   services.emacs = {
     enable = true;
     client.enable = true;
-    startWithUserSession = true;
+    #startWithUserSession = true;
   };
 
   #home.file = {
@@ -15,7 +15,7 @@
     #  recursive = true;
     #  source = ../dotfiles/emacs;
     #};
-  #}; 
+  #};
 
   systemd.user.sessionVariables = {
     # This is so that SPC f e d gives you the editable dotfile
