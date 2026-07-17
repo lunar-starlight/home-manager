@@ -26,7 +26,7 @@ python3.pkgs.buildPythonApplication (finalAttrs: {
     owner = "libratbag";
     repo = "piper";
     rev = "0a1b2667aee0b2b7d40c561051911fc79f3a3317";
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    hash = "sha256-kJUs2vMOK35b3KzeknlMspKwLGpi1p85VgedWeXP9co=";
   };
 
   nativeBuildInputs = [
