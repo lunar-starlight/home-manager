@@ -26,7 +26,6 @@
 
     settings = {
       default-layout = "rivertile";
-      #output-layout = "rivertile";
       default-attach-mode = "after 1";
 
       set-cursor-warp = "on-focus-change";
@@ -47,13 +46,13 @@
       input."pointer-1133-49291-Logitech_G502_HERO_Gaming_Mouse" = {
         accel-profile = "flat";
       };
-      inputp."ointer-1133-50503-Logitech_USB_Receiver" = {
+      input."pointer-1133-50503-Logitech_USB_Receiver" = {
         accel-profile = "flat";
       };
       input."usb-Logitech_USB_Optical_Mouse-mouse" = {
         accel-profile = "flat";
       };
-      keyboard-layout-file = "${config.xdg.configHome}/home-manager/dotfiles/xkb/xkbmap.conf";
+      keyboard-layout-file = "${config.xdg.configHome}/xkb/xkbmap.conf";
     };
 
     extraSessionVariables = {

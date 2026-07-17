@@ -10,11 +10,5 @@ let
   ];
 in
 {
-  imports = [
-    ./compose.nix
-  ] ++ lib.map ({name, src, dev}: import ./kmonad.nix {inherit config pkgs-unstable name src dev;}) keyboards;
-  #  (import ./kmonad.nix { inherit config pkgs-unstable; name = "g815"; })
-  #  (import ./kmonad.nix { inherit config pkgs-unstable; name = "g815-media"; })
-  #  (import ./kmonad.nix { inherit config pkgs-unstable; name = "g502"; })
-  #];
+  imports = lib.map ({name, src, dev}: import ./kmonad.nix {inherit config pkgs-unstable name src dev;}) keyboards;
 }

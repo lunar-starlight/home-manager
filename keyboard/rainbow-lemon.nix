@@ -7,15 +7,5 @@ let
   ];
 in
 {
-  imports = [
-    ./compose.nix
-  ] ++ lib.map ({name, src, dev}: import ./kmonad.nix {inherit config pkgs-unstable name src dev;}) keyboards;
-  #  (import ./kmonad.nix { inherit config pkgs-unstable; name = "rainbow"; })
-  #  (import ./kmonad.nix { inherit config pkgs-unstable; name = "g915"; })
-  #  (import ./kmonad.nix { inherit config pkgs-unstable; name = "g915-media"; })
-  #];
-
-  #home.file = {
-  #  "${config.xdg.configHome}/xkb".source = ../dotfiles/xkb;
-  #};
+  imports = lib.map ({name, src, dev}: import ./kmonad.nix {inherit config pkgs-unstable name src dev;}) keyboards;
 }
