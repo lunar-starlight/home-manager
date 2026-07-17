@@ -1,4 +1,4 @@
 { ... } :
 {
-  xdg.configFile."/xkb".source = ../dotfiles/xkb;
+  xdg.configFile."xkb".source = ../dotfiles/xkb;
 }

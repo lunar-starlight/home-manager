@@ -32,7 +32,7 @@
       xcursor-theme = "catppuccin-mocha-mauve-cursors 16";
 
       spawn = [
-        "rivertile -main-location right -main-ratio 0.667"
+        "'rivertile -main-location right -main-ratio 0.667'"
       ];
 
       set-repeat = "40 200";

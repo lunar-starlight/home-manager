@@ -14,14 +14,14 @@
       Unit = {
         Description = "Open the eww bars";
         After = "eww.service";
-        PartOf = "graphical-session.target";
+        PartOf = "eww.service";
       };
       Service = {
         Type = "oneshot";
         RemainAfterExit = "yes";
         ExecStart = "${pkgs.eww}/bin/eww open-many bar:primary bar:secondary --arg primary:screen=1 --arg secondary:screen=0 --no-daemonize";
       };
-      Install.WantedBy = [ "graphical-session.target" ];
+      Install.WantedBy = [ "eww.service" ];
     };
   };
 }

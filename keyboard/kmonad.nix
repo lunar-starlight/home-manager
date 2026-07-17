@@ -1,6 +1,6 @@
 { pkgs, name, src, dev, ... } :
 {
-  xdg.configFile."/kmonad/${name}.kbd".text = (import ../dotfiles/kmonad/${src}.nix {inherit dev name;});
+  xdg.configFile."kmonad/${name}.kbd".text = (import ../dotfiles/kmonad/${src}.nix {inherit dev name;});
 
   systemd.user.services = {
     "kmonad-${name}" = {

@@ -1,4 +1,4 @@
-{ config, pkgs, ... } :
+{ config, ... } :
 {
   programs.emacs = {
     enable = true;
@@ -6,7 +6,7 @@
   services.emacs = {
     enable = true;
     client.enable = true;
-    #startWithUserSession = true;
+    startWithUserSession = "graphical";
   };
 
   #home.file = {
