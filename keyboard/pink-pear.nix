@@ -6,7 +6,8 @@ let
     { name = "G915-wired"; src = "GX15"; dev = "/dev/input/by-id/usb-Logitech_G915_X_LS_BB8E30E8-event-kbd"; }
     #{ name = "G915-dongle"; src = "GX15"; dev = "/dev/input/by-id/usb-Logitech_USB_Receiver-if01-event-kbd"; }
     { name = "G502"; src = "G502"; dev = "/dev/input/by-id/usb-Logitech_G502_HERO_Gaming_Mouse_067A38753836-if01-event-kbd"; }
-    { name = "G502X"; src = "G502"; dev = "/dev/input/by-id/usb-Logitech_USB_Receiver-if01-event-kbd"; }
+    #{ name = "G502X"; src = "G502"; dev = "/dev/input/by-id/usb-Logitech_USB_Receiver-if02-event-mouse"; }
+    { name = "G502X"; src = "G502"; dev = "/dev/input/by-id/G502X"; }
   ];
 in
 {
